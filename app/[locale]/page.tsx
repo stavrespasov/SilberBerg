@@ -1,16 +1,33 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
+import { Contact } from "@/components/sections/Contact";
+import { Faq } from "@/components/sections/Faq";
+import { Footer } from "@/components/sections/Footer";
+import { Header } from "@/components/sections/Header";
+import { Hero } from "@/components/sections/Hero";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Location } from "@/components/sections/Location";
+import { PricingTable } from "@/components/sections/PricingTable";
+import { Trust } from "@/components/sections/Trust";
+import { WhatWeBuy } from "@/components/sections/WhatWeBuy";
 
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations("hero");
-
   return (
-    <main className="flex flex-1 flex-col items-start justify-center gap-4 p-12">
-      <p className="text-sm uppercase tracking-widest">{t("eyebrow")}</p>
-      <h1 className="text-4xl font-semibold">{t("heading")}</h1>
-      <p>{t("placeholder")}</p>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <PricingTable />
+        <HowItWorks />
+        <WhatWeBuy />
+        <Trust />
+        <Location />
+        <Faq />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
