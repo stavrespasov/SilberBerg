@@ -14,7 +14,7 @@ export function LocaleSwitcher() {
       {routing.locales.map((l, i) => (
         <span key={l} className="flex items-center gap-1">
           {i > 0 && (
-            <span aria-hidden="true" className="text-silver-600">
+            <span aria-hidden="true" className="text-ink-600">
               /
             </span>
           )}
@@ -24,8 +24,8 @@ export function LocaleSwitcher() {
             aria-current={l === locale ? "true" : undefined}
             className={`px-1.5 py-2 text-xs font-medium uppercase tracking-[0.18em] transition-colors duration-200 ${
               l === locale
-                ? "text-gold-400"
-                : "text-silver-400 hover:text-bone-100"
+                ? "text-gold-800"
+                : "text-ink-600 hover:text-ink-900"
             }`}
           >
             {l}

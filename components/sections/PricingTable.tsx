@@ -21,15 +21,11 @@ export function PricingTable() {
   return (
     <section
       id="cene"
-      className="bg-bone-100 px-6 py-20 text-ink-900 md:px-12 md:py-28"
+      className="bg-white px-6 py-20 text-ink-900 md:px-12 md:py-28"
     >
       <div className="grid grid-cols-12 gap-x-6 gap-y-12">
         <ScrollReveal className="col-span-12 md:col-span-4">
-          <SectionHeading
-            eyebrow={t("eyebrow")}
-            heading={t("heading")}
-            tone="light"
-          />
+          <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
           <p className="mt-6 max-w-md leading-relaxed text-ink-700">
             {t("lead")}
           </p>

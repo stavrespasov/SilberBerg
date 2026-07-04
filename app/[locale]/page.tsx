@@ -3,6 +3,10 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { faqPageJsonLd, localBusinessJsonLd } from "@/lib/structuredData";
+import { MobileActionBar } from "@/components/MobileActionBar";
+import { PriceTicker } from "@/components/PriceTicker";
+import { SectionRail } from "@/components/SectionRail";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { Contact } from "@/components/sections/Contact";
 import { Faq, faqKeys } from "@/components/sections/Faq";
 import { Footer } from "@/components/sections/Footer";
@@ -36,9 +40,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
+      <SmoothScroll />
+      <SectionRail />
+      <MobileActionBar />
       <Header />
-      <main id="main">
+      <main id="main" className="xl:pl-16">
         <Hero />
+        <PriceTicker />
         <PricingTable />
         <HowItWorks />
         <WhatWeBuy />

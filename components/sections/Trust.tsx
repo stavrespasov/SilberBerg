@@ -27,25 +27,21 @@ export function Trust() {
   const t = useTranslations("trust");
 
   return (
-    <section className="px-6 py-20 md:px-12 md:py-28">
+    <section id="zaupanje" className="bg-white px-6 py-20 md:px-12 md:py-28">
       <div className="grid grid-cols-12 gap-x-6 gap-y-12">
         <ScrollReveal className="col-span-12 md:col-span-4">
-          <SectionHeading
-            eyebrow={t("eyebrow")}
-            heading={t("heading")}
-            tone="dark"
-          />
+          <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
         </ScrollReveal>
         <div className="col-span-12 flex flex-col md:col-span-7 md:col-start-6">
           {blocks.map((block, i) => (
             <ScrollReveal key={block.title} delay={i * 0.08}>
               <article className="hairline flex gap-6 border-t py-8">
-                <block.icon className="mt-1 size-9 shrink-0 text-gold-400" />
+                <block.icon className="mt-1 size-9 shrink-0 text-gold-700" />
                 <div>
-                  <h3 className="font-display text-2xl text-bone-50">
+                  <h3 className="font-display text-2xl text-ink-900">
                     {t(block.title)}
                   </h3>
-                  <p className="mt-3 max-w-xl leading-relaxed text-silver-300">
+                  <p className="mt-3 max-w-xl leading-relaxed text-ink-700">
                     {t(block.text)}
                     {block.confirm && <ConfirmTag />}
                   </p>

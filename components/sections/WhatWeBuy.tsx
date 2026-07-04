@@ -31,13 +31,9 @@ export function WhatWeBuy() {
   const t = useTranslations("buy");
 
   return (
-    <section className="bg-bone-100 px-6 py-20 text-ink-900 md:px-12 md:py-28">
+    <section id="odkup" className="px-6 py-20 md:px-12 md:py-28">
       <ScrollReveal>
-        <SectionHeading
-          eyebrow={t("eyebrow")}
-          heading={t("heading")}
-          tone="light"
-        />
+        <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
       </ScrollReveal>
       <ul className="mt-14 grid gap-x-12 md:grid-cols-2">
         {items.map((item, i) => (

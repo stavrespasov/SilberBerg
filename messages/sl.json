@@ -8,6 +8,24 @@
     "langLabel": "Jezik",
     "skip": "Na vsebino"
   },
+  "nav": {
+    "railLabel": "Razdelki strani",
+    "prices": "Cene",
+    "process": "Postopek",
+    "buy": "Odkup",
+    "trust": "Zaupanje",
+    "location": "Lokacija",
+    "faq": "Vprašanja",
+    "contact": "Stik"
+  },
+  "ticker": {
+    "indicative": "okvirne odkupne cene"
+  },
+  "actions": {
+    "barLabel": "Hitre povezave",
+    "prices": "Cene",
+    "book": "Naročite cenitev"
+  },
   "hero": {
     "eyebrow": "Silberberg · Koper",
     "heading": "Odkup zlata in srebra v Kopru",

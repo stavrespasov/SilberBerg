@@ -8,6 +8,24 @@
     "langLabel": "Language",
     "skip": "Skip to content"
   },
+  "nav": {
+    "railLabel": "Page sections",
+    "prices": "Prices",
+    "process": "Process",
+    "buy": "What we buy",
+    "trust": "Trust",
+    "location": "Location",
+    "faq": "Questions",
+    "contact": "Contact"
+  },
+  "ticker": {
+    "indicative": "indicative buying prices"
+  },
+  "actions": {
+    "barLabel": "Quick links",
+    "prices": "Prices",
+    "book": "Book an appraisal"
+  },
   "hero": {
     "eyebrow": "Silberberg · Koper",
     "heading": "Gold and silver buying in Koper",

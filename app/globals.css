@@ -41,12 +41,12 @@
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background-color: var(--color-ink-900);
-  color: var(--color-bone-100);
+  background-color: var(--color-bone-50);
+  color: var(--color-ink-900);
   font-family: var(--font-sans);
 }
 
@@ -58,17 +58,53 @@ body {
 /* Visible, on-brand focus for keyboard navigation. The ring color follows
    the section surface so it always clears 3:1 against its background. */
 :focus-visible {
-  outline: 2px solid var(--color-gold-400);
+  outline: 2px solid var(--color-gold-800);
   outline-offset: 3px;
 }
-.bg-bone-50 :focus-visible,
-.bg-bone-100 :focus-visible {
-  outline-color: var(--color-gold-800);
+.bg-ink-900 :focus-visible,
+.bg-ink-950 :focus-visible {
+  outline-color: var(--color-gold-400);
 }
 
 /* Hairline rules — the assay-certificate motif */
 .hairline {
-  border-color: color-mix(in srgb, var(--color-silver-500) 35%, transparent);
+  border-color: color-mix(in srgb, var(--color-ink-900) 15%, transparent);
+}
+
+/* Anchors glide natively wherever Lenis isn't driving the scroll */
+html {
+  scroll-behavior: smooth;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Outlined display type — the engraved watermark treatment */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px
+    color-mix(in srgb, var(--color-ink-900) 18%, transparent);
+}
+
+/* Exchange ticker loop — transform-only, pausable, frozen under
+   prefers-reduced-motion by the global override above */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker-scroll 36s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {

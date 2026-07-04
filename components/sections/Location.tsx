@@ -12,14 +12,10 @@ export function Location() {
   const t = useTranslations("location");
 
   return (
-    <section className="bg-bone-100 px-6 py-20 text-ink-900 md:px-12 md:py-28">
+    <section id="lokacija" className="bg-bone-100 px-6 py-20 md:px-12 md:py-28">
       <div className="grid grid-cols-12 gap-x-6 gap-y-12">
         <ScrollReveal className="col-span-12 md:col-span-4">
-          <SectionHeading
-            eyebrow={t("eyebrow")}
-            heading={t("heading")}
-            tone="light"
-          />
+          <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
           <dl className="mt-10 flex flex-col gap-6">
             <div>
               <dt className="flex items-center gap-4 text-xs font-medium uppercase tracking-[0.18em] text-ink-600">

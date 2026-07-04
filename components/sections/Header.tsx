@@ -12,14 +12,14 @@ export function Header() {
       >
         {t("skip")}
       </a>
-      <p className="font-display text-lg tracking-[0.08em] text-bone-100">
+      <p className="font-display text-lg tracking-[0.08em] text-ink-900">
         Silberberg
       </p>
       <div className="flex items-center gap-6">
         <LocaleSwitcher />
         <a
           href="#kontakt"
-          className="hidden text-xs font-medium uppercase tracking-[0.18em] text-gold-400 transition-colors duration-200 hover:text-gold-300 sm:block"
+          className="hidden text-xs font-medium uppercase tracking-[0.18em] text-gold-800 transition-colors duration-200 hover:text-gold-700 sm:block"
         >
           {t("phoneCta")}
         </a>
