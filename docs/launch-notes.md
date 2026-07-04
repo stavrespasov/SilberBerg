@@ -46,4 +46,22 @@ Working checklist for taking the preview to production. Companion to `docs/desig
   navigation, native `<details>` FAQ, honeypot hidden from AT.
 - **Contact flow — verified end-to-end (2026-07-04):** submit → zod validation →
   structured `[lead]` log line → translated success status.
-- Core Web Vitals: check PageSpeed Insights against the deployed preview (Phase 1D)
+- Core Web Vitals: fully static prerender (9/9 pages SSG), self-hosted fonts via
+  next/font, no render-blocking third parties — re-check PageSpeed once the URL is public.
+
+## Deployment (2026-07-04)
+
+- Preview deployed and verified: `silberberg-3xi2x001k-stavrespasovs-projects.vercel.app`
+  (behind Vercel preview protection; 23-hour share links available on demand).
+- **Client-URL decision needed:** either promote to production → public stable
+  `silberberg.vercel.app`, or disable preview deployment protection in project
+  settings. The proposition deck should carry whichever becomes the durable URL.
+
+## Domain check (2026-07-04, via Vercel registrar API)
+
+| Domain | Status |
+|---|---|
+| **silberberg.si** | **Available** — .si not sold by Vercel; register via an ARNES-accredited registrar |
+| silberberg-koper.si / odkup-zlata-koper.si | Available (same ARNES route; keyword domain useful as redirect) |
+| silberberg.eu / silberberg.com | Taken |
+| silberberg.gold | Available, $9.99/yr (novelty; not recommended as primary) |
