@@ -33,7 +33,7 @@ export function Footer() {
           </Link>
         </div>
       </div>
-      <p className="hairline mt-12 border-t pt-6 text-xs text-silver-600">
+      <p className="hairline mt-12 border-t pt-6 text-xs text-silver-500">
         © {year} Silberberg. {t("rights")}
       </p>
     </footer>

@@ -21,41 +21,34 @@ export function Location() {
             tone="light"
           />
           <dl className="mt-10 flex flex-col gap-6">
-            <div className="flex gap-4">
-              <MapPinIcon className="mt-0.5 size-6 shrink-0 text-gold-700" />
-              <div>
-                <dt className="text-xs font-medium uppercase tracking-[0.18em] text-ink-600">
-                  {t("addressLabel")}
-                </dt>
-                <dd className="mt-1">
-                  {t("addressPlaceholder")}
-                  <ConfirmTag />
-                </dd>
-              </div>
+            <div>
+              <dt className="flex items-center gap-4 text-xs font-medium uppercase tracking-[0.18em] text-ink-600">
+                <MapPinIcon className="size-6 shrink-0 text-gold-700" />
+                {t("addressLabel")}
+              </dt>
+              <dd className="mt-1 pl-10">
+                {t("addressPlaceholder")}
+                <ConfirmTag />
+              </dd>
             </div>
-            <div className="flex gap-4">
-              <PhoneIcon className="mt-0.5 size-6 shrink-0 text-gold-700" />
-              <div>
-                <dt className="text-xs font-medium uppercase tracking-[0.18em] text-ink-600">
-                  {t("phoneLabel")}
-                </dt>
-                <dd className="mt-1">
-                  {t("phonePlaceholder")}
-                  <ConfirmTag />
-                </dd>
-              </div>
+            <div>
+              <dt className="flex items-center gap-4 text-xs font-medium uppercase tracking-[0.18em] text-ink-600">
+                <PhoneIcon className="size-6 shrink-0 text-gold-700" />
+                {t("phoneLabel")}
+              </dt>
+              <dd className="mt-1 pl-10">
+                {t("phonePlaceholder")}
+                <ConfirmTag />
+              </dd>
             </div>
-            <div className="flex gap-4">
-              <span aria-hidden="true" className="w-6" />
-              <div>
-                <dt className="text-xs font-medium uppercase tracking-[0.18em] text-ink-600">
-                  {t("hoursLabel")}
-                </dt>
-                <dd className="mt-1">
-                  {t("hoursPlaceholder")}
-                  <ConfirmTag />
-                </dd>
-              </div>
+            <div>
+              <dt className="flex items-center gap-4 pl-10 text-xs font-medium uppercase tracking-[0.18em] text-ink-600">
+                {t("hoursLabel")}
+              </dt>
+              <dd className="mt-1 pl-10">
+                {t("hoursPlaceholder")}
+                <ConfirmTag />
+              </dd>
             </div>
           </dl>
         </ScrollReveal>

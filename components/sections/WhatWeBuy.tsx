@@ -41,8 +41,11 @@ export function WhatWeBuy() {
       </ScrollReveal>
       <ul className="mt-14 grid gap-x-12 md:grid-cols-2">
         {items.map((item, i) => (
-          <ScrollReveal key={item.name} delay={(i % 2) * 0.08}>
-            <li className="flex gap-5 border-t border-ink-900/15 py-6">
+          <li key={item.name}>
+            <ScrollReveal
+              delay={(i % 2) * 0.08}
+              className="flex gap-5 border-t border-ink-900/15 py-6"
+            >
               <item.icon className="mt-1 size-8 shrink-0 text-gold-700" />
               <div>
                 <h3 className="font-display text-xl">{t(item.name)}</h3>
@@ -50,8 +53,8 @@ export function WhatWeBuy() {
                   {t(item.desc)}
                 </p>
               </div>
-            </li>
-          </ScrollReveal>
+            </ScrollReveal>
+          </li>
         ))}
       </ul>
       <p className="mt-10 text-sm text-ink-600">

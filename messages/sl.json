@@ -5,7 +5,8 @@
   },
   "header": {
     "phoneCta": "Pokličite za cenitev",
-    "langLabel": "Jezik"
+    "langLabel": "Jezik",
+    "skip": "Na vsebino"
   },
   "hero": {
     "eyebrow": "Silberberg · Koper",
@@ -133,7 +134,7 @@
     "controllerHeading": "Upravljavec podatkov",
     "controllerText": "Podatki o upravljavcu (polno ime podjetja, naslov, kontakt) bodo objavljeni pred zagonom strani.",
     "collectHeading": "Kateri podatki se zbirajo",
-    "collectText": "Prek kontaktnega obrazca zberemo ime, e-pošto ali telefonsko številko ter vsebino vašega sporočila. Stran ne uporablja sledilnih piškotkov.",
+    "collectText": "Prek kontaktnega obrazca zberemo ime, e-pošto ali telefonsko številko ter vsebino vašega sporočila. Stran ne uporablja sledilnih piškotkov; ob ročni izbiri jezika se shrani zgolj funkcijski piškotek z izbiro.",
     "purposeHeading": "Namen obdelave",
     "purposeText": "Podatke uporabimo izključno za odgovor na vaše povpraševanje. Ne posredujemo jih tretjim osebam in jih ne uporabljamo za oglaševanje.",
     "retentionHeading": "Hramba",

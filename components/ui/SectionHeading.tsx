@@ -10,7 +10,7 @@ export function SectionHeading({ eyebrow, heading, tone }: SectionHeadingProps) 
     <div className="max-w-2xl">
       <p
         className={`mb-4 text-xs font-medium uppercase tracking-[0.22em] ${
-          tone === "dark" ? "text-gold-400" : "text-gold-700"
+          tone === "dark" ? "text-gold-400" : "text-gold-800"
         }`}
       >
         {eyebrow}

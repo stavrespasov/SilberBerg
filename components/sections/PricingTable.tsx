@@ -64,7 +64,7 @@ export function PricingTable() {
                   <th
                     scope="rowgroup"
                     colSpan={3}
-                    className="pt-6 pb-2 text-xs font-medium uppercase tracking-[0.22em] text-gold-700"
+                    className="pt-6 pb-2 text-xs font-medium uppercase tracking-[0.22em] text-gold-800"
                   >
                     {group.label}
                   </th>
@@ -94,7 +94,7 @@ export function PricingTable() {
           </p>
           <a
             href="#kontakt"
-            className="mt-6 inline-block text-xs font-medium uppercase tracking-[0.18em] text-gold-700 underline-offset-4 transition-colors duration-200 hover:text-ink-900 hover:underline"
+            className="mt-6 inline-block text-xs font-medium uppercase tracking-[0.18em] text-gold-800 underline-offset-4 transition-colors duration-200 hover:text-ink-900 hover:underline"
           >
             {t("cta")}
           </a>

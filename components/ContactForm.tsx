@@ -9,7 +9,7 @@ import { itemCategories } from "@/lib/contactSchema";
 const initialState: ContactFormState = { status: "idle" };
 
 const inputClass =
-  "w-full border border-ink-900/25 bg-bone-50 px-4 py-3 text-ink-900 " +
+  "w-full border border-ink-900/55 bg-bone-50 px-4 py-3 text-ink-900 " +
   "placeholder:text-ink-600/50 transition-colors duration-200 " +
   "focus:border-gold-600 focus:outline-none";
 

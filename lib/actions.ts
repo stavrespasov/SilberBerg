@@ -1,6 +1,7 @@
 "use server";
 
 import { contactSchema } from "./contactSchema";
+import { deliverLead } from "./leadTransport";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
@@ -40,7 +41,18 @@ export async function submitContact(
     return { status: "error", fieldErrors };
   }
 
-  // Phase 1C wires the delivery transport (email forwarding). The validated
-  // shape is final, so swapping in the transport touches only this spot.
+  try {
+    await deliverLead({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      phone: parsed.data.phone,
+      message: parsed.data.message,
+      category: parsed.data.category,
+    });
+  } catch (error) {
+    console.error("contact submission delivery failed", { error });
+    return { status: "error" };
+  }
+
   return { status: "success" };
 }

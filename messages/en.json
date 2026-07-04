@@ -5,7 +5,8 @@
   },
   "header": {
     "phoneCta": "Call for an appraisal",
-    "langLabel": "Language"
+    "langLabel": "Language",
+    "skip": "Skip to content"
   },
   "hero": {
     "eyebrow": "Silberberg · Koper",
@@ -133,7 +134,7 @@
     "controllerHeading": "Data controller",
     "controllerText": "Controller details (full company name, address, contact) will be published before launch.",
     "collectHeading": "What is collected",
-    "collectText": "Through the contact form we collect your name, email or phone number, and the content of your message. The site sets no tracking cookies.",
+    "collectText": "Through the contact form we collect your name, email or phone number, and the content of your message. The site sets no tracking cookies; choosing a language manually stores a single functional cookie with that preference.",
     "purposeHeading": "Purpose",
     "purposeText": "Your details are used solely to answer your enquiry. They are not shared with third parties and not used for advertising.",
     "retentionHeading": "Retention",

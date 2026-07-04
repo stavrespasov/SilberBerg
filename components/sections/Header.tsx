@@ -6,6 +6,12 @@ export function Header() {
 
   return (
     <header className="hairline flex items-center justify-between border-b px-6 py-5 md:px-12">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-gold-500 focus:px-4 focus:py-2 focus:text-ink-950"
+      >
+        {t("skip")}
+      </a>
       <p className="font-display text-lg tracking-[0.08em] text-bone-100">
         Silberberg
       </p>

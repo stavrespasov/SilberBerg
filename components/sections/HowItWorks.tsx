@@ -24,16 +24,15 @@ export function HowItWorks() {
       </ScrollReveal>
       <ol className="mt-14 grid grid-cols-12 gap-x-6 gap-y-12">
         {steps.map((step, i) => (
-          <ScrollReveal
+          <li
             key={step.num}
-            delay={i * 0.08}
             // Editorial offset: steps stagger across the grid instead of a
             // symmetric 4-up card row.
             className={`col-span-12 sm:col-span-6 lg:col-span-5 ${
               i % 2 === 1 ? "lg:col-start-8 lg:translate-y-10" : "lg:col-start-2"
             }`}
           >
-            <li className="hairline border-t pt-5">
+            <ScrollReveal delay={i * 0.08} className="hairline border-t pt-5">
               <span className="font-display text-4xl text-gold-500">
                 {step.num}
               </span>
@@ -43,8 +42,8 @@ export function HowItWorks() {
               <p className="mt-3 max-w-md leading-relaxed text-silver-300">
                 {t(step.text)}
               </p>
-            </li>
-          </ScrollReveal>
+            </ScrollReveal>
+          </li>
         ))}
       </ol>
       <p className="mt-16 text-sm text-silver-400">
