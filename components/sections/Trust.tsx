@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import type { ComponentType, SVGProps } from "react";
 import { HallmarkIcon, ScaleIcon, ShieldIcon } from "@/components/icons";
 import { ConfirmTag } from "@/components/ui/ConfirmTag";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type Block = {
@@ -27,27 +27,25 @@ export function Trust() {
   const t = useTranslations("trust");
 
   return (
-    <section id="zaupanje" className="bg-white px-6 py-20 md:px-12 md:py-28">
-      <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-        <ScrollReveal className="col-span-12 md:col-span-4">
+    <section id="zaupanje" className="scroll-mt-24 px-4 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl">
+        <Reveal>
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
-        </ScrollReveal>
-        <div className="col-span-12 flex flex-col md:col-span-7 md:col-start-6">
+        </Reveal>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
           {blocks.map((block, i) => (
-            <ScrollReveal key={block.title} delay={i * 0.08}>
-              <article className="hairline flex gap-6 border-t py-8">
-                <block.icon className="mt-1 size-9 shrink-0 text-gold-700" />
-                <div>
-                  <h3 className="font-display text-2xl text-ink-900">
-                    {t(block.title)}
-                  </h3>
-                  <p className="mt-3 max-w-xl leading-relaxed text-ink-700">
-                    {t(block.text)}
-                    {block.confirm && <ConfirmTag />}
-                  </p>
-                </div>
+            <Reveal key={block.title} delay={i * 80}>
+              <article className="h-full rounded-3xl border border-black/5 bg-stone-50 p-6">
+                <block.icon className="size-6 text-amber-700" />
+                <h3 className="mt-4 text-lg font-semibold tracking-tight">
+                  {t(block.title)}
+                </h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-neutral-600">
+                  {t(block.text)}
+                  {block.confirm && <ConfirmTag />}
+                </p>
               </article>
-            </ScrollReveal>
+            </Reveal>
           ))}
         </div>
       </div>

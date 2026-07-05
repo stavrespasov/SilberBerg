@@ -1,64 +1,55 @@
 import { useTranslations } from "next-intl";
-import { HeroHeadline } from "@/components/HeroHeadline";
-import { CtaButton } from "@/components/ui/CtaButton";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { BanknoteIcon, ScaleIcon, ShieldIcon } from "@/components/icons";
+import { PillLink } from "@/components/ui/PillLink";
+import { Reveal } from "@/components/Reveal";
 
-const stamps = ["585", "750", "875", "999,9"];
+const points = [
+  { icon: ScaleIcon, key: "point2" },
+  { icon: BanknoteIcon, key: "point3" },
+  { icon: ShieldIcon, key: "point1" },
+] as const;
 
 export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section
-      id="vrh"
-      className="grid grid-cols-12 gap-x-6 gap-y-14 px-6 py-20 md:px-12 md:py-28"
-    >
-      <div className="col-span-12 md:col-span-7">
-        <p className="mb-6 text-xs font-medium uppercase tracking-[0.22em] text-gold-800">
+    <section id="vrh" className="px-4 pt-36 pb-10 text-center md:pt-44">
+      <Reveal>
+        <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-medium text-amber-800">
+          <span aria-hidden="true" className="size-1.5 rounded-full bg-amber-600" />
           {t("eyebrow")}
         </p>
-        <HeroHeadline heading={t("heading")} sub={t("sub")} />
-        <div className="mt-10 flex flex-wrap gap-4">
-          <CtaButton href="#kontakt">{t("ctaPrimary")}</CtaButton>
-          <CtaButton href="#cene" variant="outline">
+        <h1 className="mx-auto mt-6 max-w-3xl text-5xl font-semibold tracking-tighter text-balance md:text-7xl">
+          {t("heading")}
+        </h1>
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-neutral-600 md:text-xl">
+          {t("sub")}
+        </p>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <PillLink href="#kontakt">{t("ctaPrimary")}</PillLink>
+          <PillLink href="#cene" variant="light">
             {t("ctaSecondary")}
-          </CtaButton>
+          </PillLink>
         </div>
-      </div>
+      </Reveal>
 
-      {/* Hallmark panel — the assay-stamp motif in place of a stock photo. */}
-      <ScrollReveal
-        delay={0.25}
-        className="col-span-12 self-center sm:col-span-8 md:col-span-4 md:col-start-9"
-      >
-        <div className="hairline border bg-bone-100 p-6">
-          <div className="grid grid-cols-2 gap-px bg-ink-900/15">
-            {stamps.map((s) => (
-              <div
-                key={s}
-                className="flex aspect-square items-center justify-center bg-bone-50"
-              >
-                <span className="font-display text-2xl text-gold-700">
-                  {s}
-                </span>
-              </div>
-            ))}
-          </div>
-          <p className="hairline mt-6 border-t pt-4 text-xs uppercase tracking-[0.18em] text-ink-600">
-            {t("hallmarkCaption")}
-          </p>
-          <ul className="mt-4 flex flex-col gap-3 text-sm text-ink-800">
-            {(["point1", "point2", "point3"] as const).map((k) => (
-              <li key={k} className="flex gap-3">
-                <span aria-hidden="true" className="text-gold-600">
-                  —
-                </span>
-                {t(k)}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </ScrollReveal>
+      <Reveal delay={150} className="mx-auto mt-16 max-w-5xl">
+        <ul className="grid gap-3 text-left sm:grid-cols-3">
+          {points.map(({ icon: Icon, key }) => (
+            <li
+              key={key}
+              className="flex items-center gap-4 rounded-2xl bg-stone-100 p-5"
+            >
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
+                <Icon className="size-5 text-amber-700" />
+              </span>
+              <span className="text-[15px] font-medium text-neutral-800">
+                {t(key)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </section>
   );
 }

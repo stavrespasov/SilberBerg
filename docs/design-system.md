@@ -1,61 +1,59 @@
-# Silberberg — Visual System ("The Assay Instrument")
+# Silberberg — Visual System v3 ("Clean Counter")
 
-The reference for every screen, and later for the proposition deck. Deviations need a reason.
+The reference for every screen and for the proposition deck. Deviations need a reason.
 
 ## Voice
 
-Boutique precious-metals house in Koper. Personal, discreet, exact. The page behaves like a
-**precision instrument on paper** — light, editorial, kinetic — never like a SaaS template
-and never like a dark "vault" cliché.
+Boutique precious-metals buyer in Koper. Personal, exact, calm. The design language is
+Apple-grade product minimalism: pure white air, floating soft panels, one warm accent.
+No animation library — the entire motion system is one IntersectionObserver and CSS.
 
 ## Type
 
 | Role | Face | Notes |
 |---|---|---|
-| Display | **Fraunces** (variable: opsz, SOFT, WONK) | Oversized ink headlines; outlined watermark treatment (`.text-outline`) for Au·Ag, step numerals, footer wordmark. |
-| UI & body | **Archivo** (variable) | Uppercase micro-labels at `tracking-[0.18em]`; `font-mono` + `tabular-nums` for the ticker and rail numerals. |
+| Everything | **Geist** | Semibold, `tracking-tight(er)` headlines; 15px body rhythm. |
+| Figures | **Geist Mono** | Prices, step numbers, the ConfirmTag. `tabular-nums`. |
 
-Both self-hosted via `next/font`, `latin` + `latin-ext` (č š ž). Inter appears nowhere.
+Self-hosted via `next/font`, `latin` + `latin-ext` (č š ž).
 
-## Color — light theme
+## Color
 
-| Token | Hex | Use |
+| Role | Value | Use |
 |---|---|---|
-| `bone-50` | `#FAF7F0` | Page base (warm white). |
-| `bone-100` / `white` | `#F4EFE6` / `#FFF` | Section rhythm: bone-50 → white → bone-100. |
-| `ink-900/950` | `#17140F` / `#14110C` | Type. Warm near-black — never `#000`. |
-| `gold-500/600` | `#C4A15A` / `#A98842` | Primary CTA fill; graphics, ticks, needles. |
-| `gold-700/800` | `#8A6D33` / `#6E5626` | Icons (≥3:1) and small text (≥4.5:1) on light. |
-| `ink-600/700` | muted text | Replaces the old silver text roles on light surfaces. |
+| Base | `#FFFFFF` | Page background. |
+| Panels | `stone-100` / `stone-50` | Floating `rounded-[2rem]` section panels and cards. |
+| Text | `neutral-900` / `neutral-600` | Headings / body. `neutral-600` is the muted floor (≥4.5:1 everywhere). |
+| Accent | `amber-700/800` text, `amber-50/200` fills | Kickers, icons, consent highlights. Never decoration-wallpaper. |
+| Action | `neutral-900` pills | Primary buttons are black pills; secondary are `stone-200` pills. |
 
-No gradients as backgrounds. No purple/blue anywhere. No dark sections.
+## Shape & layout
 
-## Signature interactions
+- Everything rounds: pills for actions (`rounded-full`), `rounded-2xl/3xl` cards,
+  `rounded-[2rem]` section panels floating inside `px-4` gutters.
+- Centered `max-w-6xl` composition; hero is centered statement type (`text-balance`).
+- Section anchors use `scroll-mt-24` to clear the fixed nav.
 
-- **Lenis inertial scroll** (`SmoothScroll`) — wheel only, destroyed under reduced motion.
-- **Instrument rail** (`SectionRail`, xl+) — fixed graduated index 01–07, gold progress
-  needle via `useScroll` + spring.
-- **Hero** (`HeroHeadline`) — word-by-word rise, parallax outlined `Au·Ag` watermark,
-  scale-beam that settles level (the brand gesture).
-- **Price ticker** (`PriceTicker`) — CSS transform loop of Au/Ag rates, pauses on hover,
-  static readable line under reduced motion, sr-only plain list.
-- **Scrollytelling process** (`HowItWorks`, lg+) — sticky outlined numeral crossfades
-  01→04 while steps pass; plain editorial list on phones.
-- **CTA glint** (`CtaButton`) — cursor-tracked radial highlight + weighted `whileTap` press.
-- **Mobile action bar** (`MobileActionBar`, <md) — slides in after the hero; Cene +
-  Naročite cenitev always one thumb-tap away; safe-area padded.
-- `ScrollReveal` for everything else: rise 20px + fade, once, `--ease-settle`.
+## Signature moves
 
-Every animated element is transform/opacity-only and renders statically under
-`prefers-reduced-motion`. axe (WCAG 2.1 AA): 0 violations is the maintained baseline.
+- **Floating glass nav** — fixed pill, `bg-white/75` + `backdrop-blur`, segmented
+  locale switcher, black CTA pill.
+- **Bento stat strip** under the hero (three stone cards with icon medallions).
+- **Price cards** — white cards on the stone panel; purity tiles with big mono figures.
+- **Snap-scroll steps** — numbered black-circle cards; horizontal snap carousel on
+  phones (keyboard-focusable region), 4-up grid on desktop.
+- **Map sheet** — full-bleed rounded OSM embed (`grayscale-[0.85]`) with a floating
+  glass info card, Apple-Maps style.
+- **Form** — filled `stone-100` inputs that lift to white with an amber border on focus.
+- **Motion** — `.reveal` class + `Reveal` observer; pills compress with `active:scale`.
+  Lenis inertial wheel scrolling. Everything static under `prefers-reduced-motion`.
 
 ## Iconography
 
-Bespoke line-art in `components/icons/` — 24-grid, 1.5px stroke, squared terminals,
-engraved-plate character. No icon-pack imports.
+Bespoke line-art in `components/icons/` (24-grid, 1.5px, squared terminals), rendered
+in amber inside white/amber-50 medallions. No icon packs, no emojis.
 
-## Banned (from the brief — hard constraints)
+## Guardrails
 
-Centered hero over gradient mesh · default shadcn look · Inter-only · Lucide feature grids ·
-stock gold-bar photos · stock-avatar testimonial carousels · purple/blue SaaS palette ·
-dark-theme gold clichés · "Unlock the power of…" copy.
+axe-core 0 violations is the maintained baseline. No gradients, no dark sections,
+no serif ornament, no purple/blue SaaS palette, no "Unlock the power of…" copy.

@@ -10,27 +10,24 @@ export function LocaleSwitcher() {
   const t = useTranslations("header");
 
   return (
-    <nav aria-label={t("langLabel")} className="flex items-center gap-1">
-      {routing.locales.map((l, i) => (
-        <span key={l} className="flex items-center gap-1">
-          {i > 0 && (
-            <span aria-hidden="true" className="text-ink-600">
-              /
-            </span>
-          )}
-          <Link
-            href={pathname}
-            locale={l}
-            aria-current={l === locale ? "true" : undefined}
-            className={`px-1.5 py-2 text-xs font-medium uppercase tracking-[0.18em] transition-colors duration-200 ${
-              l === locale
-                ? "text-gold-800"
-                : "text-ink-600 hover:text-ink-900"
-            }`}
-          >
-            {l}
-          </Link>
-        </span>
+    <nav
+      aria-label={t("langLabel")}
+      className="flex items-center rounded-full bg-stone-100 p-1"
+    >
+      {routing.locales.map((l) => (
+        <Link
+          key={l}
+          href={pathname}
+          locale={l}
+          aria-current={l === locale ? "true" : undefined}
+          className={`rounded-full px-3 py-1.5 text-xs font-semibold uppercase transition-colors duration-200 ${
+            l === locale
+              ? "bg-white text-neutral-900 shadow-sm"
+              : "text-neutral-600 hover:text-neutral-900"
+          }`}
+        >
+          {l}
+        </Link>
       ))}
     </nav>
   );

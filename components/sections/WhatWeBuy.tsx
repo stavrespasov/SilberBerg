@@ -9,7 +9,7 @@ import {
   WatchIcon,
 } from "@/components/icons";
 import { ConfirmTag } from "@/components/ui/ConfirmTag";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type Item = {
@@ -31,32 +31,36 @@ export function WhatWeBuy() {
   const t = useTranslations("buy");
 
   return (
-    <section id="odkup" className="px-6 py-20 md:px-12 md:py-28">
-      <ScrollReveal>
-        <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
-      </ScrollReveal>
-      <ul className="mt-14 grid gap-x-12 md:grid-cols-2">
-        {items.map((item, i) => (
-          <li key={item.name}>
-            <ScrollReveal
-              delay={(i % 2) * 0.08}
-              className="flex gap-5 border-t border-ink-900/15 py-6"
-            >
-              <item.icon className="mt-1 size-8 shrink-0 text-gold-700" />
-              <div>
-                <h3 className="font-display text-xl">{t(item.name)}</h3>
-                <p className="mt-1.5 leading-relaxed text-ink-700">
+    <section id="odkup" className="scroll-mt-24 px-4 py-6">
+      <div className="mx-auto max-w-6xl rounded-[2rem] bg-stone-100 p-6 md:p-12">
+        <Reveal>
+          <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
+        </Reveal>
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, i) => (
+            <li key={item.name}>
+              <Reveal
+                delay={(i % 3) * 80}
+                className="h-full rounded-3xl bg-white p-6 shadow-sm"
+              >
+                <span className="flex size-11 items-center justify-center rounded-full bg-amber-50">
+                  <item.icon className="size-5 text-amber-700" />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold tracking-tight">
+                  {t(item.name)}
+                </h3>
+                <p className="mt-1.5 text-[15px] leading-relaxed text-neutral-600">
                   {t(item.desc)}
                 </p>
-              </div>
-            </ScrollReveal>
-          </li>
-        ))}
-      </ul>
-      <p className="mt-10 text-sm text-ink-600">
-        {t("exclusionsNote")}
-        <ConfirmTag />
-      </p>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-8 text-sm text-neutral-600">
+          {t("exclusionsNote")}
+          <ConfirmTag />
+        </p>
+      </div>
     </section>
   );
 }

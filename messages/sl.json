@@ -99,7 +99,8 @@
     "hoursPlaceholder": "Delovni čas bo objavljen pred zagonom",
     "phoneLabel": "Telefon",
     "phonePlaceholder": "Telefonska številka",
-    "mapTitle": "Zemljevid — Koper"
+    "mapTitle": "Zemljevid — Koper",
+    "openMap": "Odpri večji zemljevid"
   },
   "faq": {
     "eyebrow": "Vprašanja",

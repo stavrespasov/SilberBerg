@@ -1,17 +1,13 @@
-import { Archivo, Fraunces } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 
-// Display serif: Fraunces — high-contrast, optically-sized, reads as
-// heritage-with-craft rather than the default "AI luxury" serifs.
+// v3 system: Geist for everything readable, Geist Mono for figures.
 // latin-ext is required for Slovenian diacritics (č, š, ž).
-export const fraunces = Fraunces({
+export const geist = Geist({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-fraunces",
-  axes: ["opsz", "SOFT", "WONK"],
+  variable: "--font-geist",
 });
 
-// Body grotesk: Archivo — neutral, sturdy, with tabular figures for
-// the price table. Deliberately not Inter.
-export const archivo = Archivo({
+export const geistMono = Geist_Mono({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-archivo",
+  variable: "--font-geist-mono",
 });

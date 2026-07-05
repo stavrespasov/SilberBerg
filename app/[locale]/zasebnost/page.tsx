@@ -28,19 +28,16 @@ export default async function PrivacyPage({
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-20 md:py-28">
-      <h1
-        className="font-display text-(length:--text-display-md) leading-[1.05] font-medium text-ink-900"
-        style={{ fontOpticalSizing: "auto" }}
-      >
+      <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
         {t("heading")}
       </h1>
-      <p className="mt-6 leading-relaxed text-ink-700">{t("intro")}</p>
+      <p className="mt-5 leading-relaxed text-neutral-600">{t("intro")}</p>
       {sections.map((s) => (
-        <section key={s.heading} className="hairline mt-10 border-t pt-6">
-          <h2 className="font-display text-2xl text-ink-900">
+        <section key={s.heading} className="mt-9 rounded-2xl bg-stone-50 p-6">
+          <h2 className="text-lg font-semibold tracking-tight">
             {t(s.heading)}
           </h2>
-          <p className="mt-3 leading-relaxed text-ink-700">
+          <p className="mt-2 text-[15px] leading-relaxed text-neutral-600">
             {t(s.text)}
             {s.confirm && <ConfirmTag />}
           </p>
@@ -48,7 +45,7 @@ export default async function PrivacyPage({
       ))}
       <Link
         href="/"
-        className="mt-12 inline-block text-xs font-medium uppercase tracking-[0.18em] text-gold-800 underline-offset-4 transition-colors duration-200 hover:text-gold-700 hover:underline"
+        className="mt-10 inline-flex min-h-11 items-center rounded-full bg-stone-200 px-5 text-sm font-medium transition-colors duration-200 hover:bg-stone-300"
       >
         {t("backHome")}
       </Link>

@@ -1,100 +1,89 @@
 import { useLocale, useTranslations } from "next-intl";
 import type { Locale } from "@/i18n/routing";
-import { formatUpdatedDate } from "@/lib/pricing";
+import { formatEurPerGram, formatUpdatedDate } from "@/lib/pricing";
 import { indicativePrices, pricesUpdatedOn } from "@/lib/pricing.config";
-import { AnimatedPrice } from "@/components/ui/AnimatedPrice";
 import { ConfirmTag } from "@/components/ui/ConfirmTag";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function PricingTable() {
   const t = useTranslations("pricing");
   const locale = useLocale() as Locale;
 
-  const gold = indicativePrices.filter((r) => r.metal === "gold");
-  const silver = indicativePrices.filter((r) => r.metal === "silver");
   const groups = [
-    { label: t("gold"), rows: gold },
-    { label: t("silver"), rows: silver },
+    {
+      label: t("gold"),
+      rows: indicativePrices.filter((r) => r.metal === "gold"),
+      cols: "grid-cols-2",
+    },
+    {
+      label: t("silver"),
+      rows: indicativePrices.filter((r) => r.metal === "silver"),
+      cols: "grid-cols-2",
+    },
   ];
 
   return (
-    <section
-      id="cene"
-      className="bg-white px-6 py-20 text-ink-900 md:px-12 md:py-28"
-    >
-      <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-        <ScrollReveal className="col-span-12 md:col-span-4">
+    <section id="cene" className="scroll-mt-24 px-4 py-6">
+      <div className="mx-auto max-w-6xl rounded-[2rem] bg-stone-100 p-6 md:p-12">
+        <Reveal>
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
-          <p className="mt-6 max-w-md leading-relaxed text-ink-700">
+          <p className="mt-4 max-w-2xl leading-relaxed text-neutral-600">
             {t("lead")}
           </p>
-          <p className="mt-6 text-sm text-ink-600">
-            {t("updated", {
-              date: formatUpdatedDate(pricesUpdatedOn, locale),
-            })}
-          </p>
-        </ScrollReveal>
+        </Reveal>
 
-        <ScrollReveal
-          delay={0.1}
-          className="col-span-12 md:col-span-7 md:col-start-6"
-        >
-          <table className="w-full border-collapse text-left">
-            <thead>
-              <tr className="border-b border-ink-900/30 text-xs uppercase tracking-[0.18em] text-ink-600">
-                <th scope="col" className="py-3 pr-4 font-medium">
-                  {t("colFineness")}
-                </th>
-                <th scope="col" className="py-3 pr-4 font-medium">
-                  {t("colKarat")}
-                </th>
-                <th scope="col" className="py-3 text-right font-medium">
-                  {t("colPrice")}
-                </th>
-              </tr>
-            </thead>
-            {groups.map((group) => (
-              <tbody key={group.label}>
-                <tr>
-                  <th
-                    scope="rowgroup"
-                    colSpan={3}
-                    className="pt-6 pb-2 text-xs font-medium uppercase tracking-[0.22em] text-gold-800"
-                  >
-                    {group.label}
-                  </th>
-                </tr>
-                {group.rows.map((row) => (
-                  <tr
-                    key={`${row.metal}-${row.purity}`}
-                    className="border-b border-ink-900/10"
-                  >
-                    <td className="py-3 pr-4 font-display text-xl">
-                      {row.purity}
-                    </td>
-                    <td className="py-3 pr-4 text-ink-700">
-                      {row.karat ?? "—"}
-                    </td>
-                    <td className="py-3 text-right text-lg font-medium">
-                      <AnimatedPrice value={row.eurPerGram} locale={locale} />
-                      {!row.confirmed && <ConfirmTag />}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            ))}
-          </table>
-          <p className="mt-6 border-l-2 border-gold-600 pl-4 text-sm leading-relaxed text-ink-700">
-            {t("disclaimer")}
-          </p>
+        <div className="mt-10 grid gap-4 lg:grid-cols-2">
+          {groups.map((group, gi) => (
+            <Reveal key={group.label} delay={gi * 100}>
+              <div className="rounded-3xl bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold">{group.label}</h3>
+                <div className={`mt-5 grid gap-3 ${group.cols}`}>
+                  {group.rows.map((row) => (
+                    <div
+                      key={row.purity}
+                      className="rounded-2xl border border-black/5 p-4"
+                    >
+                      <p className="flex items-baseline gap-2 text-sm text-neutral-500">
+                        <span className="font-mono font-medium text-neutral-900">
+                          {row.purity}
+                        </span>
+                        {row.karat && <span>· {row.karat}</span>}
+                      </p>
+                      <p className="mt-3 font-mono text-2xl font-semibold tracking-tight tabular-nums md:text-3xl">
+                        {formatEurPerGram(row.eurPerGram, locale)}
+                      </p>
+                      {!row.confirmed && (
+                        <p className="mt-2">
+                          <ConfirmTag />
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-sm text-neutral-600">
+              {t("updated", {
+                date: formatUpdatedDate(pricesUpdatedOn, locale),
+              })}
+            </p>
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-neutral-600">
+              {t("disclaimer")}
+            </p>
+          </div>
           <a
             href="#kontakt"
-            className="mt-6 inline-block text-xs font-medium uppercase tracking-[0.18em] text-gold-800 underline-offset-4 transition-colors duration-200 hover:text-ink-900 hover:underline"
+            className="inline-flex min-h-11 w-fit shrink-0 items-center rounded-full bg-neutral-900 px-5 text-sm font-medium text-white transition-colors duration-200 hover:bg-neutral-700"
           >
             {t("cta")}
           </a>
-        </ScrollReveal>
+        </Reveal>
       </div>
     </section>
   );

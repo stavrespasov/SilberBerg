@@ -1,18 +1,18 @@
 type SectionHeadingProps = {
   eyebrow: string;
   heading: string;
+  center?: boolean;
 };
 
-export function SectionHeading({ eyebrow, heading }: SectionHeadingProps) {
+export function SectionHeading({
+  eyebrow,
+  heading,
+  center,
+}: SectionHeadingProps) {
   return (
-    <div className="max-w-2xl">
-      <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-gold-800">
-        {eyebrow}
-      </p>
-      <h2
-        className="font-display text-(length:--text-display-md) leading-[1.05] font-medium text-ink-900"
-        style={{ fontOpticalSizing: "auto" }}
-      >
+    <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+      <p className="mb-3 text-sm font-medium text-amber-700">{eyebrow}</p>
+      <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-5xl">
         {heading}
       </h2>
     </div>

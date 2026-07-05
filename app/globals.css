@@ -1,77 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Warm ink — near-black with a heritage warmth, never pure #000 */
-  --color-ink-950: #14110c;
-  --color-ink-900: #17140f;
-  --color-ink-800: #221e17;
-  --color-ink-700: #2e2921;
-  --color-ink-600: #4a4437;
-
-  /* Bone — warm paper tones for light editorial sections */
-  --color-bone-50: #faf7f0;
-  --color-bone-100: #f4efe6;
-  --color-bone-200: #e9e2d4;
-  --color-bone-300: #d9d0bd;
-
-  /* Old gold — the accent. Used precisely, never as wallpaper. */
-  --color-gold-300: #e5c87e;
-  --color-gold-400: #d4b26a;
-  --color-gold-500: #c4a15a;
-  --color-gold-600: #a98842;
-  --color-gold-700: #8a6d33;
-  /* Darkest gold: small text on bone surfaces (AA ≥ 4.5:1 needs this) */
-  --color-gold-800: #6e5626;
-
-  /* Oxidized silver — secondary metal, cool against the warm base */
-  --color-silver-300: #b9bec3;
-  --color-silver-400: #9ea4aa;
-  --color-silver-500: #8b9096;
-  --color-silver-600: #6f757b;
-
-  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
-  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-
-  /* Editorial type scale — display sizes are deliberately oversized */
-  --text-display-xl: clamp(2.75rem, 8vw, 6.5rem);
-  --text-display-lg: clamp(2.25rem, 5.5vw, 4.5rem);
-  --text-display-md: clamp(1.75rem, 4vw, 3rem);
-
-  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 :root {
   color-scheme: light;
 }
 
-body {
-  background-color: var(--color-bone-50);
-  color: var(--color-ink-900);
-  font-family: var(--font-sans);
-}
-
-::selection {
-  background-color: var(--color-gold-500);
-  color: var(--color-ink-950);
-}
-
-/* Visible, on-brand focus for keyboard navigation. The ring color follows
-   the section surface so it always clears 3:1 against its background. */
-:focus-visible {
-  outline: 2px solid var(--color-gold-800);
-  outline-offset: 3px;
-}
-.bg-ink-900 :focus-visible,
-.bg-ink-950 :focus-visible {
-  outline-color: var(--color-gold-400);
-}
-
-/* Hairline rules — the assay-certificate motif */
-.hairline {
-  border-color: color-mix(in srgb, var(--color-ink-900) 15%, transparent);
-}
-
-/* Anchors glide natively wherever Lenis isn't driving the scroll */
 html {
   scroll-behavior: smooth;
 }
@@ -83,31 +20,42 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-/* Outlined display type — the engraved watermark treatment */
-.text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1px
-    color-mix(in srgb, var(--color-ink-900) 18%, transparent);
+body {
+  background-color: #fff;
+  color: var(--color-neutral-900);
+  font-family: var(--font-sans);
 }
 
-/* Exchange ticker loop — transform-only, pausable, frozen under
-   prefers-reduced-motion by the global override above */
-@keyframes ticker-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+::selection {
+  background-color: var(--color-amber-200);
+  color: var(--color-neutral-900);
 }
-.ticker-track {
-  animation: ticker-scroll 36s linear infinite;
+
+:focus-visible {
+  outline: 2px solid var(--color-amber-700);
+  outline-offset: 2px;
 }
-.ticker-track:hover {
-  animation-play-state: paused;
+
+/* Scroll reveal: a class toggle from a 20-line IntersectionObserver.
+   No animation library. Static when reduced motion is preferred. */
+.reveal {
+  opacity: 0;
+  translate: 0 20px;
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    translate 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  translate: 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
   *,
   *::before,
   *::after {

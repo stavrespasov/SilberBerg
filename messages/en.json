@@ -99,7 +99,8 @@
     "hoursPlaceholder": "Opening hours to be published before launch",
     "phoneLabel": "Phone",
     "phonePlaceholder": "Phone number",
-    "mapTitle": "Map — Koper"
+    "mapTitle": "Map — Koper",
+    "openMap": "Open the full map"
   },
   "faq": {
     "eyebrow": "Questions",
