@@ -21,15 +21,18 @@ export function Location() {
   return (
     <section id="lokacija" className="scroll-mt-24 px-4 py-6">
       <div className="mx-auto max-w-6xl">
-        <Reveal>
+        <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
         </Reveal>
-        <Reveal className="relative mt-10 overflow-hidden rounded-[2rem] border border-black/5">
+        <Reveal
+          variant="scale"
+          className="group relative mt-10 overflow-hidden rounded-[2rem] border border-black/5"
+        >
           <iframe
             src={OSM_EMBED_SRC}
             title={t("mapTitle")}
             loading="lazy"
-            className="h-105 w-full grayscale-[0.85] md:h-130"
+            className="h-105 w-full grayscale-[0.85] transition-[transform,filter] duration-700 group-hover:scale-[1.02] group-hover:grayscale-[0.5] md:h-130"
           />
           {/* Info card floating over the map, Apple-Maps style */}
           <div className="pointer-events-none absolute inset-x-4 bottom-4 md:inset-x-auto md:left-8 md:bottom-8 md:w-96">

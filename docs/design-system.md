@@ -45,8 +45,14 @@ Self-hosted via `next/font`, `latin` + `latin-ext` (č š ž).
 - **Map sheet** — full-bleed rounded OSM embed (`grayscale-[0.85]`) with a floating
   glass info card, Apple-Maps style.
 - **Form** — filled `stone-100` inputs that lift to white with an amber border on focus.
-- **Motion** — `.reveal` class + `Reveal` observer; pills compress with `active:scale`.
-  Lenis inertial wheel scrolling. Everything static under `prefers-reduced-motion`.
+- **Motion** — three reveal variants (rise / scale / blur-focus) on one `Reveal`
+  observer; hero load choreography (`.rise` stagger) under two drifting ambient
+  glows; price marquee loop; count-up prices (rAF); scroll-progress needle;
+  hover physics: cards lift with soft shadows, icon medallions scale, step
+  numbers turn amber, the map creeps to color and zooms. Pills lift on hover and
+  compress on press. Smooth `<details>` expansion where `interpolate-size` is
+  supported. Lenis inertial wheel scrolling. Everything static under
+  `prefers-reduced-motion`.
 
 ## Iconography
 

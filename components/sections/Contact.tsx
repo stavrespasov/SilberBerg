@@ -10,7 +10,7 @@ export function Contact() {
     <section id="kontakt" className="scroll-mt-24 px-4 py-6">
       <div className="mx-auto max-w-6xl rounded-[2rem] bg-stone-100 p-6 md:p-12">
         <div className="grid gap-10 lg:grid-cols-2">
-          <Reveal>
+          <Reveal variant="blur">
             <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
             <p className="mt-4 max-w-md leading-relaxed text-neutral-600">
               {t("lead")}

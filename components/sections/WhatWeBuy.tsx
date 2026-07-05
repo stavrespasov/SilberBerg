@@ -33,7 +33,7 @@ export function WhatWeBuy() {
   return (
     <section id="odkup" className="scroll-mt-24 px-4 py-6">
       <div className="mx-auto max-w-6xl rounded-[2rem] bg-stone-100 p-6 md:p-12">
-        <Reveal>
+        <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
         </Reveal>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -41,9 +41,10 @@ export function WhatWeBuy() {
             <li key={item.name}>
               <Reveal
                 delay={(i % 3) * 80}
-                className="h-full rounded-3xl bg-white p-6 shadow-sm"
+                variant="scale"
+                className="group h-full rounded-3xl bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-stone-200"
               >
-                <span className="flex size-11 items-center justify-center rounded-full bg-amber-50">
+                <span className="flex size-11 items-center justify-center rounded-full bg-amber-50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <item.icon className="size-5 text-amber-700" />
                 </span>
                 <h3 className="mt-4 text-lg font-semibold tracking-tight">

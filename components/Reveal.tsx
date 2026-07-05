@@ -7,14 +7,22 @@ import { useEffect, useRef, type ReactNode } from "react";
  * The whole animation system of this design is this observer plus two
  * CSS rules — no animation library.
  */
+const variants = {
+  rise: "reveal",
+  scale: "reveal-scale",
+  blur: "reveal-blur",
+} as const;
+
 export function Reveal({
   children,
   className,
   delay = 0,
+  variant = "rise",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: keyof typeof variants;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -37,7 +45,7 @@ export function Reveal({
   return (
     <div
       ref={ref}
-      className={`reveal ${className ?? ""}`}
+      className={`${variants[variant]} ${className ?? ""}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

@@ -29,14 +29,14 @@ export function Trust() {
   return (
     <section id="zaupanje" className="scroll-mt-24 px-4 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <Reveal>
+        <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
         </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {blocks.map((block, i) => (
-            <Reveal key={block.title} delay={i * 80}>
-              <article className="h-full rounded-3xl border border-black/5 bg-stone-50 p-6">
-                <block.icon className="size-6 text-amber-700" />
+            <Reveal key={block.title} delay={i * 80} variant="scale">
+              <article className="group h-full rounded-3xl border border-black/5 bg-stone-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-stone-200">
+                <block.icon className="size-6 text-amber-700 transition-transform duration-300 group-hover:scale-110" />
                 <h3 className="mt-4 text-lg font-semibold tracking-tight">
                   {t(block.title)}
                 </h3>

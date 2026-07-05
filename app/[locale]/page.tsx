@@ -3,6 +3,8 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { faqPageJsonLd, localBusinessJsonLd } from "@/lib/structuredData";
+import { PriceMarquee } from "@/components/PriceMarquee";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Contact } from "@/components/sections/Contact";
 import { Faq, faqKeys } from "@/components/sections/Faq";
@@ -38,9 +40,11 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         }}
       />
       <SmoothScroll />
+      <ScrollProgress />
       <Header />
       <main id="main">
         <Hero />
+        <PriceMarquee />
         <PricingTable />
         <HowItWorks />
         <WhatWeBuy />

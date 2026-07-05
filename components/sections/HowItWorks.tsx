@@ -20,7 +20,7 @@ export function HowItWorks() {
   return (
     <section id="postopek" className="scroll-mt-24 px-4 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <Reveal>
+        <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
         </Reveal>
 
@@ -34,11 +34,11 @@ export function HowItWorks() {
             {steps.map((step) => (
               <li
                 key={step.num}
-                className="w-[78%] shrink-0 snap-center rounded-3xl border border-black/5 bg-stone-50 p-6 sm:w-[46%] md:w-auto"
+                className="group w-[78%] shrink-0 snap-center rounded-3xl border border-black/5 bg-stone-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-stone-200 sm:w-[46%] md:w-auto"
               >
                 <span
                   aria-hidden="true"
-                  className="flex size-10 items-center justify-center rounded-full bg-neutral-900 font-mono text-sm font-semibold text-white"
+                  className="flex size-10 items-center justify-center rounded-full bg-neutral-900 font-mono text-sm font-semibold text-white transition-colors duration-300 group-hover:bg-amber-700"
                 >
                   {step.num}
                 </span>

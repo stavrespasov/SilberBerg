@@ -18,14 +18,14 @@ export function Faq() {
   return (
     <section id="faq" className="scroll-mt-24 px-4 py-16 md:py-24">
       <div className="mx-auto max-w-3xl">
-        <Reveal>
+        <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} center />
         </Reveal>
         <Reveal className="mt-10 flex flex-col gap-3">
           {faqKeys.map(({ q, a }) => (
             <details
               key={q}
-              className="group rounded-2xl border border-black/5 bg-stone-50 px-5"
+              className="group rounded-2xl border border-black/5 bg-stone-50 px-5 transition-colors duration-200 hover:border-amber-300 open:border-amber-300 open:bg-white open:shadow-sm"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-4 font-medium [&::-webkit-details-marker]:hidden">
                 {t(q)}
