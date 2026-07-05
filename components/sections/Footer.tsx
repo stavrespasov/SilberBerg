@@ -11,7 +11,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="overflow-hidden px-4 pt-14 pb-6">
+    // pb-28 on mobile clears the fixed action bar.
+    <footer className="overflow-hidden px-4 pt-14 pb-28 md:pb-6">
       <div className="mx-auto max-w-6xl border-t border-line pt-10">
         <div className="flex flex-col justify-between gap-8 md:flex-row">
           <div>

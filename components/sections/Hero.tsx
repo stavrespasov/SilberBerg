@@ -47,6 +47,9 @@ export function Hero() {
         <div className="glow-breathe absolute -top-40 right-[-12rem] h-[34rem] w-[56rem] rounded-full bg-[radial-gradient(closest-side,rgba(226,181,75,0.26),rgba(226,181,75,0.06)_55%,transparent_75%)] blur-2xl" />
         <GoldCanvas />
         <div className="light-sweep" />
+        {/* Phones get the light source at reading distance — a scrim keeps
+            the copy legible there. Desktop stays untouched. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent md:hidden" />
       </div>
 
       <div className="mx-auto max-w-7xl">
@@ -89,8 +92,14 @@ export function Hero() {
               className="rise mt-8 flex flex-wrap items-center gap-3"
               style={rise(800)}
             >
-              <PillLink href="#kontakt">{t("ctaPrimary")}</PillLink>
-              <PillLink href="#cene" variant="ghost">
+              <PillLink href="#kontakt" className="w-full sm:w-auto">
+                {t("ctaPrimary")}
+              </PillLink>
+              <PillLink
+                href="#cene"
+                variant="ghost"
+                className="w-full sm:w-auto"
+              >
                 {t("ctaSecondary")}
               </PillLink>
             </div>

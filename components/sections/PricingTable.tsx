@@ -33,7 +33,7 @@ export function PricingTable() {
 
         <Reveal variant="scale" className="mt-12">
           <div className="gild-border rounded-lg p-px">
-            <div className="grid gap-x-14 gap-y-10 rounded-lg bg-ink-2 p-7 md:grid-cols-2 md:p-12">
+            <div className="grid gap-x-14 gap-y-10 rounded-lg bg-ink-2 p-5 sm:p-7 md:grid-cols-2 md:p-12">
               {groups.map((group) => (
                 <div key={group.label}>
                   <h3 className="flex items-baseline justify-between border-b border-line-2 pb-3">
@@ -50,7 +50,7 @@ export function PricingTable() {
                         key={row.purity}
                         className="group flex items-baseline justify-between gap-4 border-b border-line py-4 transition-colors duration-300 last:border-b-0 hover:bg-coal/50"
                       >
-                        <p className="flex items-baseline gap-2.5 font-mono text-sm tabular-nums">
+                        <p className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 font-mono text-sm tabular-nums">
                           <span className="font-medium whitespace-nowrap text-bone">
                             {row.purity}
                           </span>
