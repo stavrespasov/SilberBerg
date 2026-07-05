@@ -50,6 +50,14 @@ body {
   translate: 0 0;
 }
 
+/* The /predlog deck prints one slide per page */
+@media print {
+  .slide {
+    min-height: 100vh;
+    page-break-after: always;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
