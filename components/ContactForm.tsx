@@ -9,11 +9,12 @@ import { itemCategories } from "@/lib/contactSchema";
 const initialState: ContactFormState = { status: "idle" };
 
 const inputClass =
-  "w-full rounded-xl border border-transparent bg-stone-100 px-4 py-3 text-[15px] " +
-  "text-neutral-900 placeholder:text-neutral-400 transition-colors duration-200 " +
-  "focus:border-amber-600 focus:bg-white focus:outline-none";
+  "w-full rounded-md border border-line bg-ink-2 px-4 py-3 text-[15px] " +
+  "text-bone placeholder:text-dim transition-colors duration-200 " +
+  "focus:border-gold focus:bg-coal-2 focus:outline-none";
 
-const labelClass = "mb-1.5 block text-sm font-medium text-neutral-700";
+const labelClass =
+  "mb-2 block font-mono text-[11px] font-medium tracking-[0.14em] uppercase text-smoke";
 
 const categoryKey = {
   jewelry: "categoryJewelry",
@@ -35,7 +36,7 @@ export function ContactForm() {
     return (
       <p
         role="status"
-        className="rounded-2xl bg-amber-50 px-6 py-8 text-lg text-neutral-900"
+        className="rounded-lg border border-gold-deep bg-gold/10 px-6 py-8 text-lg text-bone"
       >
         {t("success")}
       </p>
@@ -61,7 +62,7 @@ export function ContactForm() {
           className={inputClass}
         />
         {errors.name && (
-          <p id="error-name" className="mt-1.5 text-sm text-red-700">
+          <p id="error-name" className="mt-1.5 text-sm text-red-400">
             {t("errorName")}
           </p>
         )}
@@ -101,11 +102,11 @@ export function ContactForm() {
           />
         </div>
       </div>
-      <p id="contact-hint" className="-mt-2 text-sm text-neutral-500">
+      <p id="contact-hint" className="-mt-2 text-sm text-smoke">
         {t("contactHint")}
       </p>
       {errors.contact && (
-        <p id="error-contact" className="-mt-2 text-sm text-red-700">
+        <p id="error-contact" className="-mt-2 text-sm text-red-400">
           {t("errorContact")}
         </p>
       )}
@@ -118,7 +119,7 @@ export function ContactForm() {
           id="contact-category"
           name="category"
           defaultValue=""
-          className={`${inputClass} appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23737373%22 stroke-width=%221.5%22%3E%3Cpath d=%22m6 9.5 6 6 6-6%22/%3E%3C/svg%3E')] bg-[length:1.25rem] bg-[right_0.9rem_center] bg-no-repeat pr-11`}
+          className={`${inputClass} appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23a09a8c%22 stroke-width=%221.5%22%3E%3Cpath d=%22m6 9.5 6 6 6-6%22/%3E%3C/svg%3E')] bg-[length:1.25rem] bg-[right_0.9rem_center] bg-no-repeat pr-11`}
         >
           <option value="">{t("categoryPlaceholder")}</option>
           {itemCategories.map((c) => (
@@ -146,7 +147,7 @@ export function ContactForm() {
           className={inputClass}
         />
         {errors.message && (
-          <p id="error-message" className="mt-1.5 text-sm text-red-700">
+          <p id="error-message" className="mt-1.5 text-sm text-red-400">
             {t("errorMessage")}
           </p>
         )}
@@ -168,20 +169,20 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="flex cursor-pointer items-start gap-3 text-sm text-neutral-600">
+        <label className="flex cursor-pointer items-start gap-3 text-sm text-smoke">
           <input
             type="checkbox"
             name="consent"
             required
             aria-invalid={errors.consent ? true : undefined}
-            className="mt-0.5 size-4 accent-amber-700"
+            className="mt-0.5 size-4 accent-gold"
           />
           <span>
             {t.rich("consentLabel", {
               link: (chunks) => (
                 <Link
                   href="/zasebnost"
-                  className="font-medium text-neutral-900 underline underline-offset-2"
+                  className="font-medium text-bone underline decoration-gold-deep underline-offset-2 transition-colors duration-200 hover:decoration-gold"
                 >
                   {chunks}
                 </Link>
@@ -190,12 +191,12 @@ export function ContactForm() {
           </span>
         </label>
         {errors.consent && (
-          <p className="mt-1.5 text-sm text-red-700">{t("errorConsent")}</p>
+          <p className="mt-1.5 text-sm text-red-400">{t("errorConsent")}</p>
         )}
       </div>
 
       {state.status === "error" && Object.keys(errors).length === 0 && (
-        <p role="alert" className="text-sm text-red-700">
+        <p role="alert" className="text-sm text-red-400">
           {t("errorGeneric")}
         </p>
       )}
@@ -203,7 +204,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="mt-1 inline-flex min-h-12 cursor-pointer items-center justify-center rounded-full bg-neutral-900 px-7 text-[15px] font-medium text-white transition-[background-color,transform] duration-200 hover:bg-neutral-700 active:scale-[0.98] disabled:cursor-wait disabled:opacity-60"
+        className="gild-bg sheen mt-1 inline-flex min-h-12 cursor-pointer items-center justify-center rounded-full px-7 text-[15px] font-semibold transition-transform duration-300 ease-vault hover:-translate-y-0.5 active:scale-[0.98] disabled:cursor-wait disabled:opacity-60"
       >
         {pending ? t("submitting") : t("submit")}
       </button>

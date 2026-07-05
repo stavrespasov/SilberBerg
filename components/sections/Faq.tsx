@@ -12,26 +12,27 @@ export const faqKeys = [
   { q: "q6", a: "a6" },
 ] as const;
 
+/** Hairline accordion — engraved lines, no cards. */
 export function Faq() {
   const t = useTranslations("faq");
 
   return (
-    <section id="faq" className="scroll-mt-24 px-4 py-16 md:py-24">
+    <section id="faq" className="scroll-mt-24 px-4 py-20 md:py-28">
       <div className="mx-auto max-w-3xl">
         <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} center />
         </Reveal>
-        <Reveal className="mt-10 flex flex-col gap-3">
+        <Reveal className="mt-12 border-y border-line">
           {faqKeys.map(({ q, a }) => (
             <details
               key={q}
-              className="group rounded-2xl border border-black/5 bg-stone-50 px-5 transition-colors duration-200 hover:border-amber-300 open:border-amber-300 open:bg-white open:shadow-sm"
+              className="group border-b border-line last:border-b-0"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-4 font-medium [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 font-medium text-bone transition-colors duration-200 hover:text-gold-hi [&::-webkit-details-marker]:hidden">
                 {t(q)}
-                <ChevronDownIcon className="size-5 shrink-0 text-neutral-600 transition-transform duration-200 group-open:rotate-180" />
+                <ChevronDownIcon className="size-5 shrink-0 text-dim transition-[transform,color] duration-300 ease-vault group-open:rotate-180 group-open:text-gold" />
               </summary>
-              <p className="pb-5 text-[15px] leading-relaxed text-neutral-600">
+              <p className="pb-6 text-[15px] leading-relaxed text-smoke">
                 {t(a)}
               </p>
             </details>

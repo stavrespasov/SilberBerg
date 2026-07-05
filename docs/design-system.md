@@ -1,65 +1,87 @@
-# Silberberg — Visual System v3 ("Clean Counter")
+# Silberberg design system — v4 "Midnight Vault"
 
-The reference for every screen and for the proposition deck. Deviations need a reason.
+The site is a lit stage, not a colored theme: one warm light source over
+near-black, materials that behave like metal, and motion that tells one
+story as the visitor descends the page. Deviations need a reason.
 
-## Voice
+v3 "Clean Counter" (white minimalism) is retired. The /predlog deck still
+renders light on purpose — it prints.
 
-Boutique precious-metals buyer in Koper. Personal, exact, calm. The design language is
-Apple-grade product minimalism: pure white air, floating soft panels, one warm accent.
-No animation library — the entire motion system is one IntersectionObserver and CSS.
+## Tokens (`app/globals.css` → `@theme`)
 
-## Type
-
-| Role | Face | Notes |
+| Token | Value | Role |
 |---|---|---|
-| Everything | **Geist** | Semibold, `tracking-tight(er)` headlines; 15px body rhythm. |
-| Figures | **Geist Mono** | Prices, step numbers, the ConfirmTag. `tabular-nums`. |
+| `ink` | `#0B0B0D` | page ground — the stage |
+| `ink-2` | `#101013` | raised ground (ticker, boards) |
+| `coal` | `#16161A` | panels, cards |
+| `coal-2` | `#1C1C21` | hover/active surfaces |
+| `line` | `#26262C` | hairline borders |
+| `line-2` | `#3A3A41` | hover borders |
+| `bone` | `#F2EFE6` | primary type |
+| `smoke` | `#A09A8C` | secondary type (AA on ink) |
+| `dim` | `#6D685E` | decorative only — fails AA for body text |
+| `gold` | `#E2B54B` | the one bold spend |
+| `gold-hi` | `#F6E3AC` | gradient highlight, hover type |
+| `gold-deep` | `#8A6117` | gradient shadow, quiet gold borders |
+| `silver` | `#AEB4BD` | secondary accent, cold |
 
-Self-hosted via `next/font`, `latin` + `latin-ext` (č š ž).
+Gold is a material, never a flat fill: `--grad-gold` (root custom
+property) drives `.gild-text`, `.gild-bg`, `.gild-border`. Easing:
+`--ease-vault` = `cubic-bezier(0.16, 1, 0.3, 1)` (`ease-vault` utility).
 
-## Color
+## Typography
 
-| Role | Value | Use |
-|---|---|---|
-| Base | `#FFFFFF` | Page background. |
-| Panels | `stone-100` / `stone-50` | Floating `rounded-[2rem]` section panels and cards. |
-| Text | `neutral-900` / `neutral-600` | Headings / body. `neutral-600` is the muted floor (≥4.5:1 everywhere). |
-| Accent | `amber-700/800` text, `amber-50/200` fills | Kickers, icons, consent highlights. Never decoration-wallpaper. |
-| Action | `neutral-900` pills | Primary buttons are black pills; secondary are `stone-200` pills. |
+- **Display — Boska 500/700** (`font-display`, self-hosted woff2 in
+  `app/fonts/`, Fontshare/ITF licence). Every `h1/h2/h3`, the wordmark.
+- **Body — Geist** (`font-sans`). Unchanged from v3; carried over.
+- **Data — Geist Mono** (`font-mono`). Every number: prices, hallmarks,
+  eyebrows, form labels. Always `tabular-nums`.
+- Eyebrows/labels: mono, uppercase, `tracking-[0.14em]`–`[0.2em]`.
 
-## Shape & layout
+## Surfaces
 
-- Everything rounds: pills for actions (`rounded-full`), `rounded-2xl/3xl` cards,
-  `rounded-[2rem]` section panels floating inside `px-4` gutters.
-- Centered `max-w-6xl` composition; hero is centered statement type (`text-balance`).
-- Section anchors use `scroll-mt-24` to clear the fixed nav.
+- `.engraved` — pressed into the metal: coal + inset shadows. Trust
+  blocks, the contact form, privacy sections.
+- `.gild-border` — 1px gold-gradient edge. Reserved for the single
+  highest-value surface per view (the assay price board).
+- `.letterpress` — ghost type stamped into the ground (step numerals,
+  footer wordmark, 404).
+- `.sheen` / `.sheen-soft` — light band sweeping on hover. `sheen` on
+  gilded CTAs, `sheen-soft` on dark cards.
+- No drop shadows anywhere; depth comes from light and hairlines.
 
-## Signature moves
+## Motion inventory
 
-- **Floating glass nav** — fixed pill, `bg-white/75` + `backdrop-blur`, segmented
-  locale switcher, black CTA pill.
-- **Bento stat strip** under the hero (three stone cards with icon medallions).
-- **Price cards** — white cards on the stone panel; purity tiles with big mono figures.
-- **Snap-scroll steps** — numbered black-circle cards; horizontal snap carousel on
-  phones (keyboard-focusable region), 4-up grid on desktop.
-- **Map sheet** — full-bleed rounded OSM embed (`grayscale-[0.85]`) with a floating
-  glass info card, Apple-Maps style.
-- **Form** — filled `stone-100` inputs that lift to white with an amber border on focus.
-- **Motion** — three reveal variants (rise / scale / blur-focus) on one `Reveal`
-  observer; hero load choreography (`.rise` stagger) under two drifting ambient
-  glows; price marquee loop; count-up prices (rAF); scroll-progress needle;
-  hover physics: cards lift with soft shadows, icon medallions scale, step
-  numbers turn amber, the map creeps to color and zooms. Pills lift on hover and
-  compress on press. Smooth `<details>` expansion where `interpolate-size` is
-  supported. Lenis inertial wheel scrolling. Everything static under
-  `prefers-reduced-motion`.
+| # | Move | Where | Mechanism |
+|---|---|---|---|
+| 01 | Intro choreography — word masks rise | hero, on load | `.mask`/`.rise` CSS keyframes |
+| 02 | Liquid gold (WebGL) | hero backdrop | **Phase 2** — static glow + `.light-sweep` today |
+| 03 | Pinned process — horizontal glide + gold rail | #postopek | GSAP ScrollTrigger (`ProcessScene`), ≥768px only |
+| 04 | Count-up prices | assay board | `CountUp` (rAF) |
+| 05 | Sheen sweeps + lift | CTAs, cards | CSS |
+| 06 | Scroll reveals (rise/scale/blur/group-stagger) | sections | one IntersectionObserver (`Reveal`) |
+| 07 | Ambient stage — grain, breathing glow, light sweep | global/hero | `body::after` SVG noise, CSS keyframes |
+| 08 | Engraved wordmark, letter by letter | footer | `Reveal variant="group"` + `.g` delays |
 
-## Iconography
+Rules: GSAP is the only animation runtime beyond CSS (no framer-motion).
+Lenis is driven by GSAP's ticker (`SmoothScroll`) so pins don't jitter.
+Everything honors `prefers-reduced-motion` — the global kill switch in
+`globals.css` plus per-component gates (`gsap.matchMedia`, JS checks).
 
-Bespoke line-art in `components/icons/` (24-grid, 1.5px, squared terminals), rendered
-in amber inside white/amber-50 medallions. No icon packs, no emojis.
+## Accessibility invariants
 
-## Guardrails
+- Split-word headline: visual spans are `aria-hidden`, the intact
+  sentence sits in `sr-only`.
+- `smoke` is the darkest color allowed for meaningful text; `dim` only on
+  `aria-hidden` decoration.
+- Focus ring: 2px `gold`. Selection: gold on ink.
+- Scrollable step strip keeps `tabIndex` + `aria-label`.
+- axe target remains 0 violations on every page.
 
-axe-core 0 violations is the maintained baseline. No gradients, no dark sections,
-no serif ornament, no purple/blue SaaS palette, no "Unlock the power of…" copy.
+## Do not
+
+- Flat `#E2B54B` fills on large areas — gold is always the gradient.
+- Drop shadows, rounded-3xl softness, centered heroes — that was v3.
+- New accent hues. Semantic red for form errors is `red-400`, nothing else.
+- Resurrect v1 (flat dark-gold sections) — the stage needs light, grain,
+  and materials, or it reads as a colored theme again.

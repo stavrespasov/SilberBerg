@@ -12,7 +12,7 @@ export function LocaleSwitcher() {
   return (
     <nav
       aria-label={t("langLabel")}
-      className="flex items-center rounded-full bg-stone-100 p-1"
+      className="flex items-center rounded-full border border-line bg-coal p-1"
     >
       {routing.locales.map((l) => (
         <Link
@@ -20,10 +20,10 @@ export function LocaleSwitcher() {
           href={pathname}
           locale={l}
           aria-current={l === locale ? "true" : undefined}
-          className={`rounded-full px-3 py-1.5 text-xs font-semibold uppercase transition-colors duration-200 ${
+          className={`rounded-full px-3 py-1.5 font-mono text-xs font-semibold uppercase transition-colors duration-200 ${
             l === locale
-              ? "bg-white text-neutral-900 shadow-sm"
-              : "text-neutral-600 hover:text-neutral-900"
+              ? "bg-coal-2 text-gold"
+              : "text-smoke hover:text-bone"
           }`}
         >
           {l}

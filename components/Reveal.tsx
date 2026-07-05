@@ -11,6 +11,9 @@ const variants = {
   rise: "reveal",
   scale: "reveal-scale",
   blur: "reveal-blur",
+  // The wrapper only observes; children opt in with `.g` and stagger
+  // themselves via the --g custom property.
+  group: "reveal-group",
 } as const;
 
 export function Reveal({

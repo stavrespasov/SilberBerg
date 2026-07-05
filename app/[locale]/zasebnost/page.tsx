@@ -28,16 +28,16 @@ export default async function PrivacyPage({
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-20 md:py-28">
-      <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+      <h1 className="font-display text-4xl font-medium tracking-tight text-bone md:text-5xl">
         {t("heading")}
       </h1>
-      <p className="mt-5 leading-relaxed text-neutral-600">{t("intro")}</p>
+      <p className="mt-5 leading-relaxed text-smoke">{t("intro")}</p>
       {sections.map((s) => (
-        <section key={s.heading} className="mt-9 rounded-2xl bg-stone-50 p-6">
-          <h2 className="text-lg font-semibold tracking-tight">
+        <section key={s.heading} className="engraved mt-9 rounded-lg p-6">
+          <h2 className="font-display text-xl font-medium tracking-tight text-bone">
             {t(s.heading)}
           </h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-neutral-600">
+          <p className="mt-2 text-[15px] leading-relaxed text-smoke">
             {t(s.text)}
             {s.confirm && <ConfirmTag />}
           </p>
@@ -45,7 +45,7 @@ export default async function PrivacyPage({
       ))}
       <Link
         href="/"
-        className="mt-10 inline-flex min-h-11 items-center rounded-full bg-stone-200 px-5 text-sm font-medium transition-colors duration-200 hover:bg-stone-300"
+        className="mt-10 inline-flex min-h-11 items-center rounded-full border border-line-2 px-5 text-sm font-medium text-bone transition-colors duration-200 hover:border-gold hover:text-gold-hi"
       >
         {t("backHome")}
       </Link>

@@ -31,33 +31,31 @@ export function WhatWeBuy() {
   const t = useTranslations("buy");
 
   return (
-    <section id="odkup" className="scroll-mt-24 px-4 py-6">
-      <div className="mx-auto max-w-6xl rounded-[2rem] bg-stone-100 p-6 md:p-12">
+    <section id="odkup" className="scroll-mt-24 px-4 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl">
         <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
         </Reveal>
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <li key={item.name}>
               <Reveal
-                delay={(i % 3) * 80}
+                delay={(i % 3) * 90}
                 variant="scale"
-                className="group h-full rounded-3xl bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-stone-200"
+                className="sheen sheen-soft group h-full rounded-lg border border-line bg-coal p-7 transition-[border-color,transform] duration-300 ease-vault hover:-translate-y-1 hover:border-line-2"
               >
-                <span className="flex size-11 items-center justify-center rounded-full bg-amber-50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  <item.icon className="size-5 text-amber-700" />
-                </span>
-                <h3 className="mt-4 text-lg font-semibold tracking-tight">
+                <item.icon className="size-6 text-gold transition-transform duration-300 ease-vault group-hover:scale-110 group-hover:-rotate-3" />
+                <h3 className="mt-5 font-display text-2xl font-medium tracking-tight text-bone">
                   {t(item.name)}
                 </h3>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-neutral-600">
+                <p className="mt-2 text-[15px] leading-relaxed text-smoke">
                   {t(item.desc)}
                 </p>
               </Reveal>
             </li>
           ))}
         </ul>
-        <p className="mt-8 text-sm text-neutral-600">
+        <p className="mt-9 text-sm text-smoke">
           {t("exclusionsNote")}
           <ConfirmTag />
         </p>
