@@ -162,6 +162,11 @@
     "rightsText": "Kadar koli lahko zahtevate vpogled, popravek ali izbris svojih podatkov ter vložite pritožbo pri Informacijskem pooblaščencu RS.",
     "backHome": "Nazaj na domačo stran"
   },
+  "notFound": {
+    "heading": "Te strani ni",
+    "text": "Naslov je napačen ali pa je bila stran odstranjena. Vse, kar potrebujete, najdete na domači strani.",
+    "back": "Na domačo stran"
+  },
   "footer": {
     "legalName": "Polno ime podjetja in pravna oblika",
     "regNumber": "Matična številka",

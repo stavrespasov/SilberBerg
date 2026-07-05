@@ -162,6 +162,11 @@
     "rightsText": "You may request access to, correction of, or deletion of your data at any time, and may lodge a complaint with the Slovenian Information Commissioner.",
     "backHome": "Back to the home page"
   },
+  "notFound": {
+    "heading": "This page doesn't exist",
+    "text": "The address is wrong or the page was removed. Everything you need is on the home page.",
+    "back": "Back to the home page"
+  },
   "footer": {
     "legalName": "Full company name and legal form",
     "regNumber": "Registration number",
