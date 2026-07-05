@@ -204,7 +204,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="gild-bg sheen mt-1 inline-flex min-h-12 cursor-pointer items-center justify-center rounded-full px-7 text-[15px] font-semibold transition-transform duration-300 ease-vault hover:-translate-y-0.5 active:scale-[0.98] disabled:cursor-wait disabled:opacity-60"
+        className="mt-1 inline-flex min-h-12 cursor-pointer items-center justify-center rounded-full bg-bone px-7 text-[15px] font-semibold text-ink transition-[background-color,transform] duration-300 ease-vault hover:bg-gold hover:-translate-y-0.5 active:scale-[0.98] disabled:cursor-wait disabled:opacity-60"
       >
         {pending ? t("submitting") : t("submit")}
       </button>

@@ -43,7 +43,7 @@ export function Header() {
           <LocaleSwitcher />
           <a
             href="#kontakt"
-            className="gild-bg sheen hidden min-h-10 items-center rounded-full px-4 text-sm font-semibold transition-transform duration-300 ease-vault hover:-translate-y-0.5 sm:inline-flex"
+            className="hidden min-h-10 items-center rounded-full bg-bone px-4 text-sm font-semibold text-ink transition-[background-color,transform] duration-300 ease-vault hover:bg-gold hover:-translate-y-0.5 sm:inline-flex"
           >
             {t("phoneCta")}
           </a>

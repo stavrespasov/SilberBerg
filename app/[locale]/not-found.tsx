@@ -15,7 +15,7 @@ export default function NotFoundPage() {
       <p className="mt-4 max-w-md leading-relaxed text-smoke">{t("text")}</p>
       <Link
         href="/"
-        className="gild-bg sheen mt-8 inline-flex min-h-12 items-center rounded-full px-7 text-[15px] font-semibold transition-transform duration-300 ease-vault hover:-translate-y-0.5"
+        className="mt-8 inline-flex min-h-12 items-center rounded-full bg-bone px-7 text-[15px] font-semibold text-ink transition-[background-color,transform] duration-300 ease-vault hover:bg-gold hover:-translate-y-0.5"
       >
         {t("back")}
       </Link>

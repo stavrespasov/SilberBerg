@@ -88,28 +88,8 @@ body::after {
 }
 
 /* ============ gold as a material ============ */
-.gild-text {
-  background: var(--grad-gold);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-size: 200% 100%;
-  animation: gild-shift 7s ease-in-out infinite;
-}
-@keyframes gild-shift {
-  0%,
-  100% {
-    background-position: 0% 0;
-  }
-  50% {
-    background-position: 100% 0;
-  }
-}
-
-.gild-bg {
-  background: var(--grad-gold);
-  color: #171204;
-}
+/* Buttons are solid fills by client direction (v4.1) — the gradient
+   lives only on non-interactive metalwork like the board frame below. */
 
 /* 1px gold-gradient border — reserved for the highest-value surfaces. */
 .gild-border {
@@ -351,9 +331,6 @@ body::after {
   }
   .mask > span {
     translate: 0 0;
-    animation: none;
-  }
-  .gild-text {
     animation: none;
   }
   *,

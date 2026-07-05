@@ -25,9 +25,11 @@ renders light on purpose — it prints.
 | `gold-deep` | `#8A6117` | gradient shadow, quiet gold borders |
 | `silver` | `#AEB4BD` | secondary accent, cold |
 
-Gold is a material, never a flat fill: `--grad-gold` (root custom
-property) drives `.gild-text`, `.gild-bg`, `.gild-border`. Easing:
-`--ease-vault` = `cubic-bezier(0.16, 1, 0.3, 1)` (`ease-vault` utility).
+`--grad-gold` (root custom property) drives `.gild-border` and the
+scroll-progress needle — non-interactive metalwork only. **Buttons are
+solid fills** (bone → solid gold on hover), no gradients — client
+direction, v4.1. Easing: `--ease-vault` = `cubic-bezier(0.16, 1, 0.3, 1)`
+(`ease-vault` utility).
 
 ## Typography
 
@@ -54,8 +56,8 @@ property) drives `.gild-text`, `.gild-bg`, `.gild-border`. Easing:
 
 | # | Move | Where | Mechanism |
 |---|---|---|---|
-| 01 | Intro choreography — word masks rise | hero, on load | `.mask`/`.rise` CSS keyframes |
-| 02 | Liquid gold (WebGL) | hero backdrop | **Phase 2** — static glow + `.light-sweep` today |
+| 01 | Intro choreography — SILBERBERG letters rise from masks | hero, on load | `.mask`/`.rise` CSS keyframes |
+| 02 | Liquid gold — domain-warped molten smoke, pointer parallax | hero backdrop | `GoldCanvas` raw-WebGL fragment shader; CSS glow poster fallback |
 | 03 | Pinned process — horizontal glide + gold rail | #postopek | GSAP ScrollTrigger (`ProcessScene`), ≥768px only |
 | 04 | Count-up prices | assay board | `CountUp` (rAF) |
 | 05 | Sheen sweeps + lift | CTAs, cards | CSS |
@@ -80,7 +82,7 @@ Everything honors `prefers-reduced-motion` — the global kill switch in
 
 ## Do not
 
-- Flat `#E2B54B` fills on large areas — gold is always the gradient.
+- Gradient fills on buttons or other interactive elements — solid only.
 - Drop shadows, rounded-3xl softness, centered heroes — that was v3.
 - New accent hues. Semantic red for form errors is `red-400`, nothing else.
 - Resurrect v1 (flat dark-gold sections) — the stage needs light, grain,
