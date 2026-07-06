@@ -6,16 +6,16 @@ import { useTranslations } from "next-intl";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { MoltenBand } from "@/components/MoltenBand";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 /**
- * A widescreen film moment between sections: AI-generated molten-gold
- * b-roll (OpenArt/Seedream still) turned into a cinemagraph — the frame
- * drifts and settles in parallax as it crosses the viewport while a slow
- * light band sweeps across it. Decorative throughout; static under
- * reduced motion. Swap the Image for a <video> when real footage lands —
- * the choreography stays the same.
+ * A widescreen film moment between sections: a live liquid-gold shader
+ * (MoltenBand) over a still poster, drifting in parallax as it crosses
+ * the viewport. The poster (an OpenArt/Seedream frame) is the fallback —
+ * it's what shows under reduced motion or without WebGL, and it holds
+ * the frame until the shader paints. Decorative throughout.
  */
 export function CinematicBand() {
   const t = useTranslations("film");
@@ -56,6 +56,7 @@ export function CinematicBand() {
         className="relative mx-auto aspect-video max-w-6xl overflow-hidden rounded-lg border border-line md:aspect-[21/9]"
       >
         <div ref={mediaRef} className="absolute inset-0 will-change-transform">
+          {/* Poster: fallback + holds the frame until the shader paints. */}
           <Image
             src="/media/molten.jpg"
             alt=""
@@ -64,8 +65,8 @@ export function CinematicBand() {
             quality={70}
             className="object-cover"
           />
+          <MoltenBand />
         </div>
-        <div className="light-sweep" />
         {/* Desktop: caption over the frame behind a scrim. On phones the
             frame stays clean — the caption moves below it. */}
         <div className="absolute inset-0 hidden bg-gradient-to-t from-ink/80 via-transparent to-ink/20 md:block" />
