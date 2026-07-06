@@ -46,11 +46,15 @@ export function Hero() {
       <div aria-hidden="true" className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_70%_0%,#191309_0%,#101013_45%,#0b0b0d_100%)]" />
         <div className="glow-breathe absolute -top-40 right-[-12rem] h-[34rem] w-[56rem] rounded-full bg-[radial-gradient(closest-side,rgba(226,181,75,0.26),rgba(226,181,75,0.06)_55%,transparent_75%)] blur-2xl" />
-        <GoldCanvas />
+        {/* Phones put the light source at reading distance, so the whole
+            canvas runs dimmer there and a deep scrim sits over it — the
+            smoke still breathes, the type owns the frame. Desktop is
+            untouched. */}
+        <div className="absolute inset-0 opacity-45 md:opacity-100">
+          <GoldCanvas />
+        </div>
         <div className="light-sweep" />
-        {/* Phones get the light source at reading distance — a scrim keeps
-            the copy legible there. Desktop stays untouched. */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent md:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/35 md:hidden" />
       </div>
 
       <div className="mx-auto max-w-7xl">

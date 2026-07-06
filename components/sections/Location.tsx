@@ -15,6 +15,39 @@ const rows = [
   { icon: PhoneIcon, label: "phoneLabel", value: "phonePlaceholder" },
 ] as const;
 
+/** Address / hours / phone. Rendered twice: floating over the map on
+ *  desktop, as its own engraved panel under the map on phones. */
+function InfoCard() {
+  const t = useTranslations("location");
+
+  return (
+    <>
+      <dl className="flex flex-col gap-5">
+        {rows.map(({ icon: Icon, label, value }) => (
+          <div key={label}>
+            <dt className="flex items-center gap-3 font-mono text-[10px] tracking-[0.16em] text-smoke uppercase">
+              <Icon className="size-4 shrink-0 text-gold" />
+              {t(label)}
+            </dt>
+            <dd className="mt-1 pl-7 text-[15px] font-medium text-bone">
+              {t(value)}
+              <ConfirmTag />
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <a
+        href={OSM_LINK}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-5 inline-block text-sm font-medium text-gold transition-colors duration-200 hover:text-gold-hi"
+      >
+        {t("openMap")} ↗
+      </a>
+    </>
+  );
+}
+
 export function Location() {
   const t = useTranslations("location");
 
@@ -31,7 +64,8 @@ export function Location() {
           {/* OSM tiles are light; the invert/desaturate filter turns them
               into a night map without a tile-server dependency. The map is
               a picture, not a widget: pointer-events off so scrolling the
-              page never zooms it — the link below opens the real thing. */}
+              page never zooms it — the link in the card opens the real
+              thing. */}
           <iframe
             src={OSM_EMBED_SRC}
             title={t("mapTitle")}
@@ -40,33 +74,16 @@ export function Location() {
             aria-hidden="true"
             className="pointer-events-none h-72 w-full [filter:invert(0.92)_hue-rotate(180deg)_saturate(0.25)_brightness(0.92)] transition-transform duration-700 ease-vault select-none group-hover:scale-[1.02] sm:h-105 md:h-130"
           />
-          {/* Info card: below the map on phones (covering a small map is
-              worse than a shorter map), floating dark glass from md up. */}
-          <div className="border-t border-line md:absolute md:left-8 md:bottom-8 md:w-96 md:border-t-0">
-            <div className="bg-ink p-6 md:rounded-lg md:border md:border-line md:bg-ink/85 md:backdrop-blur-xl">
-              <dl className="flex flex-col gap-5">
-                {rows.map(({ icon: Icon, label, value }) => (
-                  <div key={label}>
-                    <dt className="flex items-center gap-3 font-mono text-[10px] tracking-[0.16em] text-smoke uppercase">
-                      <Icon className="size-4 shrink-0 text-gold" />
-                      {t(label)}
-                    </dt>
-                    <dd className="mt-1 pl-7 text-[15px] font-medium text-bone">
-                      {t(value)}
-                      <ConfirmTag />
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-              <a
-                href={OSM_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 inline-block text-sm font-medium text-gold transition-colors duration-200 hover:text-gold-hi"
-              >
-                {t("openMap")} ↗
-              </a>
-            </div>
+          {/* Floating dark-glass card — desktop only. */}
+          <div className="absolute left-8 bottom-8 hidden w-96 rounded-lg border border-line bg-ink/85 p-6 backdrop-blur-xl md:block">
+            <InfoCard />
+          </div>
+        </Reveal>
+
+        {/* On phones the card is its own panel with air around it. */}
+        <Reveal delay={80} className="mt-4 md:hidden">
+          <div className="engraved rounded-lg p-6">
+            <InfoCard />
           </div>
         </Reveal>
       </div>
