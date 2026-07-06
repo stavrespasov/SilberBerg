@@ -57,7 +57,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-ink/55 md:hidden" />
         {/* The second mobile screen (the three points) settles into near
             solid ink — a calm, minimal stage under the busy first screen. */}
-        <div className="absolute inset-x-0 bottom-0 h-[105svh] bg-gradient-to-b from-transparent via-ink/55 to-ink md:hidden" />
+        <div className="absolute inset-x-0 bottom-0 h-[60svh] bg-gradient-to-b from-transparent via-ink/55 to-ink md:hidden" />
       </div>
 
       <div className="mx-auto max-w-7xl">
@@ -155,9 +155,9 @@ export function Hero() {
           </div>
         </div>
 
-        {/* SCREEN TWO — the three assurances, given their own quiet screen
+        {/* SCREEN TWO — the three assurances, given their own quiet space
             on phones; on desktop they stay the strip under the hero. */}
-        <div className="flex min-h-svh flex-col justify-center pb-16 md:mt-20 md:block md:min-h-0 md:pb-0">
+        <div className="flex min-h-[52svh] flex-col justify-center pt-6 pb-14 md:mt-20 md:block md:min-h-0 md:pt-0 md:pb-0">
           <ul
             className="rise grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-3"
             style={rise(1020)}
