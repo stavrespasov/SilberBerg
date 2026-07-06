@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { Magnetic } from "@/components/Magnetic";
+import { MobileMenu } from "@/components/MobileMenu";
 
 const links = [
   { href: "#cene", key: "prices" },
@@ -41,7 +42,9 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <LocaleSwitcher />
+          <span className="hidden sm:block">
+            <LocaleSwitcher />
+          </span>
           <Magnetic className="hidden sm:inline-block">
             <a
               href="#kontakt"
@@ -50,6 +53,7 @@ export function Header() {
               {t("phoneCta")}
             </a>
           </Magnetic>
+          <MobileMenu />
         </div>
       </div>
     </header>

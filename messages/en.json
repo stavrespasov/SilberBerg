@@ -178,5 +178,9 @@
   "film": {
     "eyebrow": "Under the light",
     "line": "Every gram deserves a careful look."
+  },
+  "menu": {
+    "open": "Menu",
+    "close": "Close menu"
   }
 }

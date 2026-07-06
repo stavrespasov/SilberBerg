@@ -178,5 +178,9 @@
   "film": {
     "eyebrow": "Pod lučjo",
     "line": "Vsak gram si zasluži natančen pogled."
+  },
+  "menu": {
+    "open": "Meni",
+    "close": "Zapri meni"
   }
 }

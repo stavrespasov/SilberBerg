@@ -9,6 +9,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/siteConfig";
 import "../globals.css";
 
 export const viewport: Viewport = {
+  // Colors the browser chrome to match the stage on mobile.
   themeColor: "#0b0b0d",
 };
 

@@ -29,16 +29,21 @@ export function Location() {
           className="group relative mt-12 overflow-hidden rounded-lg border border-line"
         >
           {/* OSM tiles are light; the invert/desaturate filter turns them
-              into a night map without a tile-server dependency. */}
+              into a night map without a tile-server dependency. The map is
+              a picture, not a widget: pointer-events off so scrolling the
+              page never zooms it — the link below opens the real thing. */}
           <iframe
             src={OSM_EMBED_SRC}
             title={t("mapTitle")}
             loading="lazy"
-            className="h-105 w-full [filter:invert(0.92)_hue-rotate(180deg)_saturate(0.25)_brightness(0.92)] transition-transform duration-700 ease-vault group-hover:scale-[1.02] md:h-130"
+            tabIndex={-1}
+            aria-hidden="true"
+            className="pointer-events-none h-72 w-full [filter:invert(0.92)_hue-rotate(180deg)_saturate(0.25)_brightness(0.92)] transition-transform duration-700 ease-vault select-none group-hover:scale-[1.02] sm:h-105 md:h-130"
           />
-          {/* Info card floating over the map — dark glass, hairline edge. */}
-          <div className="pointer-events-none absolute inset-x-4 bottom-4 md:inset-x-auto md:left-8 md:bottom-8 md:w-96">
-            <div className="pointer-events-auto rounded-lg border border-line bg-ink/85 p-6 backdrop-blur-xl">
+          {/* Info card: below the map on phones (covering a small map is
+              worse than a shorter map), floating dark glass from md up. */}
+          <div className="border-t border-line md:absolute md:left-8 md:bottom-8 md:w-96 md:border-t-0">
+            <div className="bg-ink p-6 md:rounded-lg md:border md:border-line md:bg-ink/85 md:backdrop-blur-xl">
               <dl className="flex flex-col gap-5">
                 {rows.map(({ icon: Icon, label, value }) => (
                   <div key={label}>
