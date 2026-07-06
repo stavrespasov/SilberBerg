@@ -4,6 +4,7 @@ import {
   useEffect,
   useRef,
   useState,
+  useSyncExternalStore,
   type CSSProperties,
 } from "react";
 import { createPortal } from "react-dom";
@@ -33,11 +34,14 @@ export function MobileMenu() {
   const t = useTranslations("menu");
   const tNav = useTranslations("nav");
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  // True after hydration only — the portal can't render during SSR.
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const openButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!open) return;
