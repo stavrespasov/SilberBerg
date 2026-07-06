@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import type { CSSProperties } from "react";
 import { BanknoteIcon, ScaleIcon, ShieldIcon } from "@/components/icons";
 import { GoldCanvas } from "@/components/GoldCanvas";
+import { Magnetic } from "@/components/Magnetic";
 import { PillLink } from "@/components/ui/PillLink";
 
 const points = [
@@ -92,16 +93,20 @@ export function Hero() {
               className="rise mt-8 flex flex-wrap items-center gap-3"
               style={rise(800)}
             >
-              <PillLink href="#kontakt" className="w-full sm:w-auto">
-                {t("ctaPrimary")}
-              </PillLink>
-              <PillLink
-                href="#cene"
-                variant="ghost"
-                className="w-full sm:w-auto"
-              >
-                {t("ctaSecondary")}
-              </PillLink>
+              <Magnetic className="w-full sm:w-auto">
+                <PillLink href="#kontakt" className="w-full sm:w-auto">
+                  {t("ctaPrimary")}
+                </PillLink>
+              </Magnetic>
+              <Magnetic className="w-full sm:w-auto">
+                <PillLink
+                  href="#cene"
+                  variant="ghost"
+                  className="w-full sm:w-auto"
+                >
+                  {t("ctaSecondary")}
+                </PillLink>
+              </Magnetic>
             </div>
           </div>
 

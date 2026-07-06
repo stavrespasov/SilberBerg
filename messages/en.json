@@ -174,5 +174,9 @@
     "vatId": "VAT ID",
     "privacy": "Privacy policy",
     "rights": "All rights reserved."
+  },
+  "film": {
+    "eyebrow": "Under the light",
+    "line": "Every gram deserves a careful look."
   }
 }

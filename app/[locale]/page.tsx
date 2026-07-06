@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { faqPageJsonLd, localBusinessJsonLd } from "@/lib/structuredData";
+import { CinematicBand } from "@/components/CinematicBand";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { PriceMarquee } from "@/components/PriceMarquee";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -50,6 +51,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         <HowItWorks />
         <WhatWeBuy />
         <Trust />
+        <CinematicBand />
         <Location />
         <Faq />
         <Contact />

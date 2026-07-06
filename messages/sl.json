@@ -174,5 +174,9 @@
     "vatId": "Davčna številka",
     "privacy": "Politika zasebnosti",
     "rights": "Vse pravice pridržane."
+  },
+  "film": {
+    "eyebrow": "Pod lučjo",
+    "line": "Vsak gram si zasluži natančen pogled."
   }
 }
