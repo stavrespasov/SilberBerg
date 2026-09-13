@@ -3,9 +3,9 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { faqPageJsonLd, localBusinessJsonLd } from "@/lib/structuredData";
+import { BrandBand } from "@/components/BrandBand";
 import { CinematicBand } from "@/components/CinematicBand";
 import { MobileActionBar } from "@/components/MobileActionBar";
-import { PriceMarquee } from "@/components/PriceMarquee";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Contact } from "@/components/sections/Contact";
@@ -15,7 +15,6 @@ import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Location } from "@/components/sections/Location";
-import { PricingTable } from "@/components/sections/PricingTable";
 import { Trust } from "@/components/sections/Trust";
 import { WhatWeBuy } from "@/components/sections/WhatWeBuy";
 
@@ -46,8 +45,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <Header />
       <main id="main">
         <Hero />
-        <PriceMarquee />
-        <PricingTable />
+        <BrandBand />
         <HowItWorks />
         <WhatWeBuy />
         <Trust />

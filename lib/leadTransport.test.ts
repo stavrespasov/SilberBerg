@@ -3,8 +3,7 @@ import { deliverLead, type Lead } from "./leadTransport";
 
 const lead: Lead = {
   name: "Ana Novak",
-  email: "ana@example.com",
-  phone: "",
+  phone: "+386 40 123 456",
   message: "Prodala bi zlato verižico, 14k, približno 12 g.",
   category: "jewelry",
 };
@@ -27,7 +26,7 @@ describe("deliverLead", () => {
     expect(info).toHaveBeenCalledOnce();
     const line = info.mock.calls[0]?.join(" ") ?? "";
     expect(line).toContain("[lead]");
-    expect(line).toContain("ana@example.com");
+    expect(line).toContain("+386 40 123 456");
   });
 
   it("sends via Resend when configured", async () => {

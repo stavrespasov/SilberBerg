@@ -3,6 +3,7 @@ import { MapPinIcon, PhoneIcon, WatchIcon } from "@/components/icons";
 import { ConfirmTag } from "@/components/ui/ConfirmTag";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { CONTACT_PHONE } from "@/lib/siteConfig";
 
 // Koper city centre — placeholder view until the client confirms the address.
 const OSM_EMBED_SRC =
@@ -12,8 +13,11 @@ const OSM_LINK = "https://www.openstreetmap.org/#map=15/45.5469/13.7294";
 const rows = [
   { icon: MapPinIcon, label: "addressLabel", value: "addressPlaceholder" },
   { icon: WatchIcon, label: "hoursLabel", value: "hoursPlaceholder" },
-  { icon: PhoneIcon, label: "phoneLabel", value: "phonePlaceholder" },
 ] as const;
+
+const phoneHref = CONTACT_PHONE
+  ? `tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`
+  : undefined;
 
 /** Address / hours / phone. Rendered twice: floating over the map on
  *  desktop, as its own engraved panel under the map on phones. */
@@ -35,6 +39,26 @@ function InfoCard() {
             </dd>
           </div>
         ))}
+        <div>
+          <dt className="flex items-center gap-3 font-mono text-[10px] tracking-[0.16em] text-smoke uppercase">
+            <PhoneIcon className="size-4 shrink-0 text-gold" />
+            {t("phoneLabel")}
+          </dt>
+          <dd className="mt-1 pl-7 text-[15px] font-medium text-bone">
+            {phoneHref ? (
+              <a
+                href={phoneHref}
+                className="transition-colors duration-200 hover:text-gold-hi"
+              >
+                {CONTACT_PHONE}
+              </a>
+            ) : (
+              <>
+                {t("phonePlaceholder")} <ConfirmTag />
+              </>
+            )}
+          </dd>
+        </div>
       </dl>
       <a
         href={OSM_LINK}

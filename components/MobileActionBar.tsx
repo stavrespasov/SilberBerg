@@ -65,10 +65,10 @@ export function MobileActionBar() {
     >
       <div className="grid grid-cols-2 gap-2 p-3">
         <a
-          href="#cene"
+          href="#odkup"
           className="inline-flex min-h-11 items-center justify-center rounded-full border border-line-2 text-sm font-medium text-bone transition-transform duration-200 active:scale-[0.97]"
         >
-          {t("prices")}
+          {t("buy")}
         </a>
         <a
           href="#kontakt"

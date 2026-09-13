@@ -2,7 +2,14 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
+import { PhoneIcon } from "@/components/icons";
+import { ConfirmTag } from "@/components/ui/ConfirmTag";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { CONTACT_PHONE } from "@/lib/siteConfig";
+
+const phoneHref = CONTACT_PHONE
+  ? `tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`
+  : undefined;
 
 export function Contact() {
   const t = useTranslations("contact");
@@ -15,11 +22,33 @@ export function Contact() {
           <p className="mt-5 max-w-md leading-relaxed text-smoke">
             {t("lead")}
           </p>
+          <div className="engraved mt-8 max-w-md rounded-lg border border-gold-deep/70 p-5 md:p-6">
+            <p className="flex items-center gap-3 font-mono text-[10px] tracking-[0.18em] text-gold uppercase">
+              <PhoneIcon className="size-4" />
+              {t("phoneLabel")}
+            </p>
+            {phoneHref ? (
+              <a
+                href={phoneHref}
+                className="mt-4 block font-display text-3xl font-medium tracking-tight text-bone transition-colors duration-200 hover:text-gold-hi"
+              >
+                {CONTACT_PHONE}
+              </a>
+            ) : (
+              <p className="mt-4 font-display text-2xl font-medium tracking-tight text-bone">
+                {t("phonePending")} <ConfirmTag />
+              </p>
+            )}
+            <p className="mt-3 text-sm leading-relaxed text-smoke">
+              {t("phoneCtaText")}
+            </p>
+          </div>
+
           {/* The appraisal scale (OpenArt still) keeps the left column
-              alive next to the tall form. Decorative. */}
+              alive next to the form without recreating the removed price board. */}
           <div
             aria-hidden="true"
-            className="relative mt-10 hidden aspect-[4/5] max-w-md overflow-hidden rounded-lg border border-line lg:block"
+            className="relative mt-5 hidden aspect-[5/3] max-w-md overflow-hidden rounded-lg border border-line lg:block"
           >
             <Image
               src="/media/scale.jpg"

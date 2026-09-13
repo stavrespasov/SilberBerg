@@ -6,7 +6,6 @@ import { MobileMenu } from "@/components/MobileMenu";
 import { HomeSectionLink } from "@/components/HomeSectionLink";
 
 const links = [
-  { href: "/#cene", key: "prices" },
   { href: "/#postopek", key: "process" },
   { href: "/#odkup", key: "buy" },
   { href: "/#lokacija", key: "location" },

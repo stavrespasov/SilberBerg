@@ -9,7 +9,6 @@ import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { HomeSectionLink } from "@/components/HomeSectionLink";
 
 const links = [
-  { href: "/#cene", key: "prices" },
   { href: "/#postopek", key: "process" },
   { href: "/#odkup", key: "buy" },
   { href: "/#zaupanje", key: "trust" },

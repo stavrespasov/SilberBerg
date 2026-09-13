@@ -10,7 +10,6 @@
   },
   "nav": {
     "railLabel": "Glavna navigacija",
-    "prices": "Cene",
     "process": "Postopek",
     "buy": "Odkup",
     "trust": "Zaupanje",
@@ -18,12 +17,15 @@
     "faq": "Vprašanja",
     "contact": "Stik"
   },
-  "ticker": {
-    "indicative": "okvirne odkupne cene"
+  "brandBand": {
+    "label": "Silberbergove storitve odkupa",
+    "wordmark": "Silberberg",
+    "offer": "Odkup plemenitih kovin",
+    "location": "Koper"
   },
   "actions": {
     "barLabel": "Hitre povezave",
-    "prices": "Cene",
+    "buy": "Kaj odkupujemo",
     "book": "Naročite cenitev"
   },
   "hero": {
@@ -34,22 +36,9 @@
     "point2": "Tehtanje in preizkus pred vašimi očmi",
     "point3": "Takojšnje plačilo ob sprejeti ponudbi",
     "ctaPrimary": "Naročite se na cenitev",
-    "ctaSecondary": "Preverite odkupne cene",
+    "ctaSecondary": "Oglejte si, kaj odkupujemo",
     "hallmarkCaption": "Odkupujemo vse standardne čistine",
     "headingGild": "zlata in srebra"
-  },
-  "pricing": {
-    "eyebrow": "Odkupne cene",
-    "heading": "Okvirne cene po čistini",
-    "lead": "Končno ceno določimo ob cenitvi, glede na dnevni borzni tečaj ter težo in čistino vaših predmetov.",
-    "colFineness": "Čistina",
-    "colKarat": "Karat",
-    "colPrice": "Cena / gram",
-    "gold": "Zlato",
-    "silver": "Srebro",
-    "updated": "Cene posodobljene: {date}",
-    "disclaimer": "Cene so okvirne in se redno spreminjajo. Za današnji točen tečaj pokličite ali se oglasite v poslovalnici.",
-    "cta": "Pokličite za današnji tečaj"
   },
   "how": {
     "eyebrow": "Postopek",
@@ -214,7 +203,7 @@
     "q1": "Kako poteka cenitev?",
     "a1": "Predmete stehtamo na umerjeni tehtnici in preverimo čistino. Vse poteka pred vašimi očmi, postopek pa vam sproti razložimo. Cenitev je brezplačna in traja nekaj minut.",
     "q2": "Koliko je vredno moje zlato?",
-    "a2": "Vrednost določajo teža, čistina in dnevni borzni tečaj. Objavljene cene so okvirne — za točen izračun prinesite predmete na brezplačno cenitev ali nas pokličite.",
+    "a2": "Vrednost določajo teža, čistina in dnevni borzni tečaj. Predmete prinesite na brezplačno cenitev ali nas pokličite za natančno oceno.",
     "q3": "Ali potrebujem osebni dokument?",
     "a3": "Da. Pri odkupu plemenitih kovin zakonodaja zahteva identifikacijo prodajalca. Podatke hranimo v skladu s predpisi in jih ne posredujemo tretjim osebam.",
     "q4": "Odkupite tudi poškodovan ali star nakit?",
@@ -229,9 +218,10 @@
     "heading": "Naročite se na cenitev",
     "lead": "Pišite nam, kaj bi radi prodali, in oglasimo se vam še isti delovni dan. Lahko pa nas preprosto pokličete.",
     "nameLabel": "Ime",
-    "emailLabel": "E-pošta",
     "phoneLabel": "Telefon",
-    "contactHint": "Vpišite e-pošto ali telefonsko številko — dovolj je eno.",
+    "phonePending": "Telefonska številka",
+    "phoneCtaText": "Pokličite nas za brezplačno cenitev in jasen odgovor o vaših predmetih.",
+    "contactHint": "Vpišite telefonsko številko, na kateri vas lahko dosežemo.",
     "categoryLabel": "Kaj prodajate?",
     "categoryPlaceholder": "Izberite (neobvezno)",
     "categoryJewelry": "Nakit",
@@ -248,7 +238,7 @@
     "success": "Hvala za povpraševanje. Oglasimo se vam še isti delovni dan.",
     "errorGeneric": "Pošiljanje ni uspelo. Poskusite znova ali nas pokličite.",
     "errorName": "Vpišite svoje ime.",
-    "errorContact": "Vpišite veljavno e-pošto ali telefonsko številko.",
+    "errorContact": "Vpišite veljavno telefonsko številko.",
     "errorMessage": "Sporočilo naj obsega vsaj 10 znakov.",
     "errorConsent": "Za pošiljanje potrebujemo vaše soglasje."
   },
@@ -259,7 +249,7 @@
     "controllerHeading": "Upravljavec podatkov",
     "controllerText": "Podatki o upravljavcu (polno ime podjetja, naslov, kontakt) bodo objavljeni pred zagonom strani.",
     "collectHeading": "Kateri podatki se zbirajo",
-    "collectText": "Prek kontaktnega obrazca zberemo ime, e-pošto ali telefonsko številko ter vsebino vašega sporočila. Stran ne uporablja sledilnih piškotkov; ob ročni izbiri jezika se shrani zgolj funkcijski piškotek z izbiro.",
+    "collectText": "Prek kontaktnega obrazca zberemo ime, telefonsko številko ter vsebino vašega sporočila. Stran ne uporablja sledilnih piškotkov; ob ročni izbiri jezika se shrani zgolj funkcijski piškotek z izbiro.",
     "purposeHeading": "Namen obdelave",
     "purposeText": "Podatke uporabimo izključno za odgovor na vaše povpraševanje. Ne posredujemo jih tretjim osebam in jih ne uporabljamo za oglaševanje.",
     "retentionHeading": "Hramba",

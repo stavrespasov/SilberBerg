@@ -2,7 +2,7 @@ import type { ContactInput } from "./contactSchema";
 
 export type Lead = Pick<
   ContactInput,
-  "name" | "email" | "phone" | "message" | "category"
+  "name" | "phone" | "message" | "category"
 >;
 
 export type DeliveryResult = {
@@ -42,7 +42,6 @@ export async function deliverLead(lead: Lead): Promise<DeliveryResult> {
       subject: `Povpraševanje: ${lead.name}`,
       text: [
         `Ime: ${lead.name}`,
-        `E-pošta: ${lead.email || "—"}`,
         `Telefon: ${lead.phone || "—"}`,
         `Kategorija: ${lead.category ?? "—"}`,
         "",
