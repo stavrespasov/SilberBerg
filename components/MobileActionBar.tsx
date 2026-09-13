@@ -2,13 +2,18 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { CONTACT_PHONE } from "@/lib/siteConfig";
+
+const phoneHref = CONTACT_PHONE
+  ? `tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`
+  : "#kontakt";
 
 /**
  * Thumb-reach actions pinned to the bottom on phones. It stays hidden
  * while the hero is on screen (its CTAs are already there, so showing
  * these too would put four competing buttons in one view) and again once
- * the contact form is reached (you've arrived — the form's own submit
- * takes over). In between it slides up as a floating layer. Hidden from
+ * the contact section is reached (you've arrived — its phone action takes
+ * over). In between it slides up as a floating layer. Hidden from
  * md up; safe-area padded for gesture-nav devices.
  */
 export function MobileActionBar() {
@@ -71,10 +76,10 @@ export function MobileActionBar() {
           {t("buy")}
         </a>
         <a
-          href="#kontakt"
+          href={phoneHref}
           className="inline-flex min-h-11 items-center justify-center rounded-full bg-bone text-sm font-semibold text-ink transition-transform duration-200 active:scale-[0.97]"
         >
-          {t("book")}
+          {CONTACT_PHONE ? t("call") : t("book")}
         </a>
       </div>
     </nav>

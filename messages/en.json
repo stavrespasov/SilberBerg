@@ -26,7 +26,8 @@
   "actions": {
     "barLabel": "Quick links",
     "buy": "What we buy",
-    "book": "Book an appraisal"
+    "book": "Contact us",
+    "call": "Call us"
   },
   "hero": {
     "eyebrow": "Silberberg · Koper",
@@ -215,32 +216,12 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "heading": "Book an appraisal",
-    "lead": "Tell us what you'd like to sell and we'll reply the same working day. Or simply call us.",
-    "nameLabel": "Name",
+    "heading": "Call for an appraisal",
+    "lead": "Call us to discuss your items and arrange a free appraisal.",
     "phoneLabel": "Phone",
     "phonePending": "Phone number",
     "phoneCtaText": "Call us to arrange a free appraisal and get a clear answer about your items.",
-    "contactHint": "Enter the phone number we should use to reach you.",
-    "categoryLabel": "What are you selling?",
-    "categoryPlaceholder": "Choose (optional)",
-    "categoryJewelry": "Jewellery",
-    "categoryCoins": "Coins",
-    "categoryBars": "Bars",
-    "categoryDental": "Dental gold",
-    "categoryWatches": "Watches",
-    "categoryOther": "Other",
-    "messageLabel": "Message",
-    "messagePlaceholder": "Briefly describe the items — type, rough weight, any fineness marks.",
-    "consentLabel": "I agree that Silberberg may use my details solely to answer this enquiry. <link>Privacy policy</link>",
-    "submit": "Send enquiry",
-    "submitting": "Sending …",
-    "success": "Thank you. We'll reply the same working day.",
-    "errorGeneric": "Sending failed. Try again, or call us.",
-    "errorName": "Enter your name.",
-    "errorContact": "Enter a valid phone number.",
-    "errorMessage": "The message should be at least 10 characters.",
-    "errorConsent": "We need your consent to send the enquiry."
+    "callAction": "Call for an appraisal"
   },
   "privacy": {
     "title": "Privacy policy — Silberberg",
@@ -249,11 +230,11 @@
     "controllerHeading": "Data controller",
     "controllerText": "Controller details (full company name, address, contact) will be published before launch.",
     "collectHeading": "What is collected",
-    "collectText": "Through the contact form we collect your name, phone number, and the content of your message. The site sets no tracking cookies; choosing a language manually stores a single functional cookie with that preference.",
+    "collectText": "This website does not collect contact submissions or contact details through a form. If you call the business, any information you share is handled by phone. The site sets no tracking cookies; choosing a language manually stores a single functional cookie with that preference.",
     "purposeHeading": "Purpose",
-    "purposeText": "Your details are used solely to answer your enquiry. They are not shared with third parties and not used for advertising.",
+    "purposeText": "Any information you choose to share by phone is used solely to assist with your appraisal. It is not shared with third parties or used for advertising.",
     "retentionHeading": "Retention",
-    "retentionText": "Enquiries are kept no longer than needed to handle them, then deleted. Exact periods will be set before launch.",
+    "retentionText": "The site does not store contact submissions. Any business records made after a phone call are kept no longer than needed and then deleted; exact periods will be set before launch.",
     "rightsHeading": "Your rights",
     "rightsText": "You may request access to, correction of, or deletion of your data at any time, and may lodge a complaint with the Slovenian Information Commissioner.",
     "backHome": "Back to the home page"

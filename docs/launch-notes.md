@@ -7,8 +7,6 @@ Working checklist for taking the preview to production. Companion to `docs/desig
 | Var | Purpose | State |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin for metadata, sitemap, JSON-LD | Set to preview URL now; switch to production domain at launch |
-| `RESEND_API_KEY` | Email delivery of contact-form leads | **Unset by design.** Until set, leads are written as structured `[lead]` lines in Vercel runtime logs (never dropped) |
-| `CONTACT_INBOX` | Destination inbox for leads | Client must supply — see open questions |
 
 ## Deliberate decisions
 
@@ -30,7 +28,6 @@ Working checklist for taking the preview to production. Companion to `docs/desig
 - [ ] Client confirms the public phone number in `lib/siteConfig.ts`
 - [ ] Legal entity, reg. number, VAT ID in footer; controller + retention in privacy policy
 - [ ] Address/hours/phone in Location section **and** then add them to LocalBusiness JSON-LD
-- [ ] `RESEND_API_KEY` + `CONTACT_INBOX` set; branded sender domain verified in Resend
 - [ ] `.si` domain registered (ARNES-accredited registrar; see 1D check) and
       `NEXT_PUBLIC_SITE_URL` updated
 - [ ] Confirm mail-in offer (HowItWorks note) and category exclusions (WhatWeBuy note)
@@ -43,8 +40,8 @@ Working checklist for taking the preview to production. Companion to `docs/desig
   ScrollReveal, gold-800 for small text on bone, solid ConfirmTag chip, 55% input
   borders, surface-aware focus ring, skip link). Manual checks: keyboard-only
   navigation, native `<details>` FAQ, honeypot hidden from AT.
-- **Contact flow — verified end-to-end (2026-07-04):** submit → zod validation →
-  structured `[lead]` log line → translated success status.
+- **Contact flow — phone-first:** the homepage displays the confirmed phone number
+  and uses native `tel:` links once configured.
 - Core Web Vitals: fully static prerender (9/9 pages SSG), self-hosted fonts via
   next/font, no render-blocking third parties — re-check PageSpeed once the URL is public.
 
