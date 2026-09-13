@@ -16,9 +16,8 @@ Working checklist for taking the preview to production. Companion to `docs/desig
   functional language preference (exempt under ePrivacy as strictly necessary/preference).
   Disclosed on the privacy page. Vercel Analytics is cookieless and aggregate-only.
   If any marketing/tracking script is ever added, a consent banner becomes mandatory.
-- **No live price feed.** Licensing research (2026-07-04): free spot-price API tiers
-  prohibit public commercial display. The indicative table is manually set in
-  `lib/pricing.config.ts`. Phase 2 option: Metals.Dev paid tier (clean commercial license).
+- **No public price display.** The client requested that the homepage avoid
+  published rates; visitors are directed to an appraisal and phone contact instead.
 - **JSON-LD carries only true facts** — no address/phone/hours in structured data until
   the client confirms them.
 - **`/` always serves Slovenian** (`localeDetection: false`) for local SEO; language
@@ -28,7 +27,7 @@ Working checklist for taking the preview to production. Companion to `docs/desig
 
 - [ ] Replace every `[CONFIRM WITH CLIENT]` tag — grep `CONFIRM WITH CLIENT` must return
       only `ConfirmTag.tsx` itself
-- [ ] Real prices + `pricesUpdatedOn` in `lib/pricing.config.ts`
+- [ ] Client confirms the public phone number in `lib/siteConfig.ts`
 - [ ] Legal entity, reg. number, VAT ID in footer; controller + retention in privacy policy
 - [ ] Address/hours/phone in Location section **and** then add them to LocalBusiness JSON-LD
 - [ ] `RESEND_API_KEY` + `CONTACT_INBOX` set; branded sender domain verified in Resend

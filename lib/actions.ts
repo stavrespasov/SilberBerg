@@ -17,7 +17,6 @@ export async function submitContact(
 ): Promise<ContactFormState> {
   const parsed = contactSchema.safeParse({
     name: formData.get("name") ?? "",
-    email: formData.get("email") ?? "",
     phone: formData.get("phone") ?? "",
     message: formData.get("message") ?? "",
     category: formData.get("category") || undefined,
@@ -30,7 +29,7 @@ export async function submitContact(
     for (const issue of parsed.error.issues) {
       const field = issue.path[0];
       if (field === "name") fieldErrors.name = true;
-      else if (field === "email" || field === "phone") {
+      else if (field === "phone") {
         fieldErrors.contact = true;
       } else if (field === "message") fieldErrors.message = true;
       else if (field === "consent") fieldErrors.consent = true;
@@ -44,7 +43,6 @@ export async function submitContact(
   try {
     await deliverLead({
       name: parsed.data.name,
-      email: parsed.data.email,
       phone: parsed.data.phone,
       message: parsed.data.message,
       category: parsed.data.category,

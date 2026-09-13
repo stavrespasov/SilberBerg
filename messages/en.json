@@ -10,7 +10,6 @@
   },
   "nav": {
     "railLabel": "Main navigation",
-    "prices": "Prices",
     "process": "Process",
     "buy": "What we buy",
     "trust": "Trust",
@@ -18,12 +17,15 @@
     "faq": "Questions",
     "contact": "Contact"
   },
-  "ticker": {
-    "indicative": "indicative buying prices"
+  "brandBand": {
+    "label": "Silberberg buying services",
+    "wordmark": "Silberberg",
+    "offer": "Precious metal buying",
+    "location": "Koper"
   },
   "actions": {
     "barLabel": "Quick links",
-    "prices": "Prices",
+    "buy": "What we buy",
     "book": "Book an appraisal"
   },
   "hero": {
@@ -34,22 +36,9 @@
     "point2": "Weighing and testing in front of you",
     "point3": "Immediate payment when you accept",
     "ctaPrimary": "Book an appraisal",
-    "ctaSecondary": "See buying prices",
+    "ctaSecondary": "Explore what we buy",
     "hallmarkCaption": "We buy all standard finenesses",
     "headingGild": "Gold and silver"
-  },
-  "pricing": {
-    "eyebrow": "Buying prices",
-    "heading": "Indicative prices by fineness",
-    "lead": "The final price is set at appraisal, based on the day's market rate and the weight and fineness of your items.",
-    "colFineness": "Fineness",
-    "colKarat": "Karat",
-    "colPrice": "Price / gram",
-    "gold": "Gold",
-    "silver": "Silver",
-    "updated": "Prices updated: {date}",
-    "disclaimer": "Prices are indicative and change regularly. Call or visit for today's exact rate.",
-    "cta": "Call for today's rate"
   },
   "how": {
     "eyebrow": "The process",
@@ -214,7 +203,7 @@
     "q1": "How does an appraisal work?",
     "a1": "Items are weighed on a calibrated scale and tested for fineness. Everything happens in front of you, and we explain the process as we go. Appraisal is free and takes a few minutes.",
     "q2": "How much is my gold worth?",
-    "a2": "Weight, fineness and the day's market rate set the value. Published prices are indicative — for an exact figure, bring your items in for a free appraisal or call us.",
+    "a2": "Weight, fineness and the day's market rate set the value. Bring your items in for a free appraisal or call us for an exact assessment.",
     "q3": "Do I need an ID?",
     "a3": "Yes. The law requires seller identification when precious metals are bought. Your details are kept as regulations require and are not passed to third parties.",
     "q4": "Do you buy damaged or old jewellery?",
@@ -229,9 +218,10 @@
     "heading": "Book an appraisal",
     "lead": "Tell us what you'd like to sell and we'll reply the same working day. Or simply call us.",
     "nameLabel": "Name",
-    "emailLabel": "Email",
     "phoneLabel": "Phone",
-    "contactHint": "Enter an email or a phone number — one is enough.",
+    "phonePending": "Phone number",
+    "phoneCtaText": "Call us to arrange a free appraisal and get a clear answer about your items.",
+    "contactHint": "Enter the phone number we should use to reach you.",
     "categoryLabel": "What are you selling?",
     "categoryPlaceholder": "Choose (optional)",
     "categoryJewelry": "Jewellery",
@@ -248,7 +238,7 @@
     "success": "Thank you. We'll reply the same working day.",
     "errorGeneric": "Sending failed. Try again, or call us.",
     "errorName": "Enter your name.",
-    "errorContact": "Enter a valid email or phone number.",
+    "errorContact": "Enter a valid phone number.",
     "errorMessage": "The message should be at least 10 characters.",
     "errorConsent": "We need your consent to send the enquiry."
   },
@@ -259,7 +249,7 @@
     "controllerHeading": "Data controller",
     "controllerText": "Controller details (full company name, address, contact) will be published before launch.",
     "collectHeading": "What is collected",
-    "collectText": "Through the contact form we collect your name, email or phone number, and the content of your message. The site sets no tracking cookies; choosing a language manually stores a single functional cookie with that preference.",
+    "collectText": "Through the contact form we collect your name, phone number, and the content of your message. The site sets no tracking cookies; choosing a language manually stores a single functional cookie with that preference.",
     "purposeHeading": "Purpose",
     "purposeText": "Your details are used solely to answer your enquiry. They are not shared with third parties and not used for advertising.",
     "retentionHeading": "Retention",

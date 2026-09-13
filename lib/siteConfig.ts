@@ -7,3 +7,6 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const SITE_NAME = "Silberberg";
+
+/** Replace this once with the client's confirmed public phone number. */
+export const CONTACT_PHONE: string = "";

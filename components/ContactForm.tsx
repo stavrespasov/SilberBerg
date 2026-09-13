@@ -68,39 +68,22 @@ export function ContactForm() {
         )}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label htmlFor="contact-email" className={labelClass}>
-            {t("emailLabel")}
-          </label>
-          <input
-            id="contact-email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            aria-invalid={errors.contact ? true : undefined}
-            aria-describedby={
-              errors.contact ? "contact-hint error-contact" : "contact-hint"
-            }
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="contact-phone" className={labelClass}>
-            {t("phoneLabel")}
-          </label>
-          <input
-            id="contact-phone"
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            aria-invalid={errors.contact ? true : undefined}
-            aria-describedby={
-              errors.contact ? "contact-hint error-contact" : "contact-hint"
-            }
-            className={inputClass}
-          />
-        </div>
+      <div>
+        <label htmlFor="contact-phone" className={labelClass}>
+          {t("phoneLabel")}
+        </label>
+        <input
+          id="contact-phone"
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          required
+          aria-invalid={errors.contact ? true : undefined}
+          aria-describedby={
+            errors.contact ? "contact-hint error-contact" : "contact-hint"
+          }
+          className={inputClass}
+        />
       </div>
       <p id="contact-hint" className="-mt-2 text-sm text-smoke">
         {t("contactHint")}

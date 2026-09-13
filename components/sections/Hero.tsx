@@ -109,7 +109,7 @@ export function Hero() {
                 </Magnetic>
                 <Magnetic className="w-full sm:w-auto">
                   <PillLink
-                    href="#cene"
+                    href="#odkup"
                     variant="ghost"
                     className="w-full sm:w-auto"
                   >

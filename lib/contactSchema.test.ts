@@ -3,8 +3,7 @@ import { contactSchema } from "./contactSchema";
 
 const valid = {
   name: "Ana Novak",
-  email: "ana@example.com",
-  phone: "",
+  phone: "+386 40 123 456",
   message: "Rada bi cenitev za zlato verižico, podedovano po babici.",
   category: "jewelry",
   website: "", // honeypot
@@ -16,28 +15,22 @@ describe("contactSchema", () => {
     expect(contactSchema.safeParse(valid).success).toBe(true);
   });
 
-  it("accepts phone-only contact (Slovenian formats)", () => {
+  it("accepts valid Slovenian phone formats", () => {
     for (const phone of ["+386 40 123 456", "040 123 456", "+386(0)40123456"]) {
-      const r = contactSchema.safeParse({ ...valid, email: "", phone });
+      const r = contactSchema.safeParse({ ...valid, phone });
       expect(r.success, phone).toBe(true);
     }
   });
 
-  it("rejects submissions with neither email nor phone", () => {
-    const r = contactSchema.safeParse({ ...valid, email: "", phone: "" });
+  it("rejects submissions without a phone number", () => {
+    const r = contactSchema.safeParse({ ...valid, phone: "" });
     expect(r.success).toBe(false);
-  });
-
-  it("rejects malformed email", () => {
-    expect(
-      contactSchema.safeParse({ ...valid, email: "not-an-email" }).success,
-    ).toBe(false);
   });
 
   it("rejects junk phone strings", () => {
     for (const phone of ["abc", "12", "call me maybe"]) {
       expect(
-        contactSchema.safeParse({ ...valid, email: "", phone }).success,
+        contactSchema.safeParse({ ...valid, phone }).success,
         phone,
       ).toBe(false);
     }

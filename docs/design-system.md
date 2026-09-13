@@ -12,7 +12,7 @@ renders light on purpose — it prints.
 | Token | Value | Role |
 |---|---|---|
 | `ink` | `#0B0B0D` | page ground — the stage |
-| `ink-2` | `#101013` | raised ground (ticker, boards) |
+| `ink-2` | `#101013` | raised ground (brand rail, boards) |
 | `coal` | `#16161A` | panels, cards |
 | `coal-2` | `#1C1C21` | hover/active surfaces |
 | `line` | `#26262C` | hairline borders |
@@ -36,8 +36,8 @@ direction, v4.1. Easing: `--ease-vault` = `cubic-bezier(0.16, 1, 0.3, 1)`
 - **Display — Boska 500/700** (`font-display`, self-hosted woff2 in
   `app/fonts/`, Fontshare/ITF licence). Every `h1/h2/h3`, the wordmark.
 - **Body — Geist** (`font-sans`). Unchanged from v3; carried over.
-- **Data — Geist Mono** (`font-mono`). Every number: prices, hallmarks,
-  eyebrows, form labels. Always `tabular-nums`.
+- **Data — Geist Mono** (`font-mono`). Every number: hallmarks, eyebrows, form
+  labels. Always `tabular-nums`.
 - Eyebrows/labels: mono, uppercase, `tracking-[0.14em]`–`[0.2em]`.
 
 ## Surfaces
@@ -45,7 +45,7 @@ direction, v4.1. Easing: `--ease-vault` = `cubic-bezier(0.16, 1, 0.3, 1)`
 - `.engraved` — pressed into the metal: coal + inset shadows. Trust
   blocks, the contact form, privacy sections.
 - `.gild-border` — 1px gold-gradient edge. Reserved for the single
-  highest-value surface per view (the assay price board).
+  highest-value surface per view.
 - `.letterpress` — ghost type stamped into the ground (step numerals,
   footer wordmark, 404).
 - `.sheen` / `.sheen-soft` — light band sweeping on hover. `sheen` on
@@ -59,11 +59,10 @@ direction, v4.1. Easing: `--ease-vault` = `cubic-bezier(0.16, 1, 0.3, 1)`
 | 01 | Intro choreography — SILBERBERG letters rise from masks | hero, on load | `.mask`/`.rise` CSS keyframes |
 | 02 | Liquid gold — domain-warped molten smoke, pointer parallax | hero backdrop | `GoldCanvas` raw-WebGL fragment shader; CSS glow poster fallback |
 | 03 | Pinned process — horizontal glide + gold rail | #postopek | GSAP ScrollTrigger (`ProcessScene`), ≥768px only |
-| 04 | Count-up prices | assay board | `CountUp` (rAF) |
-| 05 | Sheen sweeps + lift | CTAs, cards | CSS |
-| 06 | Scroll reveals (rise/scale/blur/group-stagger) | sections | one IntersectionObserver (`Reveal`) |
-| 07 | Ambient stage — grain, breathing glow, light sweep | global/hero | `body::after` SVG noise, CSS keyframes |
-| 08 | Engraved wordmark, letter by letter | footer | `Reveal variant="group"` + `.g` delays |
+| 04 | Sheen sweeps + lift | CTAs, cards | CSS |
+| 05 | Scroll reveals (rise/scale/blur/group-stagger) | sections | one IntersectionObserver (`Reveal`) |
+| 06 | Ambient stage — grain, breathing glow, light sweep | global/hero | `body::after` SVG noise, CSS keyframes |
+| 07 | Engraved wordmark, letter by letter | footer | `Reveal variant="group"` + `.g` delays |
 
 Rules: GSAP is the only animation runtime beyond CSS (no framer-motion).
 Lenis is driven by GSAP's ticker (`SmoothScroll`) so pins don't jitter.
