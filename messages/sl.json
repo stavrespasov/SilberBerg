@@ -9,7 +9,7 @@
     "skip": "Na vsebino"
   },
   "nav": {
-    "railLabel": "Razdelki strani",
+    "railLabel": "Glavna navigacija",
     "prices": "Cene",
     "process": "Postopek",
     "buy": "Odkup",
@@ -66,20 +66,125 @@
   },
   "buy": {
     "eyebrow": "Kaj odkupujemo",
-    "heading": "Odkupujemo zlato in srebro v vseh oblikah",
-    "jewelryName": "Nakit",
-    "jewelryDesc": "Verižice, prstani, zapestnice, uhani — tudi poškodovani ali brez para.",
-    "coinsName": "Kovanci",
-    "coinsDesc": "Zlatniki in srebrniki, priložnostni in naložbeni kovanci.",
-    "barsName": "Palice",
-    "barsDesc": "Naložbene palice vseh velikosti, s certifikatom ali brez.",
-    "dentalName": "Zobno zlato",
-    "dentalDesc": "Krone in mostički, očiščeni ali ne.",
-    "watchesName": "Ure",
-    "watchesDesc": "Zlate in srebrne ure ter ohišja.",
-    "scrapName": "Lomljeno zlato",
-    "scrapDesc": "Pretrgan, neparen ali star nakit — vrednost določata teža in čistina.",
-    "exclusionsNote": "Seznam kategorij in morebitne izjeme potrdimo z naročnikom."
+    "heading": "Prostor za vaše dragocenosti",
+    "categoryNav": "Kategorije odkupa",
+    "weBuy": "Odkupujemo",
+    "appraisal": "Dogovorite se za cenitev",
+    "viewCategory": "Oglejte si kategorijo",
+    "gallery": {
+      "description": "Način galerije",
+      "studio": "Studio",
+      "outdoor": "Na prostem",
+      "pause": "Ustavi diaprojekcijo",
+      "resume": "Nadaljuj diaprojekcijo"
+    },
+    "metals": {
+      "title": "Plemenite kovine",
+      "description": "Odkup zlata, srebra, platine in kositra v Kopru. Brezplačno svetovanje, cenitve in obiski na domu po dogovoru.",
+      "preview": "Nakit, naložbeno zlato, kovanci in še več. Oglejte si vse kovine in predmete, ki jih odkupujemo.",
+      "noticeHeading": "Brezplačno svetovanje in cenitve",
+      "notice": "Nudimo brezplačno svetovanje, brezplačne cenitve in po dogovoru tudi brezplačen obisk na vašem domu!",
+      "items": {
+        "jewellery": "Zlat in srebrn nakit",
+        "investment": "Naložbeno zlato",
+        "dental": "Zobno zlato (tudi zlato, ki je še pritrjeno na zob)",
+        "scrap": "Lomljeno zlato",
+        "coins": "Zlati in srebrni kovanci",
+        "cutlery": "Srebrn jedilni pribor",
+        "platinum": "Platina",
+        "tin": "Kositer"
+      },
+      "photos": {
+        "investment": {
+          "caption": "Naložbeno zlato",
+          "alt": "Dve naložbeni zlati palici na temni podlagi"
+        },
+        "jewellery": {
+          "caption": "Zlat in srebrn nakit",
+          "alt": "Zlati prstani in zapestnice na svetli podlagi"
+        },
+        "cutlery": {
+          "caption": "Srebrn jedilni pribor",
+          "alt": "Okrasen starinski srebrn jedilni pribor na platnu"
+        },
+        "dental": {
+          "caption": "Zobno zlato",
+          "alt": "Bližnji posnetek zlate zobne krone"
+        }
+      }
+    },
+    "fur": {
+      "title": "Krzneni in usnjeni izdelki",
+      "description": "Odkup krznenih in usnjenih oblačil ter dodatkov v Kopru, izključno ob sočasni prodaji zlata.",
+      "preview": "Krzneni plašči, usnjene jakne in dodatki. Novo poglavje za kose, ki jih ne nosite več.",
+      "noticeHeading": "Pogoj odkupa",
+      "notice": "Krzneni in usnjeni izdelki se odkupujejo samo ob sočasni prodaji zlata.",
+      "items": {
+        "furCoats": "Krznene jakne in plašči",
+        "collars": "Krzneni ovratniki",
+        "hats": "Krznena pokrivala",
+        "leatherCoats": "Usnjene jakne in plašči",
+        "trousers": "Usnjene hlače",
+        "belts": "Usnjeni pasovi",
+        "handbags": "Usnjene torbice"
+      },
+      "photos": {
+        "jacket": {
+          "caption": "Krznene jakne",
+          "alt": "Rjava krznena jakna, prikazana od zadaj na prostem"
+        },
+        "leather": {
+          "caption": "Usnjene jakne",
+          "alt": "Črna usnjena jakna, prikazana od zadaj"
+        },
+        "coat": {
+          "caption": "Krzneni plašči",
+          "alt": "Dolg rjav krznen plašč, prikazan od zadaj"
+        },
+        "collar": {
+          "caption": "Krzneni ovratniki",
+          "alt": "Svetel krznen ovratnik, prikazan od vratu navzdol"
+        }
+      }
+    },
+    "other": {
+      "title": "Drugi predmeti",
+      "description": "Odkup ur priznanih proizvajalcev, dizajnerskih torbic, nakita in drugih dragocenosti v Kopru, izključno ob sočasni prodaji zlata.",
+      "preview": "Prestižne ure, dizajnerske torbice, nakit in dragoceni predmeti. Oglejte si celoten seznam odkupa.",
+      "noticeHeading": "Pogoj odkupa",
+      "notice": "Ti predmeti se odkupujejo samo ob sočasni prodaji zlata.",
+      "items": {
+        "watches": "Ure prestižnih proizvajalcev",
+        "handbags": "Dizajnerske torbice",
+        "diamonds": "Diamanti",
+        "amber": "Nakit iz jantarja",
+        "wigs": "Lasulje",
+        "instruments": "Glasbila",
+        "golf": "Palice za golf",
+        "crystal": "Kristalni izdelki",
+        "porcelain": "Porcelanasti izdelki",
+        "cameras": "Starinski fotoaparati",
+        "sewing": "Šivalni stroji"
+      },
+      "photos": {
+        "watch": {
+          "caption": "Prestižne ure",
+          "alt": "Zapestna ura s temno številčnico in usnjenim paščkom na marmorju"
+        },
+        "handbag": {
+          "caption": "Dizajnerske torbice",
+          "alt": "Dizajnerska torbica z verižnim ročajem"
+        },
+        "camera": {
+          "caption": "Starinski fotoaparati",
+          "alt": "Starinski fotoaparat z mehom na temni podlagi"
+        },
+        "sewing": {
+          "caption": "Šivalni stroji",
+          "alt": "Bližnji posnetek šivalnega stroja"
+        }
+      }
+    }
   },
   "trust": {
     "eyebrow": "Zaupanje",

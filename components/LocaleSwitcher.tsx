@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
-export function LocaleSwitcher() {
+export function LocaleSwitcher({ onSwitch }: { onSwitch?: () => void }) {
   const locale = useLocale();
   const pathname = usePathname();
   const t = useTranslations("header");
@@ -19,11 +19,10 @@ export function LocaleSwitcher() {
           key={l}
           href={pathname}
           locale={l}
+          onClick={onSwitch}
           aria-current={l === locale ? "true" : undefined}
           className={`rounded-full px-3 py-1.5 font-mono text-xs font-semibold uppercase transition-colors duration-200 ${
-            l === locale
-              ? "bg-coal-2 text-gold"
-              : "text-smoke hover:text-bone"
+            l === locale ? "bg-coal-2 text-gold" : "text-smoke hover:text-bone"
           }`}
         >
           {l}
