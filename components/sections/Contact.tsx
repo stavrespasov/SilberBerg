@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
 import { PhoneIcon } from "@/components/icons";
 import { ConfirmTag } from "@/components/ui/ConfirmTag";
@@ -44,30 +43,39 @@ export function Contact() {
             </p>
           </div>
 
-          {/* The appraisal scale (OpenArt still) keeps the left column
-              alive next to the form without recreating the removed price board. */}
-          <div
-            aria-hidden="true"
-            className="relative mt-5 hidden aspect-[5/3] max-w-md overflow-hidden rounded-lg border border-line lg:block"
-          >
+        </Reveal>
+        <Reveal delay={100}>
+          <div className="relative min-h-full overflow-hidden rounded-lg border border-line bg-coal">
             <Image
               src="/media/scale.jpg"
               alt=""
               fill
-              sizes="(max-width: 1024px) 0px, 448px"
-              quality={70}
+              sizes="(max-width: 1024px) 100vw, 576px"
+              quality={75}
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
-            <p className="absolute bottom-4 left-5 flex items-center gap-3 font-mono text-[10px] tracking-[0.2em] text-gold uppercase">
-              <span className="h-px w-6 bg-gold/60" />
-              {t("eyebrow")}
-            </p>
-          </div>
-        </Reveal>
-        <Reveal delay={100}>
-          <div className="engraved relative rounded-lg p-6 md:p-8">
-            <ContactForm />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/10" />
+            <div className="relative flex min-h-[24rem] flex-col justify-end p-6 md:min-h-[30rem] md:p-8">
+              <p className="flex items-center gap-3 font-mono text-[10px] tracking-[0.2em] text-gold uppercase">
+                <span className="h-px w-6 bg-gold/60" />
+                {t("eyebrow")}
+              </p>
+              <p className="mt-3 max-w-sm font-display text-3xl leading-tight text-bone md:text-4xl">
+                {t("phoneCtaText")}
+              </p>
+              {phoneHref ? (
+                <a
+                  href={phoneHref}
+                  className="mt-6 inline-flex min-h-11 w-fit items-center rounded-full bg-bone px-5 text-sm font-semibold text-ink transition-colors duration-300 hover:bg-gold"
+                >
+                  {t("callAction")} ↗
+                </a>
+              ) : (
+                <p className="mt-6 text-sm text-smoke">
+                  {t("phonePending")} <ConfirmTag />
+                </p>
+              )}
+            </div>
           </div>
         </Reveal>
       </div>

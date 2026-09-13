@@ -26,7 +26,8 @@
   "actions": {
     "barLabel": "Hitre povezave",
     "buy": "Kaj odkupujemo",
-    "book": "Naročite cenitev"
+    "book": "Kontakt",
+    "call": "Pokličite nas"
   },
   "hero": {
     "eyebrow": "Silberberg · Koper",
@@ -215,32 +216,12 @@
   },
   "contact": {
     "eyebrow": "Stik",
-    "heading": "Naročite se na cenitev",
-    "lead": "Pišite nam, kaj bi radi prodali, in oglasimo se vam še isti delovni dan. Lahko pa nas preprosto pokličete.",
-    "nameLabel": "Ime",
+    "heading": "Pokličite za cenitev",
+    "lead": "Pokličite nas, pogovorimo se o vaših predmetih in dogovorimo brezplačno cenitev.",
     "phoneLabel": "Telefon",
     "phonePending": "Telefonska številka",
     "phoneCtaText": "Pokličite nas za brezplačno cenitev in jasen odgovor o vaših predmetih.",
-    "contactHint": "Vpišite telefonsko številko, na kateri vas lahko dosežemo.",
-    "categoryLabel": "Kaj prodajate?",
-    "categoryPlaceholder": "Izberite (neobvezno)",
-    "categoryJewelry": "Nakit",
-    "categoryCoins": "Kovanci",
-    "categoryBars": "Palice",
-    "categoryDental": "Zobno zlato",
-    "categoryWatches": "Ure",
-    "categoryOther": "Drugo",
-    "messageLabel": "Sporočilo",
-    "messagePlaceholder": "Na kratko opišite predmete — vrsta, približna teža, morebitne oznake čistine.",
-    "consentLabel": "Strinjam se, da Silberberg moje podatke uporabi izključno za odgovor na povpraševanje. <link>Politika zasebnosti</link>",
-    "submit": "Pošljite povpraševanje",
-    "submitting": "Pošiljanje …",
-    "success": "Hvala za povpraševanje. Oglasimo se vam še isti delovni dan.",
-    "errorGeneric": "Pošiljanje ni uspelo. Poskusite znova ali nas pokličite.",
-    "errorName": "Vpišite svoje ime.",
-    "errorContact": "Vpišite veljavno telefonsko številko.",
-    "errorMessage": "Sporočilo naj obsega vsaj 10 znakov.",
-    "errorConsent": "Za pošiljanje potrebujemo vaše soglasje."
+    "callAction": "Pokličite za cenitev"
   },
   "privacy": {
     "title": "Politika zasebnosti — Silberberg",
@@ -249,11 +230,11 @@
     "controllerHeading": "Upravljavec podatkov",
     "controllerText": "Podatki o upravljavcu (polno ime podjetja, naslov, kontakt) bodo objavljeni pred zagonom strani.",
     "collectHeading": "Kateri podatki se zbirajo",
-    "collectText": "Prek kontaktnega obrazca zberemo ime, telefonsko številko ter vsebino vašega sporočila. Stran ne uporablja sledilnih piškotkov; ob ročni izbiri jezika se shrani zgolj funkcijski piškotek z izbiro.",
+    "collectText": "Ta spletna stran prek obrazca ne zbira povpraševanj ali kontaktnih podatkov. Če pokličete podjetje, se vse informacije, ki jih posredujete, obravnavajo po telefonu. Stran ne uporablja sledilnih piškotkov; ob ročni izbiri jezika se shrani zgolj funkcijski piškotek z izbiro.",
     "purposeHeading": "Namen obdelave",
-    "purposeText": "Podatke uporabimo izključno za odgovor na vaše povpraševanje. Ne posredujemo jih tretjim osebam in jih ne uporabljamo za oglaševanje.",
+    "purposeText": "Vse informacije, ki jih po telefonu prostovoljno posredujete, uporabimo izključno za pomoč pri cenitvi. Ne posredujemo jih tretjim osebam in jih ne uporabljamo za oglaševanje.",
     "retentionHeading": "Hramba",
-    "retentionText": "Povpraševanja hranimo največ toliko časa, kolikor je potrebno za obravnavo, nato jih izbrišemo. Točni roki bodo določeni pred zagonom.",
+    "retentionText": "Stran ne shranjuje kontaktnih povpraševanj. Morebitne poslovne zapise po telefonskem klicu hranimo največ toliko časa, kolikor je potrebno, nato jih izbrišemo; točni roki bodo določeni pred zagonom.",
     "rightsHeading": "Vaše pravice",
     "rightsText": "Kadar koli lahko zahtevate vpogled, popravek ali izbris svojih podatkov ter vložite pritožbo pri Informacijskem pooblaščencu RS.",
     "backHome": "Nazaj na domačo stran"

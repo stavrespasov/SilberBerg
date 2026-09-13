@@ -4,12 +4,20 @@ import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { Magnetic } from "@/components/Magnetic";
 import { MobileMenu } from "@/components/MobileMenu";
 import { HomeSectionLink } from "@/components/HomeSectionLink";
+import { CONTACT_PHONE } from "@/lib/siteConfig";
 
 const links = [
   { href: "/#postopek", key: "process" },
   { href: "/#odkup", key: "buy" },
   { href: "/#lokacija", key: "location" },
 ] as const;
+
+const phoneHref = CONTACT_PHONE
+  ? `tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`
+  : undefined;
+
+const phoneCtaClass =
+  "inline-flex min-h-10 items-center rounded-full bg-bone px-4 text-sm font-semibold whitespace-nowrap text-ink transition-colors duration-300 hover:bg-gold";
 
 /** Floating dark-glass bar — fixed, hairline-bordered, out of the way. */
 export function Header() {
@@ -50,12 +58,15 @@ export function Header() {
             <LocaleSwitcher />
           </span>
           <Magnetic className="hidden sm:inline-block">
-            <HomeSectionLink
-              href="/#kontakt"
-              className="inline-flex min-h-10 items-center rounded-full bg-bone px-4 text-sm font-semibold whitespace-nowrap text-ink transition-colors duration-300 hover:bg-gold"
-            >
-              {t("phoneCta")}
-            </HomeSectionLink>
+            {phoneHref ? (
+              <a href={phoneHref} className={phoneCtaClass}>
+                {t("phoneCta")}
+              </a>
+            ) : (
+              <HomeSectionLink href="/#kontakt" className={phoneCtaClass}>
+                {t("phoneCta")}
+              </HomeSectionLink>
+            )}
           </Magnetic>
           <MobileMenu />
         </div>

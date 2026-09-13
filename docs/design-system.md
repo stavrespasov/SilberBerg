@@ -43,7 +43,7 @@ direction, v4.1. Easing: `--ease-vault` = `cubic-bezier(0.16, 1, 0.3, 1)`
 ## Surfaces
 
 - `.engraved` — pressed into the metal: coal + inset shadows. Trust
-  blocks, the contact form, privacy sections.
+  blocks, the contact phone panel, privacy sections.
 - `.gild-border` — 1px gold-gradient edge. Reserved for the single
   highest-value surface per view.
 - `.letterpress` — ghost type stamped into the ground (step numerals,
