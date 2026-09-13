@@ -9,7 +9,7 @@
     "skip": "Skip to content"
   },
   "nav": {
-    "railLabel": "Page sections",
+    "railLabel": "Main navigation",
     "prices": "Prices",
     "process": "Process",
     "buy": "What we buy",
@@ -66,20 +66,125 @@
   },
   "buy": {
     "eyebrow": "What we buy",
-    "heading": "We buy gold and silver in every form",
-    "jewelryName": "Jewellery",
-    "jewelryDesc": "Chains, rings, bracelets, earrings — damaged or unpaired included.",
-    "coinsName": "Coins",
-    "coinsDesc": "Gold and silver coins, commemorative and bullion.",
-    "barsName": "Bars",
-    "barsDesc": "Investment bars of any size, with or without certificate.",
-    "dentalName": "Dental gold",
-    "dentalDesc": "Crowns and bridges, cleaned or not.",
-    "watchesName": "Watches",
-    "watchesDesc": "Gold and silver watches and cases.",
-    "scrapName": "Scrap gold",
-    "scrapDesc": "Broken, unpaired or old jewellery — weight and fineness set the value.",
-    "exclusionsNote": "Category list and exclusions to be confirmed with the client."
+    "heading": "A place for your valuables",
+    "categoryNav": "Buying categories",
+    "weBuy": "We buy",
+    "appraisal": "Book an appraisal",
+    "viewCategory": "Explore category",
+    "gallery": {
+      "description": "Gallery treatment",
+      "studio": "Studio",
+      "outdoor": "Outdoor",
+      "pause": "Pause slideshow",
+      "resume": "Resume slideshow"
+    },
+    "metals": {
+      "title": "Precious Metals",
+      "description": "Gold, silver, platinum and tin buying in Koper. Free consultations, free valuations and free home visits by arrangement.",
+      "preview": "Jewellery, investment gold, coins and more. Discover all the metals and items we buy.",
+      "noticeHeading": "Free consultations & valuations",
+      "notice": "We offer free consultations, free valuations, and, by arrangement, we can also visit you at your home free of charge!",
+      "items": {
+        "jewellery": "Gold and silver jewellery",
+        "investment": "Investment gold",
+        "dental": "Dental gold (including gold still attached to a tooth)",
+        "scrap": "Scrap gold",
+        "coins": "Gold and silver coins",
+        "cutlery": "Silver cutlery",
+        "platinum": "Platinum",
+        "tin": "Tin"
+      },
+      "photos": {
+        "investment": {
+          "caption": "Investment gold",
+          "alt": "Two fine gold bullion bars on a dark surface"
+        },
+        "jewellery": {
+          "caption": "Gold and silver jewellery",
+          "alt": "Gold rings and bracelets arranged on a light surface"
+        },
+        "cutlery": {
+          "caption": "Silver cutlery",
+          "alt": "Decorative vintage silver cutlery on linen"
+        },
+        "dental": {
+          "caption": "Dental gold",
+          "alt": "Close-up of a gold dental crown"
+        }
+      }
+    },
+    "fur": {
+      "title": "Fur and Leather Products",
+      "description": "We buy fur and leather clothing and accessories in Koper, only when gold is sold at the same time.",
+      "preview": "Fur coats, leather jackets and accessories. Give the pieces you no longer wear a new chapter.",
+      "noticeHeading": "Purchase condition",
+      "notice": "Fur and leather products are purchased only when gold is being sold at the same time.",
+      "items": {
+        "furCoats": "Fur jackets and coats",
+        "collars": "Fur collars",
+        "hats": "Fur hats",
+        "leatherCoats": "Leather jackets and coats",
+        "trousers": "Leather trousers",
+        "belts": "Leather belts",
+        "handbags": "Leather handbags"
+      },
+      "photos": {
+        "jacket": {
+          "caption": "Fur jackets",
+          "alt": "Brown fur jacket shown from the back outdoors"
+        },
+        "leather": {
+          "caption": "Leather jackets",
+          "alt": "Black leather jacket shown from the back"
+        },
+        "coat": {
+          "caption": "Fur coats",
+          "alt": "Long brown fur coat shown from the back"
+        },
+        "collar": {
+          "caption": "Fur collars",
+          "alt": "Light fur collar shown from the neckline down"
+        }
+      }
+    },
+    "other": {
+      "title": "Other Items",
+      "description": "Premium watches, designer handbags, jewellery and other valuables in Koper, purchased only alongside a gold sale.",
+      "preview": "Fine watches, designer handbags, jewellery and treasured objects. See the full list of items we buy.",
+      "noticeHeading": "Purchase condition",
+      "notice": "These items are purchased only when gold is being sold at the same time.",
+      "items": {
+        "watches": "Watches from premium manufacturers",
+        "handbags": "Designer handbags",
+        "diamonds": "Diamonds",
+        "amber": "Amber jewellery",
+        "wigs": "Wigs",
+        "instruments": "Musical instruments",
+        "golf": "Golf clubs",
+        "crystal": "Crystal items",
+        "porcelain": "Porcelain items",
+        "cameras": "Vintage cameras",
+        "sewing": "Sewing machines"
+      },
+      "photos": {
+        "watch": {
+          "caption": "Premium watches",
+          "alt": "Wristwatch with a dark dial and leather strap on marble"
+        },
+        "handbag": {
+          "caption": "Designer handbags",
+          "alt": "Designer handbag with a chain strap"
+        },
+        "camera": {
+          "caption": "Vintage cameras",
+          "alt": "Vintage bellows camera against a dark background"
+        },
+        "sewing": {
+          "caption": "Sewing machines",
+          "alt": "Close-up of a sewing machine"
+        }
+      }
+    }
   },
   "trust": {
     "eyebrow": "Trust",

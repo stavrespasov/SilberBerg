@@ -46,3 +46,6 @@ next-env.d.ts
 .vercel
 .env*
 .playwright-mcp/
+
+# local source photos used during image preparation
+/media/

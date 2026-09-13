@@ -1,64 +1,61 @@
 import { useTranslations } from "next-intl";
-import type { ComponentType, SVGProps } from "react";
-import {
-  CoinIcon,
-  DentalIcon,
-  HallmarkIcon,
-  IngotIcon,
-  RingIcon,
-  WatchIcon,
-} from "@/components/icons";
-import { ConfirmTag } from "@/components/ui/ConfirmTag";
+import { Link } from "@/i18n/navigation";
+import { buyingCategories } from "@/lib/buying";
+import { BuyingPhoto } from "@/components/BuyingPhoto";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-type Item = {
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
-  name: string;
-  desc: string;
-};
-
-const items: readonly Item[] = [
-  { icon: RingIcon, name: "jewelryName", desc: "jewelryDesc" },
-  { icon: CoinIcon, name: "coinsName", desc: "coinsDesc" },
-  { icon: IngotIcon, name: "barsName", desc: "barsDesc" },
-  { icon: DentalIcon, name: "dentalName", desc: "dentalDesc" },
-  { icon: WatchIcon, name: "watchesName", desc: "watchesDesc" },
-  { icon: HallmarkIcon, name: "scrapName", desc: "scrapDesc" },
-];
-
 export function WhatWeBuy() {
   const t = useTranslations("buy");
-
   return (
     <section id="odkup" className="scroll-mt-24 px-4 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
         </Reveal>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item, i) => (
-            <li key={item.name}>
-              <Reveal
-                delay={(i % 3) * 90}
-                variant="scale"
-                className="sheen sheen-soft group h-full rounded-lg border border-line bg-coal p-7 transition-[border-color,transform] duration-300 ease-vault hover:-translate-y-1 hover:border-line-2"
-              >
-                <item.icon className="size-6 text-gold transition-transform duration-300 ease-vault group-hover:scale-110 group-hover:-rotate-3" />
-                <h3 className="mt-5 font-display text-2xl font-medium tracking-tight text-bone">
-                  {t(item.name)}
-                </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-smoke">
-                  {t(item.desc)}
-                </p>
+        <ul className="mt-12 grid gap-5 md:grid-cols-3">
+          {buyingCategories.map(({ key, href, images, conditional }, index) => (
+            <li key={key}>
+              <Reveal delay={index * 90} className="h-full">
+                <Link
+                  href={href}
+                  className="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-coal transition-[border-color,transform] duration-300 ease-vault hover:-translate-y-1 hover:border-line-2"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-ink-2">
+                    <BuyingPhoto
+                      image={images[0]}
+                      alt={t(`${key}.photos.${images[0].key}.alt`)}
+                      sizes="(max-width: 768px) 94vw, (max-width: 1280px) 31vw, 370px"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6 lg:p-7">
+                    <span
+                      aria-hidden="true"
+                      className="font-mono text-[11px] tracking-[0.18em] text-gold"
+                    >
+                      0{index + 1}
+                    </span>
+                    <h3 className="mt-3 font-display text-3xl leading-tight font-medium tracking-tight text-bone">
+                      {t(`${key}.title`)}
+                    </h3>
+                    <p className="mt-3 text-[15px] leading-relaxed text-smoke">
+                      {t(`${key}.preview`)}
+                    </p>
+                    {conditional && (
+                      <p className="mt-5 border-l border-gold-deep pl-3 text-sm leading-relaxed text-gold-hi">
+                        {t(`${key}.notice`)}
+                      </p>
+                    )}
+                    <span className="mt-auto flex items-center justify-between gap-3 pt-7 text-sm font-medium text-bone group-hover:text-gold-hi">
+                      {t("viewCategory")}
+                      <span aria-hidden="true">↗</span>
+                    </span>
+                  </div>
+                </Link>
               </Reveal>
             </li>
           ))}
         </ul>
-        <p className="mt-9 text-sm text-smoke">
-          {t("exclusionsNote")}
-          <ConfirmTag />
-        </p>
       </div>
     </section>
   );

@@ -58,6 +58,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      data-scroll-behavior="smooth"
       className={`${geist.variable} ${geistMono.variable} ${boska.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

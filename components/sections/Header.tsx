@@ -1,13 +1,15 @@
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { Magnetic } from "@/components/Magnetic";
 import { MobileMenu } from "@/components/MobileMenu";
+import { HomeSectionLink } from "@/components/HomeSectionLink";
 
 const links = [
-  { href: "#cene", key: "prices" },
-  { href: "#postopek", key: "process" },
-  { href: "#odkup", key: "buy" },
-  { href: "#lokacija", key: "location" },
+  { href: "/#cene", key: "prices" },
+  { href: "/#postopek", key: "process" },
+  { href: "/#odkup", key: "buy" },
+  { href: "/#lokacija", key: "location" },
 ] as const;
 
 /** Floating dark-glass bar — fixed, hairline-bordered, out of the way. */
@@ -24,21 +26,24 @@ export function Header() {
         {t("skip")}
       </a>
       <div className="mx-auto flex h-14 max-w-4xl items-center justify-between rounded-full border border-line bg-ink/70 px-2 pl-6 backdrop-blur-xl">
-        <p className="font-display text-lg font-medium tracking-wide text-bone">
+        <Link
+          href="/"
+          className="font-display text-lg font-medium tracking-wide text-bone"
+        >
           Silberberg
-        </p>
+        </Link>
         <nav
           aria-label={tNav("railLabel")}
           className="hidden items-center gap-6 lg:flex"
         >
           {links.map(({ href, key }) => (
-            <a
+            <HomeSectionLink
               key={key}
               href={href}
               className="font-mono text-[11px] tracking-[0.16em] text-smoke uppercase transition-colors duration-200 hover:text-gold"
             >
               {tNav(key)}
-            </a>
+            </HomeSectionLink>
           ))}
         </nav>
         <div className="flex items-center gap-2">
@@ -46,12 +51,12 @@ export function Header() {
             <LocaleSwitcher />
           </span>
           <Magnetic className="hidden sm:inline-block">
-            <a
-              href="#kontakt"
+            <HomeSectionLink
+              href="/#kontakt"
               className="inline-flex min-h-10 items-center rounded-full bg-bone px-4 text-sm font-semibold whitespace-nowrap text-ink transition-colors duration-300 hover:bg-gold"
             >
               {t("phoneCta")}
-            </a>
+            </HomeSectionLink>
           </Magnetic>
           <MobileMenu />
         </div>
