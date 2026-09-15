@@ -6,6 +6,8 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  // Skip internals and static assets; run on everything else.
-  matcher: "/((?!api|_next|_vercel|.*\\..*).*)",
+  // Skip internals, static assets, and the explicit default-locale prefix.
+  // Next 16 can re-run Proxy after next-intl rewrites an unprefixed Slovenian
+  // URL to /sl; letting that destination render directly avoids a / -> / loop.
+  matcher: "/((?!api|_next|_vercel|sl(?:/|$)|.*\\..*).*)",
 };

@@ -14,8 +14,8 @@ export function localBusinessJsonLd(locale: Locale, description: string) {
     description,
     url: locale === "sl" ? SITE_URL : `${SITE_URL}/${locale}`,
     areaServed: {
-      "@type": "City",
-      name: "Koper",
+      "@type": "Country",
+      name: "Slovenia",
     },
     knowsLanguage: ["sl", "en"],
   };

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Silberberg — Odkup zlata in srebra v Kopru",
-    "description": "Diskreten odkup zlata, srebra in nakita v Kopru. Cenitev pred vašimi očmi, takojšnje plačilo, brez obveznosti."
+    "title": "Silberberg — Odkup zlata in srebra po vsej Sloveniji",
+    "description": "Diskreten odkup zlata, srebra in nakita po vsej Sloveniji. Cenitev pred vašimi očmi, takojšnje plačilo, brez obveznosti."
   },
   "header": {
     "phoneCta": "Pokličite za cenitev",
@@ -21,7 +21,7 @@
     "label": "Silberbergove storitve odkupa",
     "wordmark": "Silberberg",
     "offer": "Odkup plemenitih kovin",
-    "location": "Koper"
+    "location": "Po vsej Sloveniji"
   },
   "actions": {
     "barLabel": "Hitre povezave",
@@ -30,8 +30,8 @@
     "call": "Pokličite nas"
   },
   "hero": {
-    "eyebrow": "Silberberg · Koper",
-    "heading": "Odkup zlata in srebra v Kopru",
+    "eyebrow": "Silberberg · Po vsej Sloveniji",
+    "heading": "Odkup zlata in srebra po vsej Sloveniji",
     "sub": "Nakit, kovanci, palice, zobno zlato. Stehtamo in ocenimo pred vašimi očmi — ponudbo sprejmete ali odklonite, plačilo prejmete takoj.",
     "point1": "Cenitev je brezplačna in brez obveznosti",
     "point2": "Tehtanje in preizkus pred vašimi očmi",
@@ -49,7 +49,7 @@
     "step2Title": "Cenitev pred vašimi očmi",
     "step2Text": "Predmete stehtamo na umerjeni tehtnici in preverimo čistino. Vsak korak vidite in vam ga razložimo.",
     "step3Title": "Ponudba brez obveznosti",
-    "step3Text": "Poveme točen znesek. Čas za odločitev si vzamete sami — ponudba vas k ničemur ne zavezuje.",
+    "step3Text": "Povemo točen znesek. Čas za odločitev si vzamete sami — ponudba vas k ničemur ne zavezuje.",
     "step4Title": "Takojšnje plačilo",
     "step4Text": "Ob sprejeti ponudbi prejmete plačilo takoj.",
     "mailinNote": "Možnost odkupa po pošti"
@@ -70,7 +70,7 @@
     },
     "metals": {
       "title": "Plemenite kovine",
-      "description": "Odkup zlata, srebra, platine in kositra v Kopru. Brezplačno svetovanje, cenitve in obiski na domu po dogovoru.",
+      "description": "Odkup zlata, srebra, platine in kositra po vsej Sloveniji. Brezplačno svetovanje, cenitve in obiski na domu po dogovoru.",
       "preview": "Nakit, naložbeno zlato, kovanci in še več. Oglejte si vse kovine in predmete, ki jih odkupujemo.",
       "noticeHeading": "Brezplačno svetovanje in cenitve",
       "notice": "Nudimo brezplačno svetovanje, brezplačne cenitve in po dogovoru tudi brezplačen obisk na vašem domu!",
@@ -105,7 +105,7 @@
     },
     "fur": {
       "title": "Krzneni in usnjeni izdelki",
-      "description": "Odkup krznenih in usnjenih oblačil ter dodatkov v Kopru, izključno ob sočasni prodaji zlata.",
+      "description": "Odkup krznenih in usnjenih oblačil ter dodatkov po vsej Sloveniji, izključno ob sočasni prodaji zlata.",
       "preview": "Krzneni plašči, usnjene jakne in dodatki. Novo poglavje za kose, ki jih ne nosite več.",
       "noticeHeading": "Pogoj odkupa",
       "notice": "Krzneni in usnjeni izdelki se odkupujejo samo ob sočasni prodaji zlata.",
@@ -139,7 +139,7 @@
     },
     "other": {
       "title": "Drugi predmeti",
-      "description": "Odkup ur priznanih proizvajalcev, dizajnerskih torbic, nakita in drugih dragocenosti v Kopru, izključno ob sočasni prodaji zlata.",
+      "description": "Odkup ur priznanih proizvajalcev, dizajnerskih torbic, nakita in drugih dragocenosti po vsej Sloveniji, izključno ob sočasni prodaji zlata.",
       "preview": "Prestižne ure, dizajnerske torbice, nakit in dragoceni predmeti. Oglejte si celoten seznam odkupa.",
       "noticeHeading": "Pogoj odkupa",
       "notice": "Ti predmeti se odkupujejo samo ob sočasni prodaji zlata.",
@@ -189,6 +189,7 @@
   "location": {
     "eyebrow": "Poslovalnica",
     "heading": "Najdete nas v Kopru",
+    "serviceArea": "Odkupujemo po vsej Sloveniji; poslovalnica je v Kopru.",
     "addressLabel": "Naslov",
     "addressPlaceholder": "Naslov poslovalnice v Kopru",
     "hoursLabel": "Delovni čas",

@@ -22,6 +22,7 @@ export function MobileMenu() {
   const t = useTranslations("menu");
   const tNav = useTranslations("nav");
   const tBuy = useTranslations("buy");
+  const tBrand = useTranslations("brandBand");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const mounted = useSyncExternalStore(
@@ -169,7 +170,7 @@ export function MobileMenu() {
               <div className="mt-auto flex items-center justify-between gap-4 border-t border-line pt-5">
                 <LocaleSwitcher onSwitch={() => setOpen(false)} />
                 <p className="font-mono text-[10px] tracking-[0.12em] text-smoke uppercase">
-                  Silberberg · Koper
+                  {tBrand("wordmark")} · {tBrand("location")}
                 </p>
               </div>
             </div>
