@@ -80,6 +80,9 @@ export function Location() {
       <div className="mx-auto max-w-6xl">
         <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
+          <p className="mt-5 max-w-2xl leading-relaxed text-smoke">
+            {t("serviceArea")}
+          </p>
         </Reveal>
         <Reveal
           variant="scale"

@@ -28,4 +28,25 @@ describe("i18n routing", () => {
       );
     expect(keys(en).sort()).toEqual(keys(sl).sort());
   });
+
+  it("communicates nationwide buying while keeping Koper as the shop location", () => {
+    expect(sl.meta.description).toContain("po vsej Sloveniji");
+    expect(en.meta.description).toContain("across Slovenia");
+    expect(sl.hero.heading).toContain("po vsej Sloveniji");
+    expect(en.hero.heading).toContain("across Slovenia");
+    expect(sl.location.serviceArea).toBe(
+      "Odkupujemo po vsej Sloveniji; poslovalnica je v Kopru.",
+    );
+    expect(en.location.serviceArea).toBe(
+      "We buy across Slovenia; our shop is in Koper.",
+    );
+
+    for (const key of ["metals", "fur", "other"] as const) {
+      expect(sl.buy[key].description).toContain("po vsej Sloveniji");
+      expect(en.buy[key].description).toContain("across Slovenia");
+    }
+
+    expect(sl.how.step3Text).toContain("Povemo");
+    expect(sl.how.step3Text).not.toContain("Poveme");
+  });
 });

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Silberberg — Gold & Silver Buying in Koper",
-    "description": "Discreet gold, silver and jewellery buying in Koper. Appraisal in front of you, immediate payment, no obligation."
+    "title": "Silberberg — Gold & Silver Buying Across Slovenia",
+    "description": "Discreet gold, silver and jewellery buying across Slovenia. Appraisal in front of you, immediate payment, no obligation."
   },
   "header": {
     "phoneCta": "Call for an appraisal",
@@ -21,7 +21,7 @@
     "label": "Silberberg buying services",
     "wordmark": "Silberberg",
     "offer": "Precious metal buying",
-    "location": "Koper"
+    "location": "Across Slovenia"
   },
   "actions": {
     "barLabel": "Quick links",
@@ -30,8 +30,8 @@
     "call": "Call us"
   },
   "hero": {
-    "eyebrow": "Silberberg · Koper",
-    "heading": "Gold and silver buying in Koper",
+    "eyebrow": "Silberberg · Across Slovenia",
+    "heading": "Gold and silver buying across Slovenia",
     "sub": "Jewellery, coins, bars, dental gold. Weighed and assessed in front of you — accept or decline the offer, and be paid on the spot.",
     "point1": "Appraisal is free and carries no obligation",
     "point2": "Weighing and testing in front of you",
@@ -70,7 +70,7 @@
     },
     "metals": {
       "title": "Precious Metals",
-      "description": "Gold, silver, platinum and tin buying in Koper. Free consultations, free valuations and free home visits by arrangement.",
+      "description": "Gold, silver, platinum and tin buying across Slovenia. Free consultations, free valuations and free home visits by arrangement.",
       "preview": "Jewellery, investment gold, coins and more. Discover all the metals and items we buy.",
       "noticeHeading": "Free consultations & valuations",
       "notice": "We offer free consultations, free valuations, and, by arrangement, we can also visit you at your home free of charge!",
@@ -105,7 +105,7 @@
     },
     "fur": {
       "title": "Fur and Leather Products",
-      "description": "We buy fur and leather clothing and accessories in Koper, only when gold is sold at the same time.",
+      "description": "We buy fur and leather clothing and accessories across Slovenia, only when gold is sold at the same time.",
       "preview": "Fur coats, leather jackets and accessories. Give the pieces you no longer wear a new chapter.",
       "noticeHeading": "Purchase condition",
       "notice": "Fur and leather products are purchased only when gold is being sold at the same time.",
@@ -139,7 +139,7 @@
     },
     "other": {
       "title": "Other Items",
-      "description": "Premium watches, designer handbags, jewellery and other valuables in Koper, purchased only alongside a gold sale.",
+      "description": "Premium watches, designer handbags, jewellery and other valuables across Slovenia, purchased only alongside a gold sale.",
       "preview": "Fine watches, designer handbags, jewellery and treasured objects. See the full list of items we buy.",
       "noticeHeading": "Purchase condition",
       "notice": "These items are purchased only when gold is being sold at the same time.",
@@ -189,6 +189,7 @@
   "location": {
     "eyebrow": "The shop",
     "heading": "Find us in Koper",
+    "serviceArea": "We buy across Slovenia; our shop is in Koper.",
     "addressLabel": "Address",
     "addressPlaceholder": "Shop address in Koper",
     "hoursLabel": "Opening hours",
