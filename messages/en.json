@@ -66,7 +66,10 @@
       "studio": "Studio",
       "outdoor": "Outdoor",
       "pause": "Pause slideshow",
-      "resume": "Resume slideshow"
+      "resume": "Resume slideshow",
+      "previous": "Previous photos",
+      "next": "Next photos",
+      "examples": "Examples of items we buy"
     },
     "metals": {
       "title": "Precious Metals",
@@ -157,6 +160,18 @@
         "sewing": "Sewing machines"
       },
       "photos": {
+        "rolex": {
+          "caption": "Premium watches",
+          "alt": "Rolex wristwatch with a light dial and metal bracelet, worn on a wrist"
+        },
+        "patek": {
+          "caption": "Premium watches",
+          "alt": "Patek Philippe wristwatch with a light dial and brown leather strap"
+        },
+        "louisVuitton": {
+          "caption": "Designer handbags",
+          "alt": "Brown Louis Vuitton bags with a monogram pattern"
+        },
         "watch": {
           "caption": "Premium watches",
           "alt": "Wristwatch with a dark dial and leather strap on marble"
@@ -250,7 +265,8 @@
     "regNumber": "Registration number",
     "vatId": "VAT ID",
     "privacy": "Privacy policy",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "trademarkDisclaimer": "Trademarks and brand names shown belong to their respective owners. We are not affiliated with or endorsed by these brands."
   },
   "film": {
     "eyebrow": "Under the light",

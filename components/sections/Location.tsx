@@ -1,25 +1,15 @@
 import { useTranslations } from "next-intl";
-import { MapPinIcon, PhoneIcon, WatchIcon } from "@/components/icons";
-import { ConfirmTag } from "@/components/ui/ConfirmTag";
+import { PhoneIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CONTACT_PHONE } from "@/lib/siteConfig";
+import { CONTACT_PHONE, CONTACT_PHONE_HREF } from "@/lib/siteConfig";
 
-// Koper city centre — placeholder view until the client confirms the address.
+// City overview of Koper; no unconfirmed street address or map pin.
 const OSM_EMBED_SRC =
   "https://www.openstreetmap.org/export/embed.html?bbox=13.7195%2C45.5405%2C13.7455%2C45.5525&layer=mapnik";
 const OSM_LINK = "https://www.openstreetmap.org/#map=15/45.5469/13.7294";
 
-const rows = [
-  { icon: MapPinIcon, label: "addressLabel", value: "addressPlaceholder" },
-  { icon: WatchIcon, label: "hoursLabel", value: "hoursPlaceholder" },
-] as const;
-
-const phoneHref = CONTACT_PHONE
-  ? `tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`
-  : undefined;
-
-/** Address / hours / phone. Rendered twice: floating over the map on
+/** Confirmed phone contact. Rendered twice: floating over the map on
  *  desktop, as its own engraved panel under the map on phones. */
 function InfoCard() {
   const t = useTranslations("location");
@@ -27,36 +17,18 @@ function InfoCard() {
   return (
     <>
       <dl className="flex flex-col gap-5">
-        {rows.map(({ icon: Icon, label, value }) => (
-          <div key={label}>
-            <dt className="flex items-center gap-3 font-mono text-[10px] tracking-[0.16em] text-smoke uppercase">
-              <Icon className="size-4 shrink-0 text-gold" />
-              {t(label)}
-            </dt>
-            <dd className="mt-1 pl-7 text-[15px] font-medium text-bone">
-              {t(value)}
-              <ConfirmTag />
-            </dd>
-          </div>
-        ))}
         <div>
           <dt className="flex items-center gap-3 font-mono text-[10px] tracking-[0.16em] text-smoke uppercase">
             <PhoneIcon className="size-4 shrink-0 text-gold" />
             {t("phoneLabel")}
           </dt>
           <dd className="mt-1 pl-7 text-[15px] font-medium text-bone">
-            {phoneHref ? (
-              <a
-                href={phoneHref}
-                className="transition-colors duration-200 hover:text-gold-hi"
-              >
-                {CONTACT_PHONE}
-              </a>
-            ) : (
-              <>
-                {t("phonePlaceholder")} <ConfirmTag />
-              </>
-            )}
+            <a
+              href={CONTACT_PHONE_HREF}
+              className="transition-colors duration-200 hover:text-gold-hi"
+            >
+              {CONTACT_PHONE}
+            </a>
           </dd>
         </div>
       </dl>

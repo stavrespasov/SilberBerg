@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
 import type { CSSProperties } from "react";
 import { Link } from "@/i18n/navigation";
-import { ConfirmTag } from "@/components/ui/ConfirmTag";
 import { Reveal } from "@/components/Reveal";
 
 const WORDMARK = "SILBERBERG";
@@ -19,16 +18,6 @@ export function Footer() {
             <p className="font-display text-lg font-medium tracking-wide text-bone">
               Silberberg
             </p>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-smoke">
-              {t("legalName")}
-              <ConfirmTag />
-            </p>
-            <p className="mt-1.5 text-sm text-smoke">
-              {t("regNumber")}: <ConfirmTag />
-            </p>
-            <p className="mt-1 text-sm text-smoke">
-              {t("vatId")}: <ConfirmTag />
-            </p>
           </div>
           <Link
             href="/zasebnost"
@@ -39,6 +28,9 @@ export function Footer() {
         </div>
         <p className="mt-10 text-xs text-smoke">
           © {year} Silberberg. {t("rights")}
+        </p>
+        <p className="mt-3 max-w-3xl text-xs leading-relaxed text-smoke">
+          {t("trademarkDisclaimer")}
         </p>
       </div>
 

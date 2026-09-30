@@ -1,7 +1,8 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { Link, usePathname } from "@/i18n/navigation";
+import Link from "next/link";
+import { getPathname, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
 export function LocaleSwitcher({ onSwitch }: { onSwitch?: () => void }) {
@@ -17,8 +18,10 @@ export function LocaleSwitcher({ onSwitch }: { onSwitch?: () => void }) {
       {routing.locales.map((l) => (
         <Link
           key={l}
-          href={pathname}
-          locale={l}
+          // Use canonical paths: the proxy intentionally excludes internal /sl URLs.
+          href={getPathname({ locale: l, href: pathname })}
+          hrefLang={l}
+          prefetch={false}
           onClick={onSwitch}
           aria-current={l === locale ? "true" : undefined}
           className={`rounded-full px-3 py-1.5 font-mono text-xs font-semibold uppercase transition-colors duration-200 ${

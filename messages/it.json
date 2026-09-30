@@ -1,0 +1,279 @@
+{
+  "meta": {
+    "title": "Silberberg — Acquisto di oro e argento in tutta la Slovenia",
+    "description": "Acquisto discreto di oro, argento e gioielli in tutta la Slovenia. Valutazione davanti a voi, pagamento immediato e nessun obbligo."
+  },
+  "header": {
+    "phoneCta": "Chiamate per una valutazione",
+    "langLabel": "Lingua",
+    "skip": "Vai al contenuto"
+  },
+  "nav": {
+    "railLabel": "Navigazione principale",
+    "process": "Come funziona",
+    "buy": "Cosa acquistiamo",
+    "trust": "Fiducia",
+    "location": "Dove siamo",
+    "faq": "Domande",
+    "contact": "Contatti"
+  },
+  "brandBand": {
+    "label": "Servizi di acquisto Silberberg",
+    "wordmark": "Silberberg",
+    "offer": "Acquisto di metalli preziosi",
+    "location": "In tutta la Slovenia"
+  },
+  "actions": {
+    "barLabel": "Collegamenti rapidi",
+    "buy": "Cosa acquistiamo",
+    "book": "Contattateci",
+    "call": "Chiamateci"
+  },
+  "hero": {
+    "eyebrow": "Silberberg · In tutta la Slovenia",
+    "heading": "Acquisto di oro e argento in tutta la Slovenia",
+    "sub": "Gioielli, monete, lingotti e oro dentale. Pesiamo e valutiamo tutto davanti a voi: decidete se accettare l'offerta e ricevete subito il pagamento.",
+    "point1": "Valutazione gratuita e senza impegno",
+    "point2": "Pesatura e verifica davanti a voi",
+    "point3": "Pagamento immediato se accettate",
+    "ctaPrimary": "Prenotate una valutazione",
+    "ctaSecondary": "Scoprite cosa acquistiamo",
+    "hallmarkCaption": "Acquistiamo tutti i titoli standard",
+    "headingGild": "oro e argento"
+  },
+  "how": {
+    "eyebrow": "Come funziona",
+    "heading": "Dall'oggetto al pagamento in quattro passi",
+    "step1Title": "Portate i vostri oggetti",
+    "step1Text": "Venite in negozio o prenotate un appuntamento. Portate anche gioielli danneggiati o privi di punzone: ne verifichiamo noi il titolo.",
+    "step2Title": "Valutazione davanti a voi",
+    "step2Text": "Pesiamo gli oggetti su una bilancia calibrata e ne verifichiamo il titolo. Potete seguire ogni passaggio, che vi spieghiamo durante la valutazione.",
+    "step3Title": "Un'offerta senza impegno",
+    "step3Text": "Vi comunichiamo un importo preciso. Prendetevi il tempo per decidere: l'offerta non comporta alcun obbligo.",
+    "step4Title": "Pagamento immediato",
+    "step4Text": "Se accettate l'offerta, ricevete subito il pagamento.",
+    "mailinNote": "Acquisto per corrispondenza disponibile"
+  },
+  "buy": {
+    "eyebrow": "Cosa acquistiamo",
+    "heading": "Un posto per i vostri oggetti di valore",
+    "categoryNav": "Categorie di acquisto",
+    "weBuy": "Acquistiamo",
+    "appraisal": "Prenotate una valutazione",
+    "viewCategory": "Scoprite la categoria",
+    "gallery": {
+      "description": "Ambientazione della galleria",
+      "studio": "Studio",
+      "outdoor": "All'aperto",
+      "pause": "Metti in pausa la presentazione",
+      "resume": "Riprendi la presentazione",
+      "previous": "Foto precedenti",
+      "next": "Foto successive",
+      "examples": "Esempi di oggetti che acquistiamo"
+    },
+    "metals": {
+      "title": "Metalli preziosi",
+      "description": "Acquisto di oro, argento, platino e stagno in tutta la Slovenia. Consulenze e valutazioni gratuite, anche a domicilio su appuntamento.",
+      "preview": "Gioielli, oro da investimento, monete e molto altro. Scoprite tutti i metalli e gli oggetti che acquistiamo.",
+      "noticeHeading": "Consulenze e valutazioni gratuite",
+      "notice": "Offriamo consulenze e valutazioni gratuite. Su appuntamento possiamo anche venire a casa vostra gratuitamente!",
+      "items": {
+        "jewellery": "Gioielli in oro e argento",
+        "investment": "Oro da investimento",
+        "dental": "Oro dentale (anche se ancora attaccato a un dente)",
+        "scrap": "Oro usato e rottami d'oro",
+        "coins": "Monete d'oro e d'argento",
+        "cutlery": "Posate d'argento",
+        "platinum": "Platino",
+        "tin": "Stagno"
+      },
+      "photos": {
+        "investment": {
+          "caption": "Oro da investimento",
+          "alt": "Due lingotti d'oro fino su una superficie scura"
+        },
+        "jewellery": {
+          "caption": "Gioielli in oro e argento",
+          "alt": "Anelli e bracciali d'oro disposti su una superficie chiara"
+        },
+        "cutlery": {
+          "caption": "Posate d'argento",
+          "alt": "Posate d'argento antiche e decorate su un tessuto di lino"
+        },
+        "dental": {
+          "caption": "Oro dentale",
+          "alt": "Primo piano di una corona dentale d'oro"
+        }
+      }
+    },
+    "fur": {
+      "title": "Pellicce e articoli in pelle",
+      "description": "Acquistiamo abbigliamento e accessori in pelliccia e pelle in tutta la Slovenia, esclusivamente insieme alla vendita di oro.",
+      "preview": "Cappotti di pelliccia, giacche in pelle e accessori. Un nuovo capitolo per i capi che non indossate più.",
+      "noticeHeading": "Condizione di acquisto",
+      "notice": "Gli articoli in pelliccia e pelle vengono acquistati solo se vendete anche oro nello stesso momento.",
+      "items": {
+        "furCoats": "Giacche e cappotti di pelliccia",
+        "collars": "Colli di pelliccia",
+        "hats": "Copricapi di pelliccia",
+        "leatherCoats": "Giacche e cappotti in pelle",
+        "trousers": "Pantaloni in pelle",
+        "belts": "Cinture in pelle",
+        "handbags": "Borse in pelle"
+      },
+      "photos": {
+        "jacket": {
+          "caption": "Giacche di pelliccia",
+          "alt": "Giacca di pelliccia marrone vista da dietro all'aperto"
+        },
+        "leather": {
+          "caption": "Giacche in pelle",
+          "alt": "Giacca in pelle nera vista da dietro"
+        },
+        "coat": {
+          "caption": "Cappotti di pelliccia",
+          "alt": "Cappotto lungo di pelliccia marrone visto da dietro"
+        },
+        "collar": {
+          "caption": "Colli di pelliccia",
+          "alt": "Collo di pelliccia chiara mostrato dal collo in giù"
+        }
+      }
+    },
+    "other": {
+      "title": "Altri oggetti",
+      "description": "Acquistiamo orologi di prestigio, borse firmate, gioielli e altri oggetti di valore in tutta la Slovenia, esclusivamente insieme alla vendita di oro.",
+      "preview": "Orologi di prestigio, borse firmate, gioielli e oggetti preziosi. Scoprite l'elenco completo degli oggetti che acquistiamo.",
+      "noticeHeading": "Condizione di acquisto",
+      "notice": "Questi oggetti vengono acquistati solo se vendete anche oro nello stesso momento.",
+      "items": {
+        "watches": "Orologi di marchi prestigiosi",
+        "handbags": "Borse firmate",
+        "diamonds": "Diamanti",
+        "amber": "Gioielli in ambra",
+        "wigs": "Parrucche",
+        "instruments": "Strumenti musicali",
+        "golf": "Mazze da golf",
+        "crystal": "Oggetti in cristallo",
+        "porcelain": "Oggetti in porcellana",
+        "cameras": "Macchine fotografiche antiche",
+        "sewing": "Macchine da cucire"
+      },
+      "photos": {
+        "rolex": {
+          "caption": "Orologi di prestigio",
+          "alt": "Orologio da polso Rolex con quadrante chiaro e bracciale in metallo, indossato al polso"
+        },
+        "patek": {
+          "caption": "Orologi di prestigio",
+          "alt": "Orologio da polso Patek Philippe con quadrante chiaro e cinturino in pelle marrone"
+        },
+        "louisVuitton": {
+          "caption": "Borse firmate",
+          "alt": "Borse Louis Vuitton marroni con motivo a monogrammi"
+        },
+        "watch": {
+          "caption": "Orologi di prestigio",
+          "alt": "Orologio da polso con quadrante scuro e cinturino in pelle su una superficie di marmo"
+        },
+        "handbag": {
+          "caption": "Borse firmate",
+          "alt": "Borsa firmata con manico a catena"
+        },
+        "camera": {
+          "caption": "Macchine fotografiche antiche",
+          "alt": "Macchina fotografica antica a soffietto su uno sfondo scuro"
+        },
+        "sewing": {
+          "caption": "Macchine da cucire",
+          "alt": "Primo piano di una macchina da cucire"
+        }
+      }
+    }
+  },
+  "trust": {
+    "eyebrow": "Fiducia",
+    "heading": "Tutto avviene davanti a voi",
+    "appraisalTitle": "Una valutazione verificabile",
+    "appraisalText": "Pesiamo su una bilancia calibrata e verifichiamo il titolo davanti a voi. Sappiamo spiegare ogni cifra dell'offerta.",
+    "discretionTitle": "Discrezione",
+    "discretionText": "La valutazione si svolge in privato, senza spettatori e senza trasmettere informazioni a terzi. Ciò che portate e ciò che concordiamo resta tra noi.",
+    "licenseTitle": "Un'attività registrata",
+    "licenseText": "I dati di registrazione dell'attività e il numero di identificazione IVA saranno pubblicati prima del lancio."
+  },
+  "location": {
+    "eyebrow": "Il negozio",
+    "heading": "Ci trovate a Capodistria",
+    "serviceArea": "Acquistiamo in tutta la Slovenia; il nostro negozio si trova a Capodistria (Koper).",
+    "addressLabel": "Indirizzo",
+    "addressPlaceholder": "Indirizzo del negozio a Capodistria",
+    "hoursLabel": "Orari di apertura",
+    "hoursPlaceholder": "Gli orari di apertura saranno pubblicati prima del lancio",
+    "phoneLabel": "Telefono",
+    "phonePlaceholder": "Numero di telefono",
+    "mapTitle": "Mappa — Capodistria (Koper)",
+    "openMap": "Apri la mappa completa"
+  },
+  "faq": {
+    "eyebrow": "Domande",
+    "heading": "Domande frequenti",
+    "q1": "Come si svolge la valutazione?",
+    "a1": "Pesiamo gli oggetti su una bilancia calibrata e ne verifichiamo il titolo. Tutto avviene davanti a voi e vi spieghiamo il procedimento durante la valutazione. La valutazione è gratuita e richiede pochi minuti.",
+    "q2": "Quanto vale il mio oro?",
+    "a2": "Il valore dipende dal peso, dal titolo e dalla quotazione di mercato del giorno. Portate i vostri oggetti per una valutazione gratuita o chiamateci per una stima precisa.",
+    "q3": "Serve un documento d'identità?",
+    "a3": "Sì. La legge richiede l'identificazione del venditore per l'acquisto di metalli preziosi. I vostri dati vengono conservati secondo le disposizioni di legge e non vengono comunicati a terzi.",
+    "q4": "Acquistate anche gioielli vecchi o danneggiati?",
+    "a4": "Sì. Graffi, catene spezzate o un orecchino spaiato non riducono il valore del metallo, che viene determinato in base al peso e al titolo.",
+    "q5": "Quando ricevo il pagamento?",
+    "a5": "Immediatamente, non appena accettate l'offerta.",
+    "q6": "Acquistate anche argento?",
+    "a6": "Sì: gioielli, monete, lingotti e posate d'argento con titolo 925 e 999."
+  },
+  "contact": {
+    "eyebrow": "Contatti",
+    "heading": "Chiamate per una valutazione",
+    "lead": "Chiamateci per parlare dei vostri oggetti e concordare una valutazione gratuita.",
+    "phoneLabel": "Telefono",
+    "phonePending": "Numero di telefono",
+    "phoneCtaText": "Chiamateci per organizzare una valutazione gratuita e ricevere una risposta chiara sui vostri oggetti.",
+    "callAction": "Chiamate per una valutazione"
+  },
+  "privacy": {
+    "title": "Informativa sulla privacy — Silberberg",
+    "heading": "Informativa sulla privacy",
+    "intro": "Questa informativa spiega quali dati personali vengono raccolti tramite questo sito e come vengono trattati.",
+    "controllerHeading": "Titolare del trattamento",
+    "controllerText": "I dati del titolare del trattamento (ragione sociale completa, indirizzo e contatti) saranno pubblicati prima del lancio.",
+    "collectHeading": "Quali dati vengono raccolti",
+    "collectText": "Questo sito non raccoglie richieste o dati di contatto tramite un modulo. Se chiamate l'attività, le informazioni che fornite vengono gestite per telefono. Il sito non utilizza cookie di tracciamento; quando scegliete manualmente una lingua, viene memorizzato un solo cookie funzionale con questa preferenza.",
+    "purposeHeading": "Finalità del trattamento",
+    "purposeText": "Le informazioni che scegliete di fornire per telefono vengono utilizzate esclusivamente per assistervi nella valutazione. Non vengono comunicate a terzi né utilizzate per la pubblicità.",
+    "retentionHeading": "Conservazione",
+    "retentionText": "Il sito non memorizza richieste di contatto. Gli eventuali documenti dell'attività creati dopo una telefonata vengono conservati solo per il tempo necessario e poi eliminati; i termini precisi saranno stabiliti prima del lancio.",
+    "rightsHeading": "I vostri diritti",
+    "rightsText": "Potete richiedere in qualsiasi momento l'accesso, la rettifica o la cancellazione dei vostri dati e presentare un reclamo all'autorità slovena per la protezione dei dati personali (Informacijski pooblaščenec RS).",
+    "backHome": "Torna alla pagina iniziale"
+  },
+  "notFound": {
+    "heading": "Questa pagina non esiste",
+    "text": "L'indirizzo è errato oppure la pagina è stata rimossa. Trovate tutto ciò che vi serve nella pagina iniziale.",
+    "back": "Vai alla pagina iniziale"
+  },
+  "footer": {
+    "legalName": "Ragione sociale completa e forma giuridica",
+    "regNumber": "Numero di registrazione",
+    "vatId": "Numero di identificazione IVA",
+    "privacy": "Informativa sulla privacy",
+    "rights": "Tutti i diritti riservati.",
+    "trademarkDisclaimer": "I marchi e i nomi commerciali mostrati appartengono ai rispettivi titolari. Non siamo affiliati a questi marchi né beneficiamo del loro sostegno."
+  },
+  "film": {
+    "eyebrow": "Sotto la luce",
+    "line": "Ogni grammo merita uno sguardo attento."
+  },
+  "menu": {
+    "open": "Menu",
+    "close": "Chiudi menu"
+  }
+}

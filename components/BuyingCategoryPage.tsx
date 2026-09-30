@@ -107,19 +107,29 @@ export async function BuyingCategoryPage({
               </Link>
             </section>
 
-            {categoryKey === "fur" ? (
+            {categoryKey === "fur" || categoryKey === "other" ? (
               <BuyingGalleryCarousel
                 photos={category.images.map((photo) => ({
                   image: photo,
                   alt: t(`${prefix}.photos.${photo.key}.alt`),
                   caption: t(`${prefix}.photos.${photo.key}.caption`),
+                  sequence: photo.sequence?.map((image) => ({
+                    image,
+                    alt: t(`${prefix}.photos.${image.key}.alt`),
+                  })),
                 }))}
                 labels={{
                   studio: t("gallery.studio"),
                   outdoor: t("gallery.outdoor"),
                   pause: t("gallery.pause"),
                   resume: t("gallery.resume"),
-                  description: t("gallery.description"),
+                  previous: t("gallery.previous"),
+                  next: t("gallery.next"),
+                  description: t(
+                    categoryKey === "other"
+                      ? "gallery.examples"
+                      : "gallery.description",
+                  ),
                 }}
               />
             ) : (
