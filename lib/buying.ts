@@ -1,14 +1,18 @@
 /** Shared catalogue used by the pages, overview, navigation, and sitemap. */
-export type BuyingImage = {
+export type BuyingImageAsset = {
   file: string;
   key: string;
   /** Add the approved local asset here when the photography is supplied. */
   src?: string;
+  position?: string;
+};
+
+export type BuyingImage = BuyingImageAsset & {
   variants?: {
     studio: string;
     outdoor: string;
   };
-  position?: string;
+  sequence?: readonly BuyingImageAsset[];
 };
 
 type BuyingCategory = {
@@ -17,7 +21,27 @@ type BuyingCategory = {
   conditional: boolean;
   items: readonly string[];
   images: readonly BuyingImage[];
+  cover?: BuyingImageAsset;
 };
+
+const rolexWatch = {
+  file: "rolex-watch",
+  key: "rolex",
+  src: "/media/buying/rolex-watch.webp",
+} as const;
+
+const patekWatch = {
+  file: "patek-philippe-watch",
+  key: "patek",
+  src: "/media/buying/patek-philippe-watch.jpg",
+  position: "42% 50%",
+} as const;
+
+const louisVuittonBags = {
+  file: "louis-vuitton-bags",
+  key: "louisVuitton",
+  src: "/media/buying/louis-vuitton-bags.jpg",
+} as const;
 
 export const buyingCategories = [
   {
@@ -112,6 +136,7 @@ export const buyingCategories = [
   {
     key: "other",
     href: "/drugi-predmeti",
+    cover: patekWatch,
     conditional: true,
     items: [
       "watches",
@@ -130,12 +155,29 @@ export const buyingCategories = [
       {
         file: "premium-watch",
         key: "watch",
-        src: "/media/buying/premium-watch.webp",
+        src: rolexWatch.src,
+        sequence: [
+          rolexWatch,
+          patekWatch,
+          {
+            file: "premium-watch",
+            key: "watch",
+            src: "/media/buying/premium-watch.webp",
+          },
+        ],
       },
       {
         file: "designer-handbag",
         key: "handbag",
-        src: "/media/buying/designer-handbag.webp",
+        src: louisVuittonBags.src,
+        sequence: [
+          louisVuittonBags,
+          {
+            file: "designer-handbag",
+            key: "handbag",
+            src: "/media/buying/designer-handbag.webp",
+          },
+        ],
       },
       {
         file: "vintage-camera",

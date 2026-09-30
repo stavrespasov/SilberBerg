@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { openGraphLocales, routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
 import { getBuyingCategory, type BuyingCategoryKey } from "@/lib/buying";
 import { SITE_NAME } from "@/lib/siteConfig";
@@ -35,7 +35,7 @@ export async function buyingMetadata(
       siteName: SITE_NAME,
       title,
       description,
-      locale: locale === "sl" ? "sl_SI" : "en_GB",
+      locale: openGraphLocales[locale],
       url: path,
       images: [{ url: "/og.png", width: 1200, height: 630 }],
     },

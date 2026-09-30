@@ -8,5 +8,6 @@ export const SITE_URL =
 
 export const SITE_NAME = "Silberberg";
 
-/** Replace this once with the client's confirmed public phone number. */
-export const CONTACT_PHONE: string = "";
+/** Client-confirmed public contact number. */
+export const CONTACT_PHONE = "+386 30 757 533";
+export const CONTACT_PHONE_HREF = `tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`;

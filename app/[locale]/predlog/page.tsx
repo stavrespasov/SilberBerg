@@ -82,9 +82,7 @@ export default async function PredlogPage({
           <p className="mt-6 text-lg text-neutral-600 md:text-xl">
             Predstavitev za potrditev 2. faze
           </p>
-          <p className="mt-10 font-mono text-sm text-neutral-500">
-            {LIVE_URL}
-          </p>
+          <p className="mt-10 font-mono text-sm text-neutral-500">{LIVE_URL}</p>
         </div>
       </Slide>
 
@@ -117,10 +115,22 @@ export default async function PredlogPage({
           Živa stran, pripravljena na predstavitev
         </h2>
         <ul className="mt-10 grid gap-x-10 gap-y-4 text-[17px] leading-relaxed text-neutral-700 md:grid-cols-2">
-          <li>— Dvojezično: slovensko na korenu, angleško na /en; italijanščina pripravljena na vklop</li>
-          <li>— Okvirni cenik po čistinah, postopek v štirih korakih, FAQ, obrazec z GDPR soglasjem</li>
-          <li>— Dostopnost brez napak (WCAG 2.1 AA, axe-core) in takojšnje nalaganje (statične strani)</li>
-          <li>— Strukturirani podatki LocalBusiness + FAQ že oddajajo signale Googlu</li>
+          <li>
+            — Dvojezično: slovensko na korenu, angleško na /en; italijanščina
+            pripravljena na vklop
+          </li>
+          <li>
+            — Okvirni cenik po čistinah, postopek v štirih korakih, FAQ, obrazec
+            z GDPR soglasjem
+          </li>
+          <li>
+            — Dostopnost brez napak (WCAG 2.1 AA, axe-core) in takojšnje
+            nalaganje (statične strani)
+          </li>
+          <li>
+            — Strukturirani podatki LocalBusiness + FAQ že oddajajo signale
+            Googlu
+          </li>
         </ul>
         <p className="mt-10 inline-flex items-center gap-3 rounded-full bg-neutral-900 px-6 py-3 font-mono text-sm text-white">
           Demo v živo → {LIVE_URL}
@@ -160,10 +170,15 @@ export default async function PredlogPage({
           »Odkup zlata Koper«
         </h2>
         <ul className="mt-10 grid gap-x-10 gap-y-4 text-[17px] leading-relaxed text-neutral-700 md:grid-cols-2">
-          <li>— Domena silberberg.si je prosta (registracija prek ARNES registrarja)</li>
+          <li>
+            — Domena silberberg.si je prosta (registracija prek ARNES
+            registrarja)
+          </li>
           <li>— Hreflang, sitemap in strukturirani podatki so že aktivni</li>
           <li>— Statične strani se naložijo takoj — Google to nagradi</li>
-          <li>— Ključne besede: odkup zlata Koper, odkup srebra, cenitev zlata</li>
+          <li>
+            — Ključne besede: odkup zlata Koper, odkup srebra, cenitev zlata
+          </li>
         </ul>
       </Slide>
 
@@ -204,9 +219,13 @@ export default async function PredlogPage({
             Potrdite 2. fazo ali rezervirajte termin za pogovor
           </h2>
           <div className="mx-auto mt-10 grid max-w-3xl gap-4 text-left md:grid-cols-3">
-            <Card title="1. faza">Končana — živa stran čaka le še vaše podatke.</Card>
-            <Card title="2. faza">Po potrditvi, po mejnikih: najprej cene in povpraševanja.</Card>
-            <Card title="Investicija">Uskladimo na sestanku. [USKLADITI S STRANKO]</Card>
+            <Card title="1. faza">
+              Končana — živa stran čaka le še vaše podatke.
+            </Card>
+            <Card title="2. faza">
+              Po potrditvi, po mejnikih: najprej cene in povpraševanja.
+            </Card>
+            <Card title="Investicija">Uskladimo na sestanku.</Card>
           </div>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a

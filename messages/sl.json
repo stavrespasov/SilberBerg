@@ -66,7 +66,10 @@
       "studio": "Studio",
       "outdoor": "Na prostem",
       "pause": "Ustavi diaprojekcijo",
-      "resume": "Nadaljuj diaprojekcijo"
+      "resume": "Nadaljuj diaprojekcijo",
+      "previous": "Prejšnje fotografije",
+      "next": "Naslednje fotografije",
+      "examples": "Primeri predmetov, ki jih odkupujemo"
     },
     "metals": {
       "title": "Plemenite kovine",
@@ -157,6 +160,18 @@
         "sewing": "Šivalni stroji"
       },
       "photos": {
+        "rolex": {
+          "caption": "Prestižne ure",
+          "alt": "Zapestna ura Rolex s svetlo številčnico in kovinsko zapestnico na zapestju"
+        },
+        "patek": {
+          "caption": "Prestižne ure",
+          "alt": "Zapestna ura Patek Philippe s svetlo številčnico in rjavim usnjenim paščkom"
+        },
+        "louisVuitton": {
+          "caption": "Dizajnerske torbice",
+          "alt": "Rjave torbice Louis Vuitton z vzorcem monogramov"
+        },
         "watch": {
           "caption": "Prestižne ure",
           "alt": "Zapestna ura s temno številčnico in usnjenim paščkom na marmorju"
@@ -250,7 +265,8 @@
     "regNumber": "Matična številka",
     "vatId": "Davčna številka",
     "privacy": "Politika zasebnosti",
-    "rights": "Vse pravice pridržane."
+    "rights": "Vse pravice pridržane.",
+    "trademarkDisclaimer": "Prikazane blagovne znamke in njihova imena pripadajo njihovim lastnikom. S temi znamkami nismo povezani in nas ne podpirajo."
   },
   "film": {
     "eyebrow": "Pod lučjo",

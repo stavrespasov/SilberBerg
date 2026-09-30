@@ -1,28 +1,53 @@
 import type { Metadata } from "next";
+import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
-import { ConfirmTag } from "@/components/ui/ConfirmTag";
+import { Link, getPathname } from "@/i18n/navigation";
+import { openGraphLocales, routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
+import { SITE_NAME } from "@/lib/siteConfig";
 
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/zasebnost">): Promise<Metadata> {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations({ locale, namespace: "privacy" });
-  return { title: t("title") };
+  const path = getPathname({ locale, href: "/zasebnost" });
+  return {
+    title: t("title"),
+    description: t("intro"),
+    alternates: {
+      canonical: path,
+      languages: Object.fromEntries(
+        routing.locales.map((language) => [
+          language,
+          getPathname({ locale: language, href: "/zasebnost" }),
+        ]),
+      ),
+    },
+    openGraph: {
+      type: "website",
+      siteName: SITE_NAME,
+      title: t("title"),
+      description: t("intro"),
+      locale: openGraphLocales[locale],
+      url: path,
+      images: [{ url: "/og.png", width: 1200, height: 630 }],
+    },
+  };
 }
 
 const sections = [
-  { heading: "controllerHeading", text: "controllerText", confirm: true },
-  { heading: "collectHeading", text: "collectText", confirm: false },
-  { heading: "purposeHeading", text: "purposeText", confirm: false },
-  { heading: "retentionHeading", text: "retentionText", confirm: true },
-  { heading: "rightsHeading", text: "rightsText", confirm: false },
+  { heading: "collectHeading", text: "collectText" },
+  { heading: "purposeHeading", text: "purposeText" },
+  { heading: "rightsHeading", text: "rightsText" },
 ] as const;
 
 export default async function PrivacyPage({
   params,
 }: PageProps<"/[locale]/zasebnost">) {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations("privacy");
 
@@ -39,7 +64,6 @@ export default async function PrivacyPage({
           </h2>
           <p className="mt-2 text-[15px] leading-relaxed text-smoke">
             {t(s.text)}
-            {s.confirm && <ConfirmTag />}
           </p>
         </section>
       ))}

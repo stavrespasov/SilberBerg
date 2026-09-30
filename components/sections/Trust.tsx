@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
 import type { ComponentType, SVGProps } from "react";
-import { HallmarkIcon, ScaleIcon, ShieldIcon } from "@/components/icons";
-import { ConfirmTag } from "@/components/ui/ConfirmTag";
+import { ScaleIcon, ShieldIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -12,18 +11,20 @@ type Block = {
   /* Engraved into each panel — the fineness marks a counter clerk would
      stamp, echoing the hero's assay rail. Decorative only. */
   mark: string;
-  confirm?: boolean;
 };
 
 const blocks: readonly Block[] = [
-  { icon: ScaleIcon, title: "appraisalTitle", text: "appraisalText", mark: "999,9" },
-  { icon: ShieldIcon, title: "discretionTitle", text: "discretionText", mark: "916" },
   {
-    icon: HallmarkIcon,
-    title: "licenseTitle",
-    text: "licenseText",
-    mark: "750",
-    confirm: true,
+    icon: ScaleIcon,
+    title: "appraisalTitle",
+    text: "appraisalText",
+    mark: "999,9",
+  },
+  {
+    icon: ShieldIcon,
+    title: "discretionTitle",
+    text: "discretionText",
+    mark: "916",
   },
 ];
 
@@ -36,7 +37,7 @@ export function Trust() {
         <Reveal variant="blur">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} />
         </Reveal>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
           {blocks.map((block, i) => (
             <Reveal key={block.title} delay={i * 90} variant="scale">
               <article className="engraved group relative h-full overflow-hidden rounded-lg p-7">
@@ -52,7 +53,6 @@ export function Trust() {
                 </h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-smoke">
                   {t(block.text)}
-                  {block.confirm && <ConfirmTag />}
                 </p>
               </article>
             </Reveal>

@@ -2,13 +2,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/Reveal";
 import { PhoneIcon } from "@/components/icons";
-import { ConfirmTag } from "@/components/ui/ConfirmTag";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CONTACT_PHONE } from "@/lib/siteConfig";
-
-const phoneHref = CONTACT_PHONE
-  ? `tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`
-  : undefined;
+import { CONTACT_PHONE, CONTACT_PHONE_HREF } from "@/lib/siteConfig";
 
 export function Contact() {
   const t = useTranslations("contact");
@@ -26,23 +21,16 @@ export function Contact() {
               <PhoneIcon className="size-4" />
               {t("phoneLabel")}
             </p>
-            {phoneHref ? (
-              <a
-                href={phoneHref}
-                className="mt-4 block font-display text-3xl font-medium tracking-tight text-bone transition-colors duration-200 hover:text-gold-hi"
-              >
-                {CONTACT_PHONE}
-              </a>
-            ) : (
-              <p className="mt-4 font-display text-2xl font-medium tracking-tight text-bone">
-                {t("phonePending")} <ConfirmTag />
-              </p>
-            )}
+            <a
+              href={CONTACT_PHONE_HREF}
+              className="mt-4 block font-display text-3xl font-medium tracking-tight text-bone transition-colors duration-200 hover:text-gold-hi"
+            >
+              {CONTACT_PHONE}
+            </a>
             <p className="mt-3 text-sm leading-relaxed text-smoke">
               {t("phoneCtaText")}
             </p>
           </div>
-
         </Reveal>
         <Reveal delay={100}>
           <div className="relative min-h-full overflow-hidden rounded-lg border border-line bg-coal">
@@ -63,18 +51,12 @@ export function Contact() {
               <p className="mt-3 max-w-sm font-display text-3xl leading-tight text-bone md:text-4xl">
                 {t("phoneCtaText")}
               </p>
-              {phoneHref ? (
-                <a
-                  href={phoneHref}
-                  className="mt-6 inline-flex min-h-11 w-fit items-center rounded-full bg-bone px-5 text-sm font-semibold text-ink transition-colors duration-300 hover:bg-gold"
-                >
-                  {t("callAction")} ↗
-                </a>
-              ) : (
-                <p className="mt-6 text-sm text-smoke">
-                  {t("phonePending")} <ConfirmTag />
-                </p>
-              )}
+              <a
+                href={CONTACT_PHONE_HREF}
+                className="mt-6 inline-flex min-h-11 w-fit items-center rounded-full bg-bone px-5 text-sm font-semibold text-ink transition-colors duration-300 hover:bg-gold"
+              >
+                {t("callAction")} ↗
+              </a>
             </div>
           </div>
         </Reveal>

@@ -1,10 +1,8 @@
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  // Slovenian is the primary market language; English serves cross-border
-  // and tourist traffic. Italian is deliberately deferred until the client
-  // confirms scope — adding it here is the only change needed.
-  locales: ["sl", "en"],
+  // This order is shared by the desktop and mobile language controls.
+  locales: ["sl", "it", "en"],
   defaultLocale: "sl",
   // Slovenian renders at the bare root URL for local SEO strength.
   localePrefix: "as-needed",
@@ -15,3 +13,9 @@ export const routing = defineRouting({
 });
 
 export type Locale = (typeof routing.locales)[number];
+
+export const openGraphLocales: Record<Locale, string> = {
+  sl: "sl_SI",
+  it: "it_IT",
+  en: "en_GB",
+};

@@ -3,7 +3,8 @@ import type { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { openGraphLocales, routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
 import { boska, geist, geistMono } from "@/lib/fonts";
 import { SITE_NAME, SITE_URL } from "@/lib/siteConfig";
 import "../globals.css";
@@ -21,6 +22,7 @@ export async function generateMetadata({
   params,
 }: LayoutProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations({ locale, namespace: "meta" });
   const path = locale === "sl" ? "/" : `/${locale}`;
   return {
@@ -29,14 +31,19 @@ export async function generateMetadata({
     description: t("description"),
     alternates: {
       canonical: path,
-      languages: { sl: "/", en: "/en" },
+      languages: Object.fromEntries(
+        routing.locales.map((language) => [
+          language,
+          getPathname({ locale: language, href: "/" }),
+        ]),
+      ),
     },
     openGraph: {
       type: "website",
       siteName: SITE_NAME,
       title: t("title"),
       description: t("description"),
-      locale: locale === "sl" ? "sl_SI" : "en_GB",
+      locale: openGraphLocales[locale],
       url: path,
       images: [{ url: "/og.png", width: 1200, height: 630 }],
     },
